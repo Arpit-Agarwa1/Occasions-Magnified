@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-burgundy: #450201;
+  --color-burgundy-deep: #2e0101;
+  --color-cream: #e5dcc8;
+  --color-cream-muted: #d4c9b4;
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+/* Infinite marquee for “SHOP CUSTOM DESIGNS” ribbons (matches reference layout). */
+@keyframes om-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.om-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: om-marquee 32s linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-burgundy);
+  background-color: #faf8f4;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
