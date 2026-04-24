@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { DreamDesignCtaSection } from '../components/home/DreamDesignCtaSection.jsx'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { brandShowcaseLoop } from '../data/workGallery.js'
@@ -9,6 +8,9 @@ const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions M
 
 /** Client banner asset — `public/brand/hero-banner.jpg` (copied from `_extracted/Assets/Banner.jpg`). */
 const HERO_BANNER_SRC = '/brand/hero-banner.jpg'
+
+/** Services reel behind “Your dream design…” — `public/brand/services-bg.mp4` (from `_extracted/Assets/Services.mp4`). */
+const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 
 /**
  * Home — hero matches client mock: banner + right-aligned headline + ghost CTA.
@@ -113,9 +115,55 @@ export function HomePage() {
 
       <PortfolioPreviewSection />
 
-      <DreamDesignCtaSection />
+      {/* Etsy marquees top + bottom; services video + scrims behind full block */}
+      <section className="relative flex min-h-[min(52vh,580px)] flex-col overflow-hidden text-white md:min-h-[min(58vh,700px)]">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          <video
+            aria-hidden
+            autoPlay
+            className="absolute inset-0 h-full w-full object-cover opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden"
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            src={SERVICES_BG_VIDEO_SRC}
+            style={{ transform: 'rotate(-4deg) scale(1.15)' }}
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 hidden scale-110 bg-cover bg-center opacity-95 [@media(prefers-reduced-motion:reduce)]:block"
+            style={{
+              backgroundImage: 'url(/brand/dark-texture.jpg)',
+              transform: 'rotate(-4deg) scale(1.15)',
+            }}
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-[#4A0404]/78" />
+        <div className="pointer-events-none absolute inset-0 z-[1] opacity-20 mix-blend-soft-light">
+          <div
+            className="h-full w-full bg-cover bg-center opacity-90"
+            style={{
+              backgroundImage: 'url(/brand/bg-grid.png)',
+              transform: 'rotate(6deg) scale(1.2)',
+            }}
+          />
+        </div>
 
-      <MarqueeRibbon />
+        <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+          <MarqueeRibbon className="relative z-20 shrink-0 shadow-[0_1px_0_rgba(0,0,0,0.2)]" />
+          <div className="flex flex-1 flex-col items-center justify-center px-4 py-16 md:px-8 md:py-20">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="font-nav text-xl font-bold leading-snug tracking-[0.14em] uppercase sm:text-2xl md:text-[1.65rem]">
+                YOUR DREAM DESIGN, JUST A CLICK AWAY
+              </h2>
+              <p className="mt-5 font-serif text-lg text-white/92 md:text-xl">
+                Browse through our past creations and place your custom order easily.
+              </p>
+            </div>
+          </div>
+          <MarqueeRibbon className="relative z-20 shrink-0 shadow-[0_-1px_0_rgba(0,0,0,0.2)]" />
+        </div>
+      </section>
 
       {/* Meet the founder — name only in copy, not overlaid on portrait */}
       <section className="relative overflow-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
