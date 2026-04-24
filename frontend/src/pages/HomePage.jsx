@@ -1,45 +1,37 @@
 import { Link } from 'react-router-dom'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
+import { brandShowcaseLoop } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
-
-/** Handwritten callouts — wording + spelling from the approved home mock. */
-const CALLOUTS = [
-  { text: 'Personalized Stories', className: 'left-[5%] top-[8%] -rotate-6' },
-  { text: 'Memorable Gift', className: 'right-[6%] top-[14%] rotate-3' },
-  { text: 'Fully Customizable', className: 'left-[8%] bottom-[42%] -rotate-2' },
-  { text: 'Timeless Designs', className: 'right-[8%] bottom-[36%] rotate-5' },
-  { text: 'High Quality Print', className: 'left-[12%] bottom-[10%] rotate-2' },
-]
 
 const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions Magnified. I love turning life's biggest chapters into tangible art: invitations that feel like the first page of your story, and O'Mag magazines you can hold again and again.`
 
 /**
- * Home — matches the supplied mock: hero + transparent nav, O’MAG lockup + polaroid + callouts, ribbons, dream grid, founder + overlapping signature, testimonial split, imagery from brand pack.
+ * Home — extended hero cover, O’Mag video without polaroid frame or overlay copy, marquees, portfolio, founder.
  */
 export function HomePage() {
   return (
     <>
-      {/* Hero — studio still: easel welcome piece, magazines, vase (brand/hero-banner.jpg) */}
-      <section className="relative overflow-hidden bg-[#F5F5F5] pb-16 pt-28 md:pb-24 md:pt-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:grid-cols-2 md:gap-14 md:px-8">
-          <div className="order-2 md:order-1">
+      {/* Hero — wide cover image (extends toward edges on small screens) + headline */}
+      <section className="relative overflow-hidden bg-[#F5F5F5] pb-14 pt-32 md:pb-20 md:pt-36">
+        <div className="mx-auto grid max-w-7xl items-stretch gap-0 md:min-h-[min(86vh,900px)] md:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] md:gap-12 md:px-8 lg:gap-16">
+          <div className="-mx-4 min-h-[min(50vh,520px)] sm:-mx-6 md:mx-0 md:min-h-0">
             <img
               src="/brand/hero-banner.jpg"
               alt="Welcome sign on easel, magazines, envelopes, and white blossom branches — Occasions Magnified"
-              className="h-auto w-full rounded-sm object-cover shadow-[0_20px_50px_-24px_rgba(74,4,4,0.35)]"
+              className="h-full min-h-[min(50vh,520px)] w-full object-cover shadow-[0_24px_60px_-30px_rgba(74,4,4,0.28)] md:min-h-[min(82vh,880px)] md:rounded-sm"
               width={960}
               height={720}
               loading="eager"
             />
           </div>
-          <div className="order-1 text-center md:order-2 md:pr-2 md:text-left">
+          <div className="flex flex-col justify-center px-5 py-10 text-center md:px-0 md:py-12 md:text-left">
             <h1 className="font-serif text-[2.05rem] font-semibold leading-[1.12] text-[#4A0404] sm:text-4xl md:text-[2.75rem] lg:text-[2.95rem]">
               Crafting Memories through Elegant Designs
             </h1>
             <Link
               to="/work"
-              className="mt-10 inline-flex items-center justify-center border border-[#4A0404] bg-transparent px-8 py-2.5 font-nav text-xs font-semibold tracking-[0.18em] text-[#4A0404] uppercase transition hover:bg-[#4A0404] hover:text-white"
+              className="mt-10 inline-flex items-center justify-center rounded-sm bg-[#4A0404] px-8 py-3 font-nav text-xs font-semibold tracking-[0.18em] text-[#F5F5F0] uppercase shadow-md transition hover:bg-[#3a0303] md:max-w-xs"
             >
               Explore Our Work
             </Link>
@@ -47,7 +39,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* O’MAG — deep maroon; lockup + copy; polaroid frame + couple cover + handwritten notes */}
+      {/* O’MAG — video only: no white frame, no handwritten overlay text */}
       <section className="bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <div>
@@ -72,42 +64,27 @@ export function HomePage() {
 
           <Link
             to="/omag"
-            className="group mx-auto block w-full max-w-md"
+            className="group mx-auto block w-full max-w-md md:max-w-lg"
             aria-label="View O'Mag details"
           >
-            <div className="relative rounded-sm bg-white p-4 pb-6 shadow-2xl ring-1 ring-black/5 transition group-hover:ring-2 group-hover:ring-white/60">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-neutral-100">
-                {/* Looping clip — muted for autoplay; poster keeps layout sharp before first frame */}
-                <video
-                  className="absolute inset-0 h-full w-full scale-[1.02] object-cover pointer-events-none transition duration-300 group-hover:scale-[1.04]"
-                  src="/brand/omag-section-loop.mp4"
-                  poster="/work/magazine/mockup-magazine.jpg"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  aria-hidden
-                />
-                <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent"
-                  aria-hidden
-                />
-                {CALLOUTS.map((c) => (
-                  <span
-                    key={c.text}
-                    className={`pointer-events-none absolute z-10 max-w-[55%] font-hand text-2xl leading-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)] sm:text-[1.65rem] md:text-3xl ${c.className}`}
-                  >
-                    {c.text}
-                  </span>
-                ))}
-              </div>
+            <div className="relative overflow-hidden rounded-lg shadow-2xl ring-1 ring-black/20 transition duration-300 group-hover:ring-2 group-hover:ring-white/40">
+              <video
+                className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-[1.02] sm:aspect-[4/5]"
+                src={brandShowcaseLoop.src}
+                poster={brandShowcaseLoop.poster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-label="O'Mag layout preview video"
+              />
             </div>
           </Link>
         </div>
       </section>
 
-      <MarqueeRibbon />
+      <MarqueeRibbon withStudioVideo />
 
       <PortfolioPreviewSection />
 
@@ -141,7 +118,7 @@ export function HomePage() {
 
       <MarqueeRibbon />
 
-      {/* Meet the founder — gold script overlaps bottom of portrait (mock) */}
+      {/* Meet the founder — name only in copy, not overlaid on portrait */}
       <section className="relative overflow-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-40"
@@ -151,18 +128,15 @@ export function HomePage() {
           }}
         />
         <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
-          <div className="relative mx-auto flex w-full max-w-md flex-col items-center md:mx-0">
+          <div className="mx-auto flex w-full max-w-md justify-center md:mx-0 md:justify-start">
             <img
               src="/brand/founder-shristi.png"
               alt="Illustration of founder Shristi Jhalani"
-              className="relative z-0 w-full max-w-[380px] object-contain drop-shadow-xl"
+              className="w-full max-w-[380px] object-contain drop-shadow-xl"
               width={420}
               height={520}
               loading="lazy"
             />
-            <p className="font-signature pointer-events-none absolute bottom-2 left-1/2 z-10 w-[90%] -translate-x-1/2 translate-y-1/3 text-center text-[2.35rem] leading-none text-[#e8c87a] drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] sm:text-5xl md:bottom-4 md:text-[2.75rem]">
-              Shristi Jhalani
-            </p>
           </div>
           <div>
             <h2 className="font-nav text-xs font-semibold tracking-[0.38em] text-[#F5F5F5]/90 uppercase">
@@ -181,7 +155,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials — title on maroon; wide cream card (mock) */}
       <section className="relative bg-[#4A0404] pb-0 pt-14 md:pt-16">
         <h2 className="relative z-10 px-4 text-center font-serif text-3xl text-white md:text-[2.35rem]">
           What Our Clients Say....
@@ -195,8 +168,6 @@ export function HomePage() {
           </p>
         </div>
       </section>
-
-      {/* Design reference asset (full mock) available at /brand/home-design-reference.png for stakeholders */}
     </>
   )
 }

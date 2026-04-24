@@ -45,25 +45,35 @@ export const magazineGalleryItems = [
   { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
 ]
 
+/** Printed spreads & covers for O’Mag “Samples” (actual magazines, not device mockups). */
+export const omagSampleCarouselItems = [
+  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread' },
+  { src: '/work/magazine/cover.jpg', title: 'Cover' },
+  { src: '/work/magazine/back-cover.jpg', title: 'Back cover' },
+  { src: '/work/magazine/15.png', title: 'Inside spread' },
+  { src: '/work/magazine/20.png', title: 'Feature layout' },
+  { src: '/work/magazine/8.jpg', title: 'Cover finish' },
+]
+
 /** @type {InvitationFilmItem[]} */
 export const invitationVideoItems = [
   {
     src: '/work/invitations/neha-sunny.mp4',
-    title: 'Neha & Sunny',
-    poster: '/work/magazine/cover.jpg',
-    tagline: 'Cinematic save-the-date motion piece.',
+    title: 'Neha & Sunny — motion story',
+    poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
+    tagline: 'Save-the-date film with custom type and colour grade.',
   },
   {
     src: '/work/invitations/ritwik-anjana.mp4',
-    title: 'Ritwik & Anjana',
-    poster: '/work/magazine/mockup-magazine.jpg',
-    tagline: 'Story-led pacing and custom typography.',
+    title: 'Ritwik & Anjana — motion story',
+    poster: '/work/magazine/cover2.png',
+    tagline: 'Pacing and layout aligned to their celebration theme.',
   },
   {
     src: '/work/invitations/rishabh-sonam.mp4',
-    title: 'Rishabh & Sonam',
-    poster: '/work/magazine/mockup3.jpg',
-    tagline: 'Warm palette and elegant transitions.',
+    title: 'Rishabh & Sonam — motion story',
+    poster: '/work/magazine/back-cover.jpg',
+    tagline: 'Warm tones and elegant transitions for family sharing.',
   },
 ]
 
@@ -90,8 +100,8 @@ export const serviceGalleryItems = [
   { src: '/services/8.png', label: 'Illustration & caricature', description: 'Hand-drawn personality for print and motion.' },
 ]
 
-/** Brand loop used on home O’MAG block — reusable for previews */
+/** Brand loop — poster uses a real printed spread (not a device mockup). */
 export const brandShowcaseLoop = {
   src: '/brand/omag-section-loop.mp4',
-  poster: '/work/magazine/mockup-magazine.jpg',
+  poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
 }

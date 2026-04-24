@@ -44,7 +44,7 @@ export function NewsletterForm() {
     <div className="mx-auto w-full max-w-2xl">
       <form
         onSubmit={onSubmit}
-        className="flex overflow-hidden rounded-sm shadow-md"
+        className="flex w-full flex-col overflow-hidden rounded-sm shadow-md sm:flex-row sm:items-stretch"
         noValidate
       >
         <label className="sr-only" htmlFor="newsletter-email">
@@ -60,12 +60,12 @@ export function NewsletterForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === 'loading'}
-          className="min-h-12 flex-1 rounded-none border-0 bg-white px-4 text-[#4A0404] placeholder:text-[#4A0404]/45 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#4A0404]/25 disabled:opacity-60"
+          className="h-14 min-h-[3.5rem] w-full min-w-0 flex-1 border-0 bg-white px-4 py-0 text-[#4A0404] placeholder:text-[#4A0404]/45 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#4A0404]/25 disabled:opacity-60 sm:border-r sm:border-[#4A0404]/10"
         />
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="min-h-12 shrink-0 rounded-none bg-[#4A0404] px-8 font-nav text-xs font-semibold tracking-[0.35em] text-white uppercase transition hover:bg-[#310B0B] disabled:opacity-60"
+          className="flex h-14 min-h-[3.5rem] w-full shrink-0 items-center justify-center bg-[#4A0404] px-6 font-nav text-xs font-semibold tracking-[0.35em] text-white uppercase transition hover:bg-[#310B0B] disabled:opacity-60 sm:w-auto sm:min-w-[10.5rem] sm:px-8"
         >
           {status === 'loading' ? '…' : 'SUBMIT'}
         </button>

@@ -12,7 +12,6 @@ import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
 import { ImageLightbox } from '../components/work/ImageLightbox.jsx'
 import { MotionInviteVideoCard } from '../components/work/MotionInviteVideoCard.jsx'
 
-/** Polaroid “labels” row (Explore our Work mock). */
 /** O’Mag loop — static poster when user prefers reduced motion. */
 function OmagBrandLoopMedia() {
   const [reduceMotion, setReduceMotion] = useState(false)
@@ -50,13 +49,14 @@ function OmagBrandLoopMedia() {
   )
 }
 
+/** Labels + real magazine / product stills — no white polaroid frame. */
 const POLAROIDS = [
-  { src: '/work/magazine/mockup-magazine.jpg', label: 'MAGAZINES', tilt: 'rotate-[2.5deg]' },
-  { src: '/services/e-invites.png', label: 'INVITATION', tilt: '-rotate-[3deg]' },
-  { src: '/work/magazine/cover.jpg', label: 'WELCOME BOARDS', tilt: '-rotate-[2deg]' },
-  { src: '/services/6.png', label: 'WEDDING STATIONERY', tilt: 'rotate-[3deg]' },
-  { src: '/services/7.png', label: 'CUSTOM LOGO', tilt: 'rotate-[2deg]' },
-  { src: '/services/8.png', label: 'CARICATURES', tilt: '-rotate-[2.5deg]' },
+  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', label: 'MAGAZINES', tilt: 'rotate-[2.5deg]' },
+  { src: '/work/magazine/cover.jpg', label: "O'MAG", tilt: '-rotate-[3deg]' },
+  { src: '/work/magazine/back-cover.jpg', label: 'PRINT', tilt: '-rotate-[2deg]' },
+  { src: '/services/e-invites.png', label: 'INVITATIONS', tilt: 'rotate-[3deg]' },
+  { src: '/services/6.png', label: 'STATIONERY', tilt: 'rotate-[2deg]' },
+  { src: '/services/8.png', label: 'ILLUSTRATION', tilt: '-rotate-[2.5deg]' },
 ]
 
 /** Portfolio — polaroids, motion films, O’Mag loop, masonry archive, process, services. */
@@ -93,7 +93,7 @@ export function WorkPage() {
           {POLAROIDS.map((p) => (
             <div key={p.label} className={`flex flex-col items-center ${p.tilt}`}>
               <span className="font-hand text-3xl text-white drop-shadow md:text-4xl">{p.label}</span>
-              <div className="om-polaroid mt-3 w-[min(88vw,300px)] rounded-sm bg-white p-3 pb-10">
+              <div className="mt-3 w-[min(88vw,300px)] overflow-hidden rounded-xl shadow-[0_16px_48px_-12px_rgba(0,0,0,0.45)] ring-1 ring-white/15">
                 <img src={p.src} alt={p.label} className="aspect-[4/3] w-full object-cover" loading="lazy" />
               </div>
             </div>
@@ -123,10 +123,9 @@ export function WorkPage() {
             <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-white/45 uppercase">
               Motion
             </p>
-            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.5rem]">Invitation films</h2>
+            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.5rem]">Custom motion invitations</h2>
             <p className="mt-4 font-serif text-lg leading-relaxed text-cream/80">
-              Cinematic reels couples share before the big day — typography, pacing, and colour graded for
-              every screen.
+              Save-the-date and invitation films — typography, pacing, and colour graded for every screen.
             </p>
           </div>
           <div className="mt-14 grid gap-10 lg:grid-cols-3 lg:gap-8">

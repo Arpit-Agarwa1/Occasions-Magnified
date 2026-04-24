@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { magazineGalleryItems } from '../data/workGallery.js'
+import { omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
 import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
 
@@ -46,7 +46,7 @@ const FAQS = [
 
 /** O’Mag marketing + process + FAQ (matches O’Mag home mock). */
 export function OmagPage() {
-  const slides = useMemo(() => magazineGalleryItems.slice(0, 6), [])
+  const slides = useMemo(() => omagSampleCarouselItems, [])
   const [i, setI] = useState(0)
   const [reduceMotion, setReduceMotion] = useState(false)
 
@@ -95,18 +95,12 @@ export function OmagPage() {
           </div>
         </div>
         <div className="mt-10 md:mt-0 md:w-1/2">
-          <div className="mx-auto max-w-md rounded-[28px] border border-black/10 bg-white p-4 shadow-xl">
-            <div className="flex items-center gap-2 border-b border-black/5 pb-3 font-nav text-[10px] font-semibold tracking-wide text-black/50">
-              <span className="h-2 w-2 rounded-full bg-rose-400" />
-              <span className="h-2 w-2 rounded-full bg-amber-300" />
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              <span className="ml-2">omag</span>
-            </div>
+          <div className="mx-auto max-w-md overflow-hidden rounded-lg shadow-2xl ring-1 ring-black/10 md:max-w-lg">
             <img
-              src="/work/magazine/mockup3.jpg"
-              alt="O'Mag cover mockup"
-              className="mt-3 w-full rounded-md object-cover"
-              loading="lazy"
+              src="/work/magazine/open-magazne-o-mag-aashi.jpg"
+              alt="Printed O'Mag magazine — open spread"
+              className="aspect-[4/5] w-full object-cover md:aspect-[3/4]"
+              loading="eager"
             />
           </div>
         </div>
@@ -168,17 +162,17 @@ export function OmagPage() {
                   Full tour <span aria-hidden>→</span>
                 </a>
 
-                <div className="relative aspect-video w-full bg-[#1a0505]">
+                <div className="relative min-h-[min(52vh,520px)] w-full bg-[#1a0505] md:min-h-[min(58vh,600px)] lg:min-h-[min(64vh,720px)]">
                   {reduceMotion ? (
                     <img
                       src="/how-it-works/how-it-works.png"
                       alt="Illustrated overview of the O'Mag design process"
-                      className="h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover"
                       loading="lazy"
                     />
                   ) : (
                     <video
-                      className="h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover"
                       src="/brand/omag-section-loop.mp4"
                       poster="/how-it-works/how-it-works.png"
                       autoPlay

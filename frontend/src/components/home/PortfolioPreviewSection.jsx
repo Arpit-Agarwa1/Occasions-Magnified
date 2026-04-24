@@ -3,7 +3,7 @@ import { invitationVideoItems } from '../../data/workGallery.js'
 import { SITE_LINKS } from '../../constants/site.js'
 
 /**
- * Home teaser — motion invites + link into full portfolio.
+ * Home teaser — custom motion invitations + link into full portfolio.
  */
 export function PortfolioPreviewSection() {
   return (
@@ -11,14 +11,13 @@ export function PortfolioPreviewSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-burgundy/55 uppercase">
-            Portfolio
+            Motion
           </p>
           <h2 className="mt-3 font-serif text-3xl font-semibold text-burgundy md:text-[2.35rem]">
-            Motion invitations &amp; print magic
+            Custom motion invitations
           </h2>
           <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
-            A few of our cinematic invite reels — each crafted to match the couple&apos;s story, palette, and
-            celebration.
+            Cinematic reels crafted for each couple — colour, typography, and pacing tuned to your story.
           </p>
         </div>
 

@@ -1,8 +1,9 @@
-import { magazineGalleryItems } from '../data/workGallery.js'
+import { magazineGalleryItems, omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
 import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
 
-const GRID = magazineGalleryItems.slice(0, 9)
+const extraPrint = magazineGalleryItems.filter((i) => !i.src.toLowerCase().includes('mockup'))
+const GRID = [...omagSampleCarouselItems, ...extraPrint].slice(0, 9)
 
 /** Shop magazine grid — 3×3 mock with first-row labels + marble field. */
 export function MagazineShopPage() {

@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { SiteLogo } from './SiteLogo.jsx'
 
 /** Home mock: HOME · OUR WORK · O’MAG · SHOP · ABOUT US · TESTIMONIAL · CONTACT US */
 const links = [
@@ -46,7 +47,7 @@ export function SiteHeader() {
   return (
     <header className={shell}>
       {/* Logo left · desktop nav right · burger right on small screens */}
-      <div className="flex min-h-[4rem] w-full min-w-0 items-center justify-between gap-4 px-4 sm:min-h-[4.25rem] sm:gap-5 sm:px-6 md:gap-6 md:px-8 lg:px-10 xl:gap-8 xl:px-12">
+      <div className="flex min-h-[4.75rem] w-full min-w-0 items-center justify-between gap-4 px-4 sm:min-h-[5.25rem] sm:gap-5 sm:px-6 md:min-h-[5.75rem] md:gap-6 md:px-8 lg:min-h-24 lg:px-10 xl:gap-8 xl:px-12">
         <NavLink
           to="/"
           className={`flex shrink-0 items-center rounded-sm outline-none drop-shadow-sm transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
@@ -57,14 +58,7 @@ export function SiteHeader() {
           onClick={close}
           aria-label="Home"
         >
-          <img
-            src="/brand/logo.png"
-            alt="Occasions Magnified"
-            className={`h-14 w-auto shrink-0 sm:h-[3.75rem] md:h-16 ${isHome ? '' : 'brightness-0 invert'}`}
-            width={280}
-            height={84}
-            loading="eager"
-          />
+          <SiteLogo variant={isHome ? 'default' : 'inverted'} />
         </NavLink>
 
         <nav
@@ -80,7 +74,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md outline-none ring-1 ring-inset transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 lg:hidden ${isHome ? 'bg-white/10 ring-[#4A0404]/25 focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#F5F5F5]' : 'bg-white/5 ring-white/20 focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]'}`}
+          className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md outline-none ring-1 ring-inset transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 sm:h-12 sm:w-12 lg:hidden ${isHome ? 'bg-white/10 ring-[#4A0404]/25 focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#F5F5F5]' : 'bg-white/5 ring-white/20 focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]'}`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}

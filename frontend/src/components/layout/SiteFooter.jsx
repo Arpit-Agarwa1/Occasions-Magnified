@@ -2,8 +2,10 @@ import { NavLink } from 'react-router-dom'
 import { NewsletterForm } from '../forms/NewsletterForm.jsx'
 import { SocialIconRow } from './SocialIconRow.jsx'
 
-/** Footer CTA + bar (mock: questions band, © 2024, icons, Terms | Privacy). */
+/** Footer CTA + bar — newsletter, © year, socials, legal. */
 export function SiteFooter() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="mt-auto">
       <section
@@ -32,7 +34,9 @@ export function SiteFooter() {
 
       <div className="bg-[#1f0707] py-7 text-cream">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 text-sm md:grid-cols-3 md:gap-4 md:px-8">
-          <p className="text-center font-nav text-cream/80 md:text-left">© 2024 Occasions Magnified</p>
+          <p className="text-center font-nav text-cream/80 md:text-left">
+            © {currentYear} Occasions Magnified
+          </p>
           <div className="flex justify-center">
             <SocialIconRow />
           </div>
