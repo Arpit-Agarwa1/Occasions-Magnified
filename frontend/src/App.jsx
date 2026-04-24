@@ -5,6 +5,7 @@ import { ContactPage } from './pages/ContactPage.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 import { NotFoundPage } from './pages/NotFoundPage.jsx'
 import { OmagPage } from './pages/OmagPage.jsx'
+import { MagazineShopPage } from './pages/MagazineShopPage.jsx'
 import { ShopPage } from './pages/ShopPage.jsx'
 import { TestimonialsPage } from './pages/TestimonialsPage.jsx'
 import { WorkPage } from './pages/WorkPage.jsx'
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="work" element={<WorkPage />} />
         <Route path="omag" element={<OmagPage />} />
         <Route path="shop" element={<ShopPage />} />
+        <Route path="shop/magazine" element={<MagazineShopPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="testimonials" element={<TestimonialsPage />} />
         <Route path="contact" element={<ContactPage />} />

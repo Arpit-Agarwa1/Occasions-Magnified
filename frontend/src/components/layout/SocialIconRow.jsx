@@ -1,6 +1,8 @@
 import { SITE_LINKS } from '../../constants/site.js'
 
-const iconClass = 'h-9 w-9 rounded-full border border-cream/25 p-2 text-cream transition hover:bg-cream/10'
+/** Brand marks without ring borders — soft fill + hover for a clean bar */
+const iconClass =
+  'h-9 w-9 rounded-full bg-cream/10 p-2 text-cream outline-none transition hover:bg-cream/15 focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#1f0707]'
 
 /** Compact social icons for the footer bar (reference layout). */
 export function SocialIconRow() {

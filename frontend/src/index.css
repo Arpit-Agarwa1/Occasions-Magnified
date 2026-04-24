@@ -5,11 +5,17 @@
   --color-burgundy-deep: #2e0101;
   --color-cream: #e5dcc8;
   --color-cream-muted: #d4c9b4;
+  --color-om-header: #310b0b;
+  --color-om-page: #f9f7f2;
+  --color-om-gold: #c9a24d;
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-nav: 'Montserrat', 'DM Sans', system-ui, sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --font-signature: 'Great Vibes', cursive;
 }
 
-/* Infinite marquee for “SHOP CUSTOM DESIGNS” ribbons (matches reference layout). */
+/* Infinite marquee for “SHOP CUSTOM DESIGNS | …” ribbons. */
 @keyframes om-marquee {
   0% {
     transform: translateX(0);
@@ -22,7 +28,28 @@
 .om-marquee-track {
   display: flex;
   width: max-content;
-  animation: om-marquee 32s linear infinite;
+  animation: om-marquee 36s linear infinite;
+}
+
+/* Light marble / paper texture for shop-style pages. */
+.om-marble-bg {
+  background-color: #ebe8e4;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+  background-size:
+    22px 22px,
+    18px 18px;
+  background-position:
+    0 0,
+    6px 10px;
+}
+
+/* Polaroid lift (Explore our Work mock). */
+.om-polaroid {
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -31,13 +58,28 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-sans);
   color: var(--color-burgundy);
   background-color: #faf8f4;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+  background-color: color-mix(in srgb, var(--color-burgundy) 18%, transparent);
+  color: var(--color-burgundy-deep);
+}
+
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
 }

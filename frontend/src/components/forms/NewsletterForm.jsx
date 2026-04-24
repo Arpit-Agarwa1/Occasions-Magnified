@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react'
+import { apiUrl } from '../../utils/apiUrl.js'
 
 /**
- * Footer “Have any Questions?” form — posts to Node API (`/api/newsletter`) via Vite proxy in dev.
+ * Footer “Have any Questions?” — joined field + SUBMIT (mock).
  */
 export function NewsletterForm() {
   const [email, setEmail] = useState('')
@@ -15,7 +16,7 @@ export function NewsletterForm() {
       setMessage('')
 
       try {
-        const res = await fetch('/api/newsletter', {
+        const res = await fetch(apiUrl('/api/newsletter'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email }),
@@ -43,7 +44,7 @@ export function NewsletterForm() {
     <div className="mx-auto w-full max-w-2xl">
       <form
         onSubmit={onSubmit}
-        className="flex flex-col gap-3 sm:flex-row sm:items-stretch"
+        className="flex overflow-hidden rounded-sm shadow-md"
         noValidate
       >
         <label className="sr-only" htmlFor="newsletter-email">
@@ -55,18 +56,18 @@ export function NewsletterForm() {
           type="email"
           autoComplete="email"
           required
-          placeholder="Your email"
+          placeholder="Enter your E-Mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={status === 'loading'}
-          className="min-h-12 flex-1 rounded-sm border border-white/35 bg-white px-4 text-burgundy placeholder:text-burgundy/40 focus:border-cream focus:outline-none focus:ring-2 focus:ring-cream/35 disabled:opacity-60"
+          className="min-h-12 flex-1 rounded-none border-0 bg-white px-4 text-[#4A0404] placeholder:text-[#4A0404]/45 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#4A0404]/25 disabled:opacity-60"
         />
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="min-h-12 shrink-0 rounded-sm bg-burgundy-deep px-10 text-xs font-semibold tracking-[0.35em] text-cream uppercase shadow-sm transition hover:bg-black/80 disabled:opacity-60"
+          className="min-h-12 shrink-0 rounded-none bg-[#4A0404] px-8 font-nav text-xs font-semibold tracking-[0.35em] text-white uppercase transition hover:bg-[#310B0B] disabled:opacity-60"
         >
-          {status === 'loading' ? 'Sending…' : 'SUBMIT'}
+          {status === 'loading' ? '…' : 'SUBMIT'}
         </button>
       </form>
       {message ? (

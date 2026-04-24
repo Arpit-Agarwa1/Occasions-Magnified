@@ -8,6 +8,8 @@ export const SITE_LINKS = {
   website: 'https://www.occasionsmagnified.com',
   email: 'mailto:occasionsmagnified@gmail.com',
   phone: 'tel:+919660011183',
+  /** WhatsApp chat (same number as phone). */
+  whatsapp: 'https://wa.me/919660011183',
 }
 
 export const SITE_EMAIL = 'occasionsmagnified@gmail.com'
