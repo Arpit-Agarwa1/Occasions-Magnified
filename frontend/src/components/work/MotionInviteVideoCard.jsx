@@ -1,8 +1,8 @@
 /**
  * Invitation film — poster frame, native controls, editorial caption block.
- * @param {{ src: string; title: string; poster: string; tagline: string; tone?: 'light' | 'dark' }} props
+ * @param {{ src: string; title: string; poster: string; tagline: string; tone?: 'light' | 'dark'; className?: string }} props
  */
-export function MotionInviteVideoCard({ src, title, poster, tagline, tone = 'light' }) {
+export function MotionInviteVideoCard({ src, title, poster, tagline, tone = 'light', className = '' }) {
   const isDark = tone === 'dark'
   const footer = isDark
     ? 'border-white/10 bg-black/55 text-cream backdrop-blur-md'
@@ -11,7 +11,9 @@ export function MotionInviteVideoCard({ src, title, poster, tagline, tone = 'lig
   const bodyCls = isDark ? 'text-cream/80' : 'text-burgundy/75'
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-lg border border-black/10 shadow-[0_24px_55px_-30px_rgba(0,0,0,0.45)] ring-1 ring-white/5 transition hover:-translate-y-0.5 hover:shadow-[0_32px_60px_-28px_rgba(0,0,0,0.5)]">
+    <article
+      className={`flex flex-col overflow-hidden rounded-xl border border-black/10 shadow-[0_24px_55px_-30px_rgba(0,0,0,0.45)] ring-1 ring-white/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_32px_60px_-28px_rgba(0,0,0,0.55)] ${className}`.trim()}
+    >
       <div
         className={`relative aspect-[9/16] w-full overflow-hidden ${isDark ? 'bg-black' : 'bg-[#1a0505]'}`}
       >

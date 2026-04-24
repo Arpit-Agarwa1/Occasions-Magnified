@@ -7,6 +7,8 @@
  * @typedef {Object} WorkMediaItem
  * @property {string} src
  * @property {string} title
+ * @property {string} [badge] Optional ribbon on shop grid cards
+ * @property {string} [pdfSrc] Opens in a new tab when set (sample PDF under `public/work/`).
  */
 
 /**
@@ -45,14 +47,32 @@ export const magazineGalleryItems = [
   { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
 ]
 
-/** Printed spreads & covers for O’Mag “Samples” (actual magazines, not device mockups). */
+/** Printed spreads & covers for O’Mag “Samples” (thumbs from real multi-page PDFs). */
 export const omagSampleCarouselItems = [
-  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread' },
-  { src: '/work/magazine/cover.jpg', title: 'Cover' },
-  { src: '/work/magazine/back-cover.jpg', title: 'Back cover' },
-  { src: '/work/magazine/15.png', title: 'Inside spread' },
-  { src: '/work/magazine/20.png', title: 'Feature layout' },
-  { src: '/work/magazine/8.jpg', title: 'Cover finish' },
+  {
+    src: '/work/magazine/samples/sample-12-pages.jpg',
+    pdfSrc: '/work/magazine/samples/sample-12-pages.pdf',
+    title: "O'Mag — 12-page issue (sample)",
+    badge: '12 pages',
+  },
+  {
+    src: '/work/magazine/samples/sample-16-pages.jpg',
+    pdfSrc: '/work/magazine/samples/sample-16-pages.pdf',
+    title: "O'Mag — 16-page issue (sample)",
+    badge: '16 pages',
+  },
+  {
+    src: '/work/magazine/samples/sample-20-pages.jpg',
+    pdfSrc: '/work/magazine/samples/sample-20-pages.pdf',
+    title: "O'Mag — 20-page issue (sample)",
+    badge: '20 pages',
+  },
+  {
+    src: '/work/magazine/samples/sample-24-pages.jpg',
+    pdfSrc: '/work/magazine/samples/sample-24-pages.pdf',
+    title: "O'Mag — 24-page issue (sample)",
+    badge: '24 pages',
+  },
 ]
 
 /** @type {InvitationFilmItem[]} */

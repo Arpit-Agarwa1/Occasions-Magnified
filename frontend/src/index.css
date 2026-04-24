@@ -45,6 +45,26 @@
     6px 10px;
 }
 
+/* O’Mag marketing page — cream paper + soft rose watercolor (client mock). */
+.om-omag-skin {
+  background-color: #f5f2ec;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 92% 8%, rgba(232, 178, 188, 0.28), transparent 58%),
+    radial-gradient(ellipse 70% 50% at 4% 92%, rgba(218, 168, 178, 0.18), transparent 52%),
+    radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size:
+    auto,
+    auto,
+    20px 20px,
+    17px 17px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    5px 8px;
+}
+
 /* Polaroid lift (Explore our Work mock). */
 .om-polaroid {
   box-shadow:

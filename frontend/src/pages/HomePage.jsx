@@ -21,41 +21,46 @@ export function HomePage() {
     <>
       {/* Hero under sticky nav — overlap uses SITE_LOGO_NAV_PULL_CLASSES (sync with SiteLogo) */}
       <section className={`relative w-full ${SITE_LOGO_NAV_PULL_CLASSES}`}>
-        {/* Full-bleed banner + copy overlaid top-right */}
-        <div className="relative isolate min-h-[min(78vh,720px)] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(92vh,1000px)] lg:min-h-[min(94vh,1080px)]">
+        {/* Full-bleed banner + copy overlay — mobile: bottom-right + narrow wash so art stays visible; md+: top-right */}
+        <div className="relative isolate min-h-[min(64svh,480px)] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] min-[480px]:min-h-[min(70svh,560px)] md:min-h-[min(92vh,1000px)] lg:min-h-[min(94vh,1080px)]">
           <img
             src={HERO_BANNER_SRC}
             alt="Occasions Magnified — hero banner"
-            className="absolute inset-0 h-full w-full object-cover object-left"
+            className="absolute inset-0 h-full w-full object-cover object-[36%_center] sm:object-left"
             width={1890}
             height={1200}
             sizes="100vw"
             loading="eager"
           />
           <div
-            className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-24"
+            className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-16 bg-gradient-to-b from-[#faf8f4]/35 to-transparent min-[480px]:h-20 md:h-24"
             aria-hidden
           />
-          {/* Readability wash behind type (right side) */}
+          {/* Readability wash — narrow on phones so banner stays visible; wider from sm up */}
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-full bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/48 to-transparent sm:max-w-[min(100%,420px)] md:max-w-[min(100%,480px)] lg:max-w-[520px] xl:max-w-[560px]"
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(100%,17.5rem)] bg-gradient-to-l from-[#FAF7F2]/90 via-[#FAF7F2]/55 to-transparent min-[400px]:w-[min(100%,20rem)] sm:w-full sm:max-w-[min(100%,420px)] md:max-w-[min(100%,480px)] lg:max-w-[520px] xl:max-w-[560px]"
             aria-hidden
           />
-          {/* Overlay: top-right; pointer-events only on interactive bits */}
-          <div className="pointer-events-none absolute inset-0 z-10 flex justify-end px-5 pt-16 sm:px-7 sm:pt-20 md:px-10 md:pt-24 lg:px-12 lg:pt-24 xl:px-16 xl:pt-28">
-            <div className="pointer-events-auto w-full max-w-[min(100%,19rem)] text-right sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg">
+          {/* Bottom sheet wash on very small screens (under copy) */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[42%] bg-gradient-to-t from-[#FAF7F2]/88 via-[#FAF7F2]/35 to-transparent max-sm:block sm:hidden"
+            aria-hidden
+          />
+          {/* Overlay copy: bottom-right + safe-area on mobile; top-right from sm */}
+          <div className="pointer-events-none absolute inset-0 z-10 flex justify-end px-[max(1rem,env(safe-area-inset-left))] pb-[max(1rem,env(safe-area-inset-bottom))] pr-[max(1rem,env(safe-area-inset-right))] pt-12 max-sm:items-end max-sm:pt-8 sm:items-start sm:px-[max(1.25rem,env(safe-area-inset-left))] sm:pb-0 sm:pr-[max(1.5rem,env(safe-area-inset-right))] sm:pt-20 md:px-10 md:pt-24 lg:px-12 lg:pt-24 xl:px-16 xl:pt-28">
+            <div className="pointer-events-auto w-full max-w-[min(100%,17.5rem)] text-right min-[400px]:max-w-[19rem] sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg">
               <h1 className="font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.65)]">
-                <span className="block text-[0.9rem] font-medium leading-snug tracking-[0.03em] text-[#4A0404]/92 sm:text-[1.02rem] md:text-lg lg:text-xl">
+                <span className="block text-[0.85rem] font-medium leading-snug tracking-[0.03em] text-[#4A0404]/92 min-[400px]:text-[0.9rem] sm:text-[1.02rem] md:text-lg lg:text-xl">
                   Crafting Memories through
                 </span>
-                <span className="mt-2 block text-[2.1rem] font-semibold leading-[0.98] tracking-[-0.025em] sm:mt-2.5 sm:text-5xl md:mt-3 md:text-6xl lg:text-7xl xl:text-[4rem]">
+                <span className="mt-1.5 block text-[1.85rem] font-semibold leading-[0.98] tracking-[-0.025em] min-[400px]:mt-2 min-[400px]:text-[2.1rem] sm:mt-2.5 sm:text-5xl md:mt-3 md:text-6xl lg:text-7xl xl:text-[4rem]">
                   Elegant Designs
                 </span>
               </h1>
-              <div className="mt-8 flex justify-end sm:mt-9 md:mt-10">
+              <div className="mt-6 flex justify-end max-sm:mt-5 sm:mt-9 md:mt-10">
                 <Link
                   to="/work"
-                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/35 px-8 py-2.5 font-nav text-[11px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:border-[#4A0404] hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
+                  className="inline-flex w-full max-w-none items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/45 px-6 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:border-[#4A0404] hover:bg-[#4A0404]/12 min-[400px]:text-[11px] sm:w-auto sm:px-8 sm:tracking-[0.22em] md:px-10 md:py-3 md:text-xs"
                 >
                   Explore Our Work
                 </Link>

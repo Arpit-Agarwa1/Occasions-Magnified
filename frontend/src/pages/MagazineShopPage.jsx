@@ -20,7 +20,7 @@ export function MagazineShopPage() {
           {GRID.map((item, idx) => (
             <li key={item.src}>
               <a
-                href={SITE_LINKS.etsy}
+                href={item.pdfSrc ?? SITE_LINKS.etsy}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block overflow-hidden rounded-sm bg-white shadow-md transition hover:shadow-lg"
@@ -31,9 +31,9 @@ export function MagazineShopPage() {
                   className="aspect-[3/4] w-full object-cover"
                   loading="lazy"
                 />
-                {idx < 3 ? (
+                {item.badge ? (
                   <p className="bg-[#310B0B] py-2 text-center font-nav text-[10px] font-semibold tracking-wide text-white uppercase">
-                    Kids Magazine (12 Pager)
+                    {item.badge}
                   </p>
                 ) : null}
               </a>

@@ -69,44 +69,53 @@ export function WorkPage() {
 
   return (
     <div className="bg-burgundy text-cream">
+      {/* Hero — texture + gold accent; quick anchor for deep links */}
       <div
-        className="relative border-b border-white/10 py-14 md:py-20"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(69,2,1,0.55), rgba(69,2,1,0.55)), url(/brand/dark-texture.jpg)',
-          backgroundSize: 'cover',
-        }}
+        id="work-hero"
+        className="relative border-b border-om-gold/25 bg-[linear-gradient(rgba(69,2,1,0.58),rgba(69,2,1,0.58)),url(/brand/dark-texture.jpg)] bg-cover bg-center py-16 md:py-24"
       >
-        <div className="mx-auto max-w-4xl px-4 text-center md:px-8">
-          <p className="font-nav text-[11px] font-semibold tracking-[0.35em] text-cream/60 uppercase">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-om-gold/35 to-transparent" aria-hidden />
+        <div className="mx-auto max-w-3xl px-4 text-center md:px-8">
+          <p className="font-nav text-[11px] font-semibold tracking-[0.35em] text-om-gold/90 uppercase">
             Portfolio
           </p>
-          <h1 className="mt-3 font-serif text-3xl font-semibold text-white md:text-[2.75rem]">
+          <h1 className="mt-4 font-serif text-[2.1rem] font-semibold leading-tight text-white sm:text-4xl md:text-[2.85rem]">
             Explore our work
           </h1>
-          <p className="mt-4 font-serif text-base italic leading-relaxed text-cream/85 md:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl font-serif text-base leading-relaxed text-cream/88 md:text-lg md:leading-relaxed">
             Magazines, motion invitations, and stationery — each piece composed with editorial care and
             print-ready precision.
           </p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-12 px-4 sm:grid-cols-2 sm:gap-14 lg:grid-cols-3 lg:gap-10 lg:px-8">
+        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-12 px-4 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-14 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 lg:px-8">
           {POLAROIDS.map((p) => (
-            <div key={p.label} className={`flex flex-col items-center ${p.tilt}`}>
-              <span className="font-hand text-3xl text-white drop-shadow md:text-4xl">{p.label}</span>
-              <div className="mt-3 w-[min(88vw,300px)] overflow-hidden rounded-xl shadow-[0_16px_48px_-12px_rgba(0,0,0,0.45)] ring-1 ring-white/15">
-                <img src={p.src} alt={p.label} className="aspect-[4/3] w-full object-cover" loading="lazy" />
+            <div
+              key={p.label}
+              className={`group flex flex-col items-center transition duration-500 will-change-transform hover:-translate-y-1 ${p.tilt}`}
+            >
+              <span className="font-hand text-3xl text-cream/95 drop-shadow-md transition group-hover:text-white md:text-4xl">
+                {p.label}
+              </span>
+              <div className="mt-3 w-[min(88vw,300px)] overflow-hidden rounded-2xl shadow-[0_20px_56px_-14px_rgba(0,0,0,0.5)] ring-1 ring-white/20 transition duration-500 group-hover:ring-om-gold/40">
+                <img
+                  src={p.src}
+                  alt={p.label}
+                  className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mx-auto mt-16 flex flex-wrap justify-center gap-4 px-4">
+        <div className="mx-auto mt-16 flex flex-wrap justify-center gap-4 px-4 pt-2 md:mt-20">
           <ChevronPillLink href={SITE_LINKS.etsy} external>
             Shop custom designs
           </ChevronPillLink>
           <Link
             to="/omag"
-            className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-6 py-3 font-nav text-[11px] font-semibold tracking-[0.2em] text-white uppercase backdrop-blur-sm transition hover:bg-white/20"
+            className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-7 py-3.5 font-nav text-[11px] font-semibold tracking-[0.2em] text-white uppercase shadow-sm backdrop-blur-sm transition hover:border-om-gold/50 hover:bg-white/18"
           >
             O&apos;Mag details <span aria-hidden>›</span>
           </Link>
@@ -116,22 +125,23 @@ export function WorkPage() {
       {/* Motion invitations — full-width showcase */}
       <section
         id="films"
-        className="scroll-mt-[5.5rem] border-b border-white/10 bg-gradient-to-b from-[#1f0505] via-[#2a0a0a] to-[#1a0404] py-16 md:py-24"
+        className="scroll-mt-24 border-b border-white/10 bg-gradient-to-b from-[#1a0404] via-[#2a0a0a] to-[#140303] py-20 md:scroll-mt-28 md:py-24"
       >
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-white/45 uppercase">
+            <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-om-gold/85 uppercase">
               Motion
             </p>
-            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.5rem]">Custom motion invitations</h2>
-            <p className="mt-4 font-serif text-lg leading-relaxed text-cream/80">
+            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.55rem]">Custom motion invitations</h2>
+            <p className="mt-4 font-serif text-lg leading-relaxed text-cream/82 md:text-xl md:leading-relaxed">
               Save-the-date and invitation films — typography, pacing, and colour graded for every screen.
             </p>
           </div>
-          <div className="mt-14 grid gap-10 lg:grid-cols-3 lg:gap-8">
+          <div className="mt-14 grid justify-items-center gap-10 sm:gap-12 lg:grid-cols-3 lg:justify-items-stretch lg:gap-8">
             {invitationVideoItems.map((item) => (
               <MotionInviteVideoCard
                 key={item.src}
+                className="w-full max-w-[min(100%,300px)] lg:max-w-none"
                 src={item.src}
                 title={item.title}
                 poster={item.poster}
@@ -140,53 +150,59 @@ export function WorkPage() {
               />
             ))}
           </div>
-          <p className="mt-10 text-center font-nav text-[10px] font-medium tracking-wide text-cream/50">
+          <p className="mt-12 text-center font-nav text-[10px] font-medium tracking-wide text-cream/45">
             Tip: use full-screen on the video player for the best detail.
           </p>
         </div>
       </section>
 
       {/* O’Mag brand loop */}
-      <section className="border-b border-white/10 bg-[#F5F5F0] py-16 text-burgundy md:py-20">
+      <section className="border-b border-burgundy/10 bg-om-page py-16 text-burgundy md:py-20 lg:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <div>
-            <p className="font-nav text-[11px] font-semibold tracking-[0.3em] text-burgundy/50 uppercase">
+            <p className="font-nav text-[11px] font-semibold tracking-[0.3em] text-burgundy/55 uppercase">
               O&apos;Mag in motion
             </p>
-            <h2 className="mt-3 font-serif text-3xl font-semibold md:text-[2.35rem]">
+            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight md:text-[2.4rem]">
               Keepsake magazines, brought to life
             </h2>
-            <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
+            <p className="mt-5 font-serif text-lg leading-relaxed text-burgundy/80 md:text-xl">
               A looping look at layout, texture, and print presence — the same craft we carry into every
               custom issue.
             </p>
             <Link
               to="/omag"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-burgundy px-8 py-3 font-nav text-xs font-bold tracking-[0.2em] text-cream uppercase shadow-md transition hover:bg-burgundy-deep"
+              className="mt-9 inline-flex items-center justify-center rounded-full bg-burgundy px-9 py-3.5 font-nav text-xs font-bold tracking-[0.2em] text-cream uppercase shadow-md transition hover:bg-burgundy-deep hover:shadow-lg"
             >
               Explore O&apos;Mag
             </Link>
           </div>
-          <div className="flex min-h-[14rem] items-center justify-center overflow-hidden rounded-lg border border-burgundy/10 bg-black shadow-2xl ring-1 ring-black/5 md:min-h-[16rem]">
+          <div className="flex min-h-[16rem] items-center justify-center overflow-hidden rounded-2xl border border-burgundy/15 bg-black shadow-[0_28px_80px_-32px_rgba(45,2,2,0.35)] ring-1 ring-black/10 md:min-h-[18rem] lg:min-h-[20rem]">
             <OmagBrandLoopMedia />
           </div>
         </div>
       </section>
 
       {/* Archive + masonry + lightbox */}
-      <div id="archive" className="scroll-mt-[5.5rem] bg-om-page py-16 text-burgundy md:py-24">
+      <div id="archive" className="scroll-mt-24 bg-om-page py-16 text-burgundy md:scroll-mt-28 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <h2 className="text-center font-serif text-3xl md:text-4xl">Print &amp; layout archive</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center font-serif text-lg text-burgundy/80">
+          <p className="text-center font-nav text-[11px] font-semibold tracking-[0.32em] text-burgundy/50 uppercase">
+            Archive
+          </p>
+          <h2 className="mt-3 text-center font-serif text-3xl font-semibold md:text-4xl">Print &amp; layout archive</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center font-serif text-lg leading-relaxed text-burgundy/80 md:text-xl">
             Magazine spreads, covers, and mockups — click any frame to enlarge. Ready to start something
             similar?{' '}
-            <a href={SITE_LINKS.etsy} className="font-semibold underline decoration-burgundy/30 underline-offset-4 hover:decoration-burgundy">
+            <a
+              href={SITE_LINKS.etsy}
+              className="font-semibold text-burgundy underline decoration-om-gold/50 underline-offset-[6px] transition hover:decoration-burgundy"
+            >
               Commission on Etsy
             </a>
             .
           </p>
 
-          <div className="mt-12 overflow-hidden rounded-lg border border-burgundy/10 shadow-xl">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-burgundy/10 shadow-xl ring-1 ring-burgundy/[0.04]">
             <img
               src="/layout/explore-work.jpg"
               alt="Collage of Occasions Magnified design work"
@@ -195,12 +211,12 @@ export function WorkPage() {
             />
           </div>
 
-          <div className="columns-1 gap-5 pt-14 sm:columns-2 lg:columns-3">
+          <div className="columns-1 gap-5 pt-16 sm:columns-2 lg:columns-3">
             {magazineGalleryItems.map((item, idx) => (
               <button
                 key={item.src}
                 type="button"
-                className="group mb-5 w-full break-inside-avoid overflow-hidden rounded-md border border-burgundy/10 bg-white text-left shadow-md ring-1 ring-black/[0.03] transition hover:shadow-lg"
+                className="group mb-5 w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-xl border border-burgundy/10 bg-white text-left shadow-md ring-1 ring-black/[0.03] transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy"
                 aria-label={`View large — ${item.title}`}
                 onClick={() => setLightboxIndex(idx)}
               >
@@ -238,46 +254,57 @@ export function WorkPage() {
       {/* Process + services */}
       <section className="border-t border-burgundy/10 bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
-          <h2 className="text-center font-serif text-3xl text-burgundy md:text-4xl">Behind the craft</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center font-serif text-burgundy/80">
+          <p className="text-center font-nav text-[11px] font-semibold tracking-[0.3em] text-burgundy/50 uppercase">
+            Studio
+          </p>
+          <h2 className="mt-3 text-center font-serif text-3xl font-semibold text-burgundy md:text-4xl">
+            Behind the craft
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center font-serif text-lg leading-relaxed text-burgundy/80">
             Planning, layout, and finishing — every project moves through a clear studio workflow.
           </p>
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
+          <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-12">
             {processShowcaseItems.map((block) => (
               <figure
                 key={block.src}
-                className="overflow-hidden rounded-lg border border-burgundy/10 bg-om-page shadow-md"
+                className="overflow-hidden rounded-2xl border border-burgundy/10 bg-om-page shadow-md ring-1 ring-burgundy/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <img src={block.src} alt="" className="aspect-[4/3] w-full object-cover" loading="lazy" />
-                <figcaption className="border-t border-burgundy/10 px-5 py-4">
-                  <p className="font-serif text-xl font-semibold text-burgundy">{block.title}</p>
-                  <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75">{block.caption}</p>
+                <figcaption className="border-t border-burgundy/10 px-5 py-5 md:px-6 md:py-5">
+                  <p className="font-serif text-xl font-semibold text-burgundy md:text-2xl">{block.title}</p>
+                  <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75 md:text-base">
+                    {block.caption}
+                  </p>
                 </figcaption>
               </figure>
             ))}
           </div>
 
-          <h3 className="mt-20 text-center font-serif text-2xl text-burgundy md:text-3xl">What we design</h3>
-          <p className="mx-auto mt-2 max-w-2xl text-center font-serif text-burgundy/75">
+          <h3 className="mt-20 text-center font-serif text-2xl font-semibold text-burgundy md:mt-24 md:text-3xl">
+            What we design
+          </h3>
+          <p className="mx-auto mt-3 max-w-2xl text-center font-serif text-base text-burgundy/75 md:text-lg">
             A cross-section of deliverables — from digital motion to printed day-of pieces.
           </p>
-          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
             {serviceGalleryItems.map((s) => (
               <li
                 key={s.src}
-                className="flex flex-col overflow-hidden rounded-lg border border-burgundy/10 bg-[#faf7f2] shadow-sm"
+                className="flex flex-col overflow-hidden rounded-xl border border-burgundy/10 bg-[#faf7f2] shadow-sm ring-1 ring-black/[0.02] transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
               >
                 <img src={s.src} alt="" className="aspect-[4/3] w-full object-cover" loading="lazy" />
-                <div className="flex flex-1 flex-col px-4 py-4">
+                <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
                   <p className="font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/60 uppercase">
                     {s.label}
                   </p>
-                  <p className="mt-2 flex-1 font-serif text-sm leading-relaxed text-burgundy/80">{s.description}</p>
+                  <p className="mt-2 flex-1 font-serif text-sm leading-relaxed text-burgundy/80 md:text-[0.95rem]">
+                    {s.description}
+                  </p>
                   <a
                     href={SITE_LINKS.etsy}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex font-nav text-[10px] font-bold tracking-wide text-burgundy underline decoration-burgundy/30 underline-offset-4 hover:decoration-burgundy"
+                    className="mt-4 inline-flex font-nav text-[10px] font-bold tracking-wide text-burgundy underline decoration-om-gold/45 underline-offset-4 transition hover:decoration-burgundy"
                   >
                     Discuss on Etsy →
                   </a>
@@ -292,15 +319,26 @@ export function WorkPage() {
         <img
           src="/brand/reference-home-strip.jpg"
           alt="Occasions Magnified colour and layout reference strip"
-          className="mx-auto max-h-[min(40vh,280px)] w-full object-cover object-center opacity-95"
+          className="mx-auto max-h-[min(44vh,320px)] w-full object-cover object-center opacity-[0.97]"
           loading="lazy"
         />
       </section>
 
-      <div className="bg-burgundy py-12 text-center">
-        <ChevronPillLink href={SITE_LINKS.etsy} external>
-          Start your commission
-        </ChevronPillLink>
+      <div className="border-t border-om-gold/20 bg-gradient-to-b from-burgundy to-burgundy-deep py-14 text-center md:py-16">
+        <p className="mx-auto max-w-lg px-4 font-serif text-sm text-cream/80 md:text-base">
+          Tell us your date, palette, and story — we&apos;ll guide the rest.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4 px-4">
+          <ChevronPillLink href={SITE_LINKS.etsy} external>
+            Start your commission
+          </ChevronPillLink>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center rounded-full border-2 border-cream/40 bg-transparent px-7 py-3 font-nav text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition hover:border-cream hover:bg-white/10"
+          >
+            Contact
+          </Link>
+        </div>
       </div>
 
       <ImageLightbox
