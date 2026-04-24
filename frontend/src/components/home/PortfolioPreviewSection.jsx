@@ -35,11 +35,12 @@ export function PortfolioPreviewSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        {/* Narrower max width on md+ so 9:16 frames stay phone-like, not skyscraper-tall in 3 columns */}
+        <div className="mt-12 grid justify-items-center gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
           {invitationVideoItems.map((item) => (
             <article
               key={item.src}
-              className="overflow-hidden rounded-lg border border-burgundy/12 bg-white shadow-md ring-1 ring-black/[0.03]"
+              className="w-full max-w-[min(100%,300px)] overflow-hidden rounded-lg border border-burgundy/12 bg-white shadow-md ring-1 ring-black/[0.03] md:max-w-[min(100%,232px)] lg:max-w-[min(100%,248px)] xl:max-w-[min(100%,268px)]"
             >
               <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
                 {reduceMotion ? (

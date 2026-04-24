@@ -1,9 +1,20 @@
 /**
- * Default height scale for the brand mark (Tailwind classes on the `<img>`).
- * Edit this one string to resize the logo everywhere `SiteLogo` is used.
+ * Layout footprint for the wordmark (sets nav row height with header `py-0`).
+ * Visual size is boosted with `scale` on the `<img>` so the mark reads larger without growing the bar.
  */
 export const SITE_LOGO_IMG_CLASSES =
-  'h-14 w-auto shrink-0 sm:h-[4.25rem] md:h-20 lg:h-[5.5rem] xl:h-24 2xl:h-[6.5rem]'
+  'h-11 w-auto shrink-0 origin-left sm:h-12 md:h-14 lg:h-16 xl:h-[4.25rem] 2xl:h-20'
+
+/** CSS scale applied on top of `SITE_LOGO_IMG_CLASSES` — does not affect layout height. */
+const SITE_LOGO_VISUAL_SCALE_CLASSES =
+  'scale-[1.52] motion-reduce:scale-100 sm:scale-[1.46] md:scale-[1.58] lg:scale-[1.68] xl:scale-[1.76] 2xl:scale-[1.84]'
+
+/**
+ * Hero overlap on home — negative margin must mirror each breakpoint in `SITE_LOGO_IMG_CLASSES`.
+ * Header uses `py-0` so bar height equals the logo.
+ */
+export const SITE_LOGO_NAV_PULL_CLASSES =
+  '-mt-11 sm:-mt-12 md:-mt-14 lg:-mt-16 xl:-mt-[4.25rem] 2xl:-mt-20'
 
 /**
  * Occasions Magnified wordmark — isolated so size/invert can be tuned in one place.
@@ -20,7 +31,7 @@ export function SiteLogo({ variant = 'default', className = '', imgClassName = '
       <img
         src="/brand/logo.png"
         alt="Occasions Magnified"
-        className={`${SITE_LOGO_IMG_CLASSES} ${inverted ? 'brightness-0 invert' : ''} ${imgClassName}`.trim()}
+        className={`${SITE_LOGO_IMG_CLASSES} ${SITE_LOGO_VISUAL_SCALE_CLASSES} ${inverted ? 'brightness-0 invert' : ''} ${imgClassName}`.trim()}
         width={360}
         height={108}
         decoding="async"

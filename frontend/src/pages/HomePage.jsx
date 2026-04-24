@@ -3,6 +3,7 @@ import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { brandShowcaseLoop } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
+import { SITE_LOGO_NAV_PULL_CLASSES } from '../components/layout/SiteLogo.jsx'
 
 const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions Magnified. I love turning life's biggest chapters into tangible art: invitations that feel like the first page of your story, and O'Mag magazines you can hold again and again.`
 
@@ -18,44 +19,43 @@ const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 export function HomePage() {
   return (
     <>
-      {/* Hero — reference layout: full banner, copy + ghost CTA right-aligned */}
-      {/* Pull up by ~header height so the banner still meets the viewport top under sticky nav */}
-      <section className="relative w-full -mt-[5.75rem] sm:-mt-[6.5rem] md:-mt-[7.25rem] lg:-mt-[8rem] xl:-mt-[8.75rem] 2xl:-mt-[9.5rem]">
-        <div className="relative isolate min-h-[min(58vh,620px)] w-full overflow-hidden shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(78vh,920px)]">
+      {/* Hero under sticky nav — overlap uses SITE_LOGO_NAV_PULL_CLASSES (sync with SiteLogo) */}
+      <section className={`relative w-full ${SITE_LOGO_NAV_PULL_CLASSES}`}>
+        {/* Full-bleed banner + copy overlaid top-right */}
+        <div className="relative isolate min-h-[min(78vh,720px)] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(92vh,1000px)] lg:min-h-[min(94vh,1080px)]">
           <img
             src={HERO_BANNER_SRC}
             alt="Occasions Magnified — hero banner"
-            className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+            className="absolute inset-0 h-full w-full object-cover object-left"
             width={1890}
             height={1200}
             sizes="100vw"
             loading="eager"
           />
-          {/* Feather top edge so the photo meets the frosted nav without a hard seam */}
           <div
-            className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#FAF7F2]/30 to-transparent md:h-28"
+            className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-24"
             aria-hidden
           />
-          {/* Soft cream wash from the right so burgundy type reads on the still life */}
+          {/* Readability wash behind type (right side) */}
           <div
-            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-full max-w-[min(100%,420px)] bg-gradient-to-l from-[#F5F5F0]/92 via-[#F5F5F0]/55 to-transparent sm:max-w-[min(100%,480px)] md:max-w-[min(100%,540px)] lg:max-w-[580px]"
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-full bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/48 to-transparent sm:max-w-[min(100%,420px)] md:max-w-[min(100%,480px)] lg:max-w-[520px] xl:max-w-[560px]"
             aria-hidden
           />
-          {/* Copy anchored lower-right (editorial) — centered on very small viewports */}
-          <div className="relative z-10 mx-auto flex w-full max-w-7xl min-h-[min(58vh,620px)] flex-col justify-end px-5 pb-14 pt-20 sm:px-7 md:min-h-[min(78vh,920px)] md:px-10 md:pb-20 md:pt-24 lg:px-12 lg:pb-24 xl:px-16 xl:pb-28">
-            <div className="mx-auto w-full max-w-[20rem] text-center sm:mx-0 sm:ml-auto sm:max-w-xs sm:text-right md:max-w-md lg:max-w-lg xl:max-w-xl">
-              <h1 className="font-serif text-[#4A0404]">
-                <span className="block text-[0.9rem] font-medium leading-snug tracking-[0.04em] text-[#4A0404]/88 sm:text-[1.02rem] md:text-lg lg:text-xl">
+          {/* Overlay: top-right; pointer-events only on interactive bits */}
+          <div className="pointer-events-none absolute inset-0 z-10 flex justify-end px-5 pt-16 sm:px-7 sm:pt-20 md:px-10 md:pt-24 lg:px-12 lg:pt-24 xl:px-16 xl:pt-28">
+            <div className="pointer-events-auto w-full max-w-[min(100%,19rem)] text-right sm:max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg">
+              <h1 className="font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.65)]">
+                <span className="block text-[0.9rem] font-medium leading-snug tracking-[0.03em] text-[#4A0404]/92 sm:text-[1.02rem] md:text-lg lg:text-xl">
                   Crafting Memories through
                 </span>
-                <span className="mt-2.5 block text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.025em] sm:mt-3 sm:text-5xl md:mt-4 md:text-6xl lg:text-7xl xl:text-[4.35rem]">
+                <span className="mt-2 block text-[2.1rem] font-semibold leading-[0.98] tracking-[-0.025em] sm:mt-2.5 sm:text-5xl md:mt-3 md:text-6xl lg:text-7xl xl:text-[4rem]">
                   Elegant Designs
                 </span>
               </h1>
-              <div className="mt-9 flex justify-center sm:mt-10 sm:justify-end md:mt-12">
+              <div className="mt-8 flex justify-end sm:mt-9 md:mt-10">
                 <Link
                   to="/work"
-                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/25 px-8 py-2.5 font-nav text-[11px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:border-[#4A0404] hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
+                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/35 px-8 py-2.5 font-nav text-[11px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:border-[#4A0404] hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
                 >
                   Explore Our Work
                 </Link>
