@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { DreamDesignCtaSection } from '../components/home/DreamDesignCtaSection.jsx'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { brandShowcaseLoop } from '../data/workGallery.js'
@@ -112,33 +113,7 @@ export function HomePage() {
 
       <PortfolioPreviewSection />
 
-      <section className="relative overflow-hidden py-20 text-white md:py-28">
-        <div
-          className="absolute inset-0 scale-110 bg-cover bg-center opacity-95"
-          style={{
-            backgroundImage: 'url(/brand/dark-texture.jpg)',
-            transform: 'rotate(-4deg) scale(1.15)',
-          }}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[#4A0404]/86" />
-        <div className="pointer-events-none absolute inset-0 opacity-35 mix-blend-soft-light">
-          <div
-            className="h-full w-full bg-cover bg-center opacity-90"
-            style={{
-              backgroundImage: 'url(/brand/bg-grid.png)',
-              transform: 'rotate(6deg) scale(1.2)',
-            }}
-          />
-        </div>
-        <div className="relative z-10 mx-auto max-w-3xl px-4 text-center md:px-8">
-          <h2 className="font-nav text-xl font-bold leading-snug tracking-[0.14em] uppercase sm:text-2xl md:text-[1.65rem]">
-            YOUR DREAM DESIGN, JUST A CLICK AWAY
-          </h2>
-          <p className="mt-5 font-serif text-lg text-white/92 md:text-xl">
-            Browse through our past creations and place your custom order easily.
-          </p>
-        </div>
-      </section>
+      <DreamDesignCtaSection />
 
       <MarqueeRibbon />
 
