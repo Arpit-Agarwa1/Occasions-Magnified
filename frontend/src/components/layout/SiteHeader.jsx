@@ -14,7 +14,7 @@ const links = [
 ]
 
 /**
- * Home: transparent bar over the hero (mock). Other routes: solid #310B0B + inverted logo.
+ * Sticky top bar everywhere. Home: warm frosted strip that fades into the hero. Else: solid bar + inverted logo.
  */
 export function SiteHeader() {
   const { pathname } = useLocation()
@@ -26,7 +26,7 @@ export function SiteHeader() {
     [
       'rounded-sm px-2 py-1.5 outline-none ring-offset-2 transition-colors focus-visible:ring-2 lg:px-2.5 lg:py-2',
       isHome
-        ? 'drop-shadow-[0_1px_2px_rgba(255,255,255,0.85)] focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#F5F5F5]'
+        ? 'drop-shadow-[0_1px_0_rgba(255,255,255,0.55)] focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#FAF7F2]'
         : 'focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]',
       'shrink-0 whitespace-nowrap font-nav text-[10px] font-semibold tracking-[0.18em] uppercase md:text-[11px] md:tracking-[0.2em]',
       isHome
@@ -38,8 +38,9 @@ export function SiteHeader() {
           : 'text-white/75 hover:text-white drop-shadow-none',
     ].join(' ')
 
+  /** Home: warm frosted strip + soft hairlines so the bar meets the hero like one continuous surface. */
   const shell = isHome
-    ? 'absolute inset-x-0 top-0 z-50 w-full bg-transparent'
+    ? 'sticky top-0 z-50 w-full border-b border-[#4A0404]/[0.08] bg-gradient-to-b from-[#FAF7F2]/95 via-[#FAF7F2]/40 to-transparent shadow-[0_1px_0_rgba(255,255,255,0.5),inset_0_-1px_0_rgba(74,4,4,0.05)] backdrop-blur-xl backdrop-saturate-125'
     : 'sticky top-0 z-50 w-full border-b border-white/10 bg-[#310B0B] shadow-md'
 
   const burgerBar = isHome ? 'bg-[#4A0404]' : 'bg-white'
@@ -47,12 +48,12 @@ export function SiteHeader() {
   return (
     <header className={shell}>
       {/* Logo left · desktop nav right · burger right on small screens */}
-      <div className="flex min-h-[4.75rem] w-full min-w-0 items-center justify-between gap-4 px-4 sm:min-h-[5.25rem] sm:gap-5 sm:px-6 md:min-h-[5.75rem] md:gap-6 md:px-8 lg:min-h-24 lg:px-10 xl:gap-8 xl:px-12">
+      <div className="flex w-full min-w-0 items-center justify-between gap-3 px-4 py-2.5 sm:gap-4 sm:px-5 sm:py-3 md:gap-5 md:px-6 md:py-3.5 lg:px-8 lg:py-4 xl:gap-6 xl:px-10 2xl:px-12">
         <NavLink
           to="/"
           className={`flex shrink-0 items-center rounded-sm outline-none drop-shadow-sm transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
             isHome
-              ? 'focus-visible:ring-[#4A0404]/80 focus-visible:ring-offset-[#F5F5F5]'
+              ? 'focus-visible:ring-[#4A0404]/80 focus-visible:ring-offset-[#FAF7F2]'
               : 'focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]'
           }`}
           onClick={close}
@@ -74,7 +75,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md outline-none ring-1 ring-inset transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 sm:h-12 sm:w-12 lg:hidden ${isHome ? 'bg-white/10 ring-[#4A0404]/25 focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#F5F5F5]' : 'bg-white/5 ring-white/20 focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]'}`}
+          className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md outline-none ring-1 ring-inset transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 sm:h-12 sm:w-12 lg:hidden ${isHome ? 'bg-[#4A0404]/[0.06] ring-[#4A0404]/20 focus-visible:ring-[#4A0404] focus-visible:ring-offset-[#FAF7F2]' : 'bg-white/5 ring-white/20 focus-visible:ring-white/90 focus-visible:ring-offset-[#310B0B]'}`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -91,7 +92,7 @@ export function SiteHeader() {
 
       <div
         id="mobile-nav"
-        className={`w-full border-t lg:hidden ${isHome ? 'border-[#4A0404]/10 bg-[#F5F5F5]/98' : 'border-white/10 bg-[#310B0B]'} ${open ? 'max-h-[520px] opacity-100' : 'max-h-0 overflow-hidden opacity-0'} transition-all duration-300`}
+        className={`w-full border-t lg:hidden ${isHome ? 'border-[#4A0404]/10 bg-[#FAF7F2]/98 backdrop-blur-md' : 'border-white/10 bg-[#310B0B]'} ${open ? 'max-h-[520px] opacity-100' : 'max-h-0 overflow-hidden opacity-0'} transition-all duration-300`}
       >
         <nav
           className="flex w-full flex-col gap-2 px-4 py-4 text-left sm:px-6 md:px-8"
@@ -106,7 +107,7 @@ export function SiteHeader() {
                   isHome
                     ? isActive
                       ? 'bg-white text-[#4A0404] focus-visible:ring-[#4A0404]'
-                      : 'text-[#4A0404]/90 focus-visible:ring-[#4A0404]/60 focus-visible:ring-offset-[#F5F5F5]'
+                      : 'text-[#4A0404]/90 focus-visible:ring-[#4A0404]/60 focus-visible:ring-offset-[#FAF7F2]'
                     : isActive
                       ? 'bg-white/10 text-white focus-visible:ring-white/80'
                       : 'text-white/85 focus-visible:ring-white/60 focus-visible:ring-offset-[#310B0B]'

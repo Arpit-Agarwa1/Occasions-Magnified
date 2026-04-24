@@ -1,11 +1,22 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { invitationVideoItems } from '../../data/workGallery.js'
 import { SITE_LINKS } from '../../constants/site.js'
 
 /**
- * Home teaser — custom motion invitations + link into full portfolio.
+ * Home — custom motion invitations as muted autoplay highlight loops (like story highlights).
  */
 export function PortfolioPreviewSection() {
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setReduceMotion(mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
   return (
     <section className="border-y border-burgundy/10 bg-[#faf7f2] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
@@ -19,25 +30,43 @@ export function PortfolioPreviewSection() {
           <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
             Cinematic reels crafted for each couple — colour, typography, and pacing tuned to your story.
           </p>
+          <p className="mt-2 font-nav text-[10px] font-medium tracking-wide text-burgundy/50">
+            Highlights autoplay muted · Full reels with sound on the portfolio page
+          </p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {invitationVideoItems.map((item, i) => (
+          {invitationVideoItems.map((item) => (
             <article
               key={item.src}
               className="overflow-hidden rounded-lg border border-burgundy/12 bg-white shadow-md ring-1 ring-black/[0.03]"
             >
-              <div className="relative aspect-video bg-black">
-                <video
-                  className="h-full w-full object-cover"
-                  src={item.src}
-                  poster={item.poster}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  muted={i > 0}
-                  aria-label={`Preview — ${item.title}`}
-                />
+              <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
+                {reduceMotion ? (
+                  <img
+                    src={item.poster}
+                    alt={item.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src={item.src}
+                    poster={item.poster}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    aria-label={`Highlight preview — ${item.title}`}
+                  />
+                )}
+                {!reduceMotion && (
+                  <span className="pointer-events-none absolute right-2 top-2 rounded bg-black/55 px-2 py-0.5 font-nav text-[9px] font-semibold tracking-wide text-white/90 uppercase backdrop-blur-sm">
+                    Highlight
+                  </span>
+                )}
               </div>
               <div className="px-4 py-3">
                 <h3 className="font-serif text-lg font-semibold text-burgundy">{item.title}</h3>

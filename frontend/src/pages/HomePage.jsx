@@ -6,35 +6,58 @@ import { SITE_LINKS } from '../constants/site.js'
 
 const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions Magnified. I love turning life's biggest chapters into tangible art: invitations that feel like the first page of your story, and O'Mag magazines you can hold again and again.`
 
+/** Client banner asset — `public/brand/hero-banner.jpg` (copied from `_extracted/Assets/Banner.jpg`). */
+const HERO_BANNER_SRC = '/brand/hero-banner.jpg'
+
 /**
- * Home — extended hero cover, O’Mag video without polaroid frame or overlay copy, marquees, portfolio, founder.
+ * Home — hero matches client mock: banner + right-aligned headline + ghost CTA.
  */
 export function HomePage() {
   return (
     <>
-      {/* Hero — wide cover image (extends toward edges on small screens) + headline */}
-      <section className="relative overflow-hidden bg-[#F5F5F5] pb-14 pt-32 md:pb-20 md:pt-36">
-        <div className="mx-auto grid max-w-7xl items-stretch gap-0 md:min-h-[min(86vh,900px)] md:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] md:gap-12 md:px-8 lg:gap-16">
-          <div className="-mx-4 min-h-[min(50vh,520px)] sm:-mx-6 md:mx-0 md:min-h-0">
-            <img
-              src="/brand/hero-banner.jpg"
-              alt="Welcome sign on easel, magazines, envelopes, and white blossom branches — Occasions Magnified"
-              className="h-full min-h-[min(50vh,520px)] w-full object-cover shadow-[0_24px_60px_-30px_rgba(74,4,4,0.28)] md:min-h-[min(82vh,880px)] md:rounded-sm"
-              width={960}
-              height={720}
-              loading="eager"
-            />
-          </div>
-          <div className="flex flex-col justify-center px-5 py-10 text-center md:px-0 md:py-12 md:text-left">
-            <h1 className="font-serif text-[2.05rem] font-semibold leading-[1.12] text-[#4A0404] sm:text-4xl md:text-[2.75rem] lg:text-[2.95rem]">
-              Crafting Memories through Elegant Designs
-            </h1>
-            <Link
-              to="/work"
-              className="mt-10 inline-flex items-center justify-center rounded-sm bg-[#4A0404] px-8 py-3 font-nav text-xs font-semibold tracking-[0.18em] text-[#F5F5F0] uppercase shadow-md transition hover:bg-[#3a0303] md:max-w-xs"
-            >
-              Explore Our Work
-            </Link>
+      {/* Hero — reference layout: full banner, copy + ghost CTA right-aligned */}
+      {/* Pull up by ~header height so the banner still meets the viewport top under sticky nav */}
+      <section className="relative w-full -mt-[5.75rem] sm:-mt-[6.5rem] md:-mt-[7.25rem] lg:-mt-[8rem] xl:-mt-[8.75rem] 2xl:-mt-[9.5rem]">
+        <div className="relative isolate min-h-[min(58vh,620px)] w-full overflow-hidden shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(78vh,920px)]">
+          <img
+            src={HERO_BANNER_SRC}
+            alt="Occasions Magnified — hero banner"
+            className="absolute inset-0 h-full w-full object-cover object-[center_42%]"
+            width={1890}
+            height={1200}
+            sizes="100vw"
+            loading="eager"
+          />
+          {/* Feather top edge so the photo meets the frosted nav without a hard seam */}
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-20 bg-gradient-to-b from-[#FAF7F2]/30 to-transparent md:h-28"
+            aria-hidden
+          />
+          {/* Soft cream wash from the right so burgundy type reads on the still life */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-full max-w-[min(100%,420px)] bg-gradient-to-l from-[#F5F5F0]/92 via-[#F5F5F0]/55 to-transparent sm:max-w-[min(100%,480px)] md:max-w-[min(100%,540px)] lg:max-w-[580px]"
+            aria-hidden
+          />
+          {/* Copy anchored lower-right (editorial) — centered on very small viewports */}
+          <div className="relative z-10 mx-auto flex w-full max-w-7xl min-h-[min(58vh,620px)] flex-col justify-end px-5 pb-14 pt-20 sm:px-7 md:min-h-[min(78vh,920px)] md:px-10 md:pb-20 md:pt-24 lg:px-12 lg:pb-24 xl:px-16 xl:pb-28">
+            <div className="mx-auto w-full max-w-[20rem] text-center sm:mx-0 sm:ml-auto sm:max-w-xs sm:text-right md:max-w-md lg:max-w-lg xl:max-w-xl">
+              <h1 className="font-serif text-[#4A0404]">
+                <span className="block text-[0.9rem] font-medium leading-snug tracking-[0.04em] text-[#4A0404]/88 sm:text-[1.02rem] md:text-lg lg:text-xl">
+                  Crafting Memories through
+                </span>
+                <span className="mt-2.5 block text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.025em] sm:mt-3 sm:text-5xl md:mt-4 md:text-6xl lg:text-7xl xl:text-[4.35rem]">
+                  Elegant Designs
+                </span>
+              </h1>
+              <div className="mt-9 flex justify-center sm:mt-10 sm:justify-end md:mt-12">
+                <Link
+                  to="/work"
+                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/25 px-8 py-2.5 font-nav text-[11px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:border-[#4A0404] hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
+                >
+                  Explore Our Work
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -67,9 +90,10 @@ export function HomePage() {
             className="group mx-auto block w-full max-w-md md:max-w-lg"
             aria-label="View O'Mag details"
           >
-            <div className="relative overflow-hidden rounded-lg shadow-2xl ring-1 ring-black/20 transition duration-300 group-hover:ring-2 group-hover:ring-white/40">
+            <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-lg bg-black shadow-2xl ring-1 ring-black/20 transition duration-300 group-hover:ring-2 group-hover:ring-white/40 md:min-h-[300px]">
+              {/* object-contain = full frame visible (letterboxing if aspect differs from container) */}
               <video
-                className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-[1.02] sm:aspect-[4/5]"
+                className="mx-auto block h-auto w-full max-w-full object-contain transition duration-500 group-hover:scale-[1.01]"
                 src={brandShowcaseLoop.src}
                 poster={brandShowcaseLoop.poster}
                 autoPlay
@@ -84,7 +108,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <MarqueeRibbon withStudioVideo />
+      <MarqueeRibbon />
 
       <PortfolioPreviewSection />
 

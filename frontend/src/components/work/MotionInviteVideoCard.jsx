@@ -12,9 +12,11 @@ export function MotionInviteVideoCard({ src, title, poster, tagline, tone = 'lig
 
   return (
     <article className="flex flex-col overflow-hidden rounded-lg border border-black/10 shadow-[0_24px_55px_-30px_rgba(0,0,0,0.45)] ring-1 ring-white/5 transition hover:-translate-y-0.5 hover:shadow-[0_32px_60px_-28px_rgba(0,0,0,0.5)]">
-      <div className={`relative aspect-video w-full overflow-hidden ${isDark ? 'bg-black' : 'bg-[#1a0505]'}`}>
+      <div
+        className={`relative aspect-[9/16] w-full overflow-hidden ${isDark ? 'bg-black' : 'bg-[#1a0505]'}`}
+      >
         <video
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
           src={src}
           poster={poster}
           controls

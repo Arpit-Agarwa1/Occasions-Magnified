@@ -3,7 +3,7 @@
  * Edit this one string to resize the logo everywhere `SiteLogo` is used.
  */
 export const SITE_LOGO_IMG_CLASSES =
-  'h-[4.5rem] w-auto shrink-0 sm:h-20 md:h-[5.5rem] lg:h-24 xl:h-[6.75rem] 2xl:h-[7.25rem]'
+  'h-14 w-auto shrink-0 sm:h-[4.25rem] md:h-20 lg:h-[5.5rem] xl:h-24 2xl:h-[6.5rem]'
 
 /**
  * Occasions Magnified wordmark — isolated so size/invert can be tuned in one place.

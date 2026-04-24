@@ -167,12 +167,12 @@ export function OmagPage() {
                     <img
                       src="/how-it-works/how-it-works.png"
                       alt="Illustrated overview of the O'Mag design process"
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 m-auto max-h-full max-w-full object-contain"
                       loading="lazy"
                     />
                   ) : (
                     <video
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 m-auto max-h-full max-w-full object-contain"
                       src="/brand/omag-section-loop.mp4"
                       poster="/how-it-works/how-it-works.png"
                       autoPlay

@@ -29,14 +29,14 @@ function OmagBrandLoopMedia() {
       <img
         src={brandShowcaseLoop.poster}
         alt="O'Mag magazine mockup still"
-        className="aspect-[4/5] w-full object-cover sm:aspect-video"
+        className="mx-auto block h-auto w-full max-w-full object-contain"
       />
     )
   }
 
   return (
     <video
-      className="aspect-[4/5] w-full object-cover sm:aspect-video"
+      className="mx-auto block h-auto w-full max-w-full object-contain"
       src={brandShowcaseLoop.src}
       poster={brandShowcaseLoop.poster}
       autoPlay
@@ -167,7 +167,7 @@ export function WorkPage() {
               Explore O&apos;Mag
             </Link>
           </div>
-          <div className="overflow-hidden rounded-lg border border-burgundy/10 bg-black shadow-2xl ring-1 ring-black/5">
+          <div className="flex min-h-[14rem] items-center justify-center overflow-hidden rounded-lg border border-burgundy/10 bg-black shadow-2xl ring-1 ring-black/5 md:min-h-[16rem]">
             <OmagBrandLoopMedia />
           </div>
         </div>
