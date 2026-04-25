@@ -20,7 +20,7 @@ export function MagazineShopPage() {
           {GRID.map((item, idx) => (
             <li key={item.src}>
               <a
-                href={item.pdfSrc ?? SITE_LINKS.etsy}
+                href={item.href ?? SITE_LINKS.etsy}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block overflow-hidden rounded-sm bg-white shadow-md transition hover:shadow-lg"

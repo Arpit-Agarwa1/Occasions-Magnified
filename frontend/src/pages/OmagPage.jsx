@@ -243,7 +243,7 @@ export function OmagPage() {
       >
         <h2 className="text-center font-serif text-3xl tracking-[0.18em] text-cream md:text-4xl">SAMPLES</h2>
         <p className="mx-auto mt-3 max-w-2xl text-center font-serif text-sm text-cream/80 md:text-base">
-          Real page counts we print — drag the row or use arrows. Tap a card to open the full PDF in a new tab.
+          Real page counts we print — drag the row or use arrows. Tap a card to open the flipbook in a new tab.
         </p>
         <div className="mx-auto mt-10 flex max-w-6xl items-stretch gap-3 md:gap-5">
           <button
@@ -262,7 +262,7 @@ export function OmagPage() {
               <a
                 key={s.src}
                 data-omag-sample-card
-                href={s.pdfSrc ?? SITE_LINKS.etsy}
+                href={s.href ?? SITE_LINKS.etsy}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[min(88vw,22rem)] shrink-0 snap-center overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"

@@ -8,7 +8,7 @@
  * @property {string} src
  * @property {string} title
  * @property {string} [badge] Optional ribbon on shop grid cards
- * @property {string} [pdfSrc] Opens in a new tab when set (sample PDF under `public/work/`).
+ * @property {string} [href] Optional external link (opens in new tab)
  */
 
 /**
@@ -51,27 +51,33 @@ export const magazineGalleryItems = [
 export const omagSampleCarouselItems = [
   {
     src: '/work/magazine/samples/sample-12-pages.jpg',
-    pdfSrc: '/work/magazine/samples/sample-12-pages.pdf',
+    href: 'https://heyzine.com/flip-book/a85318a2cd.html',
     title: "O'Mag — 12-page issue (sample)",
     badge: '12 pages',
   },
   {
     src: '/work/magazine/samples/sample-16-pages.jpg',
-    pdfSrc: '/work/magazine/samples/sample-16-pages.pdf',
+    href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
     title: "O'Mag — 16-page issue (sample)",
     badge: '16 pages',
   },
   {
     src: '/work/magazine/samples/sample-20-pages.jpg',
-    pdfSrc: '/work/magazine/samples/sample-20-pages.pdf',
+    href: 'https://heyzine.com/flip-book/38540cdbaa.html',
     title: "O'Mag — 20-page issue (sample)",
     badge: '20 pages',
   },
   {
     src: '/work/magazine/samples/sample-24-pages.jpg',
-    pdfSrc: '/work/magazine/samples/sample-24-pages.pdf',
+    href: 'https://heyzine.com/flip-book/ec694af2e0.html',
     title: "O'Mag — 24-page issue (sample)",
     badge: '24 pages',
+  },
+  {
+    src: '/work/magazine/cover.jpg',
+    href: 'https://heyzine.com/flip-book/068c607c1a.html',
+    title: "O'Mag — sample issue (flip book)",
+    badge: 'sample',
   },
 ]
 
