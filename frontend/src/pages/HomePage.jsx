@@ -36,8 +36,8 @@ export function HomePage() {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(100%,24rem)] bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/55 to-transparent sm:max-w-[420px] md:max-w-[520px]" aria-hidden />
           <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-16 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-20" aria-hidden />
 
-          <div className="absolute inset-0 z-10 flex items-start justify-end px-4 pr-7 pt-16 sm:px-6 sm:pr-12 sm:pt-20 md:px-10 md:pr-16 md:pt-24 lg:px-12 lg:pr-20">
-            <div className="w-full max-w-[min(100%,22rem)] text-right md:max-w-md">
+          <div className="absolute inset-0 z-10 flex items-start justify-end px-4 pr-7 pt-14 sm:px-6 sm:pr-12 sm:pt-20 md:px-10 md:pr-16 md:pt-24 lg:px-12 lg:pr-20">
+            <div className="w-full max-w-[min(100%,20rem)] text-right sm:max-w-[min(100%,22rem)] sm:text-left md:max-w-md">
               <h1 className="font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.6)]">
                 <span className="block text-[1.15rem] font-medium leading-snug tracking-[0.02em] text-[#4A0404]/92 md:text-[1.75rem]">
                   Crafting Memories through
@@ -46,10 +46,10 @@ export function HomePage() {
                   Elegant Designs
                 </span>
               </h1>
-              <div className="mt-6 flex flex-col items-end justify-end gap-3 md:mt-8 sm:flex-row sm:flex-wrap sm:justify-end">
+              <div className="mt-6 flex flex-col items-end justify-end gap-3 sm:items-start sm:justify-start md:mt-8 sm:flex-row sm:flex-wrap">
                 <Link
                   to="/work"
-                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/55 px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
+                  className="inline-flex w-full items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/55 px-7 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:bg-[#4A0404]/12 sm:w-auto sm:px-8 md:px-10 md:py-3 md:text-xs"
                 >
                   Explore Our Work
                 </Link>
@@ -57,7 +57,7 @@ export function HomePage() {
                   href={SITE_LINKS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#4A0404] px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:bg-[#310B0B] md:px-10 md:py-3 md:text-xs"
+                  className="inline-flex w-full items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#4A0404] px-7 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:bg-[#310B0B] sm:w-auto sm:px-8 md:px-10 md:py-3 md:text-xs"
                 >
                   Request Custom Order
                 </a>
