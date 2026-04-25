@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { HomeServicesStrip } from '../components/home/HomeServicesStrip.jsx'
-import { HomeThemeSection } from '../components/home/HomeThemeSection.jsx'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { SITE_LINKS } from '../constants/site.js'
@@ -15,8 +14,8 @@ const HERO_BANNER_SRC = '/brand/hero-banner.jpg'
 const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 
 /**
- * Home — layout matches client mock: two-column hero → dream-design band → four service tiles →
- * O’Mag feature → choose your theme → founder → testimonial. Newsletter + legal live in `SiteFooter`.
+ * Home — sequence matches client layout: hero → dream-design band → service strip → O’Mag →
+ * our work (highlights) → founder → testimonial. Newsletter + footer live in `SiteFooter`.
  */
 export function HomePage() {
   return (
@@ -138,8 +137,6 @@ export function HomePage() {
       </section>
 
       <PortfolioPreviewSection />
-
-      <HomeThemeSection />
 
       {/* Meet our founder — portrait + copy */}
       <section className="relative overflow-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
