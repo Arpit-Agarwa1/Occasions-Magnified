@@ -51,6 +51,14 @@ export function HomePage() {
             <p className="mt-4 max-w-2xl text-center font-serif text-base text-white/90 md:text-lg">
               Browse through our past creations and place your custom order easily.
             </p>
+            <div className="mt-8 flex justify-center">
+              <Link
+                to="/work"
+                className="inline-flex items-center justify-center rounded-sm border-2 border-cream/80 bg-cream px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white md:px-10 md:py-3 md:text-xs"
+              >
+                Explore Our Design
+              </Link>
+            </div>
           </div>
         </div>
       </section>
