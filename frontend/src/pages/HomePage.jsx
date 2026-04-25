@@ -21,20 +21,20 @@ export function HomePage() {
           <video
             aria-hidden
             autoPlay
-            className="absolute inset-0 h-full w-full object-cover opacity-90 [@media(prefers-reduced-motion:reduce)]:hidden"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden"
             loop
             muted
             playsInline
             preload="metadata"
             src={SERVICES_BG_VIDEO_SRC}
-            style={{ transform: 'rotate(-4deg) scale(1.12)' }}
+            style={{ transform: 'scale(1.05)' }}
           />
           <div
             aria-hidden
-            className="absolute inset-0 hidden scale-110 bg-cover bg-center opacity-90 [@media(prefers-reduced-motion:reduce)]:block"
+            className="absolute inset-0 hidden bg-cover bg-center opacity-95 [@media(prefers-reduced-motion:reduce)]:block"
             style={{
               backgroundImage: 'url(/brand/dark-texture.jpg)',
-              transform: 'rotate(-4deg) scale(1.12)',
+              transform: 'scale(1.05)',
             }}
           />
         </div>
@@ -56,7 +56,7 @@ export function HomePage() {
                 to="/work"
                 className="inline-flex items-center justify-center rounded-sm border-2 border-cream/80 bg-cream px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white md:px-10 md:py-3 md:text-xs"
               >
-                Explore Our Design
+                Explore Our Designs
               </Link>
             </div>
           </div>
