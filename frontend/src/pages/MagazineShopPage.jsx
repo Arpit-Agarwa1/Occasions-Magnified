@@ -18,7 +18,7 @@ export function MagazineShopPage() {
 
         <ul className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {GRID.map((item, idx) => (
-            <li key={item.href ?? item.src}>
+            <li key={`${item.href ?? item.src}#${idx}`}>
               <a
                 href={item.href ?? SITE_LINKS.etsy}
                 target="_blank"

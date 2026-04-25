@@ -258,9 +258,9 @@ export function OmagPage() {
             ref={scrollerRef}
             className="flex min-h-0 flex-1 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {slides.map((s) => (
+            {slides.map((s, idx) => (
               <a
-                key={s.href ?? s.src}
+                key={`${s.href ?? s.src}#${idx}`}
                 data-omag-sample-card
                 href={s.href ?? SITE_LINKS.etsy}
                 target="_blank"
