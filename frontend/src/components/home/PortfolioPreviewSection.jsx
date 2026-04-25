@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { invitationVideoItems } from '../../data/workGallery.js'
 
 /**
  * Home — custom motion invitations as muted autoplay highlight loops (like story highlights).
@@ -15,6 +14,27 @@ export function PortfolioPreviewSection() {
     mq.addEventListener('change', sync)
     return () => mq.removeEventListener('change', sync)
   }, [])
+
+  const reels = [
+    {
+      href: 'https://www.instagram.com/reel/C9pnJDOi5Pl/',
+      embedSrc: 'https://www.instagram.com/reel/C9pnJDOi5Pl/embed/',
+      title: 'Instagram highlight reel',
+      tagline: 'Tap to open on Instagram.',
+    },
+    {
+      href: 'https://www.instagram.com/reel/DJovXjFTAtH/',
+      embedSrc: 'https://www.instagram.com/reel/DJovXjFTAtH/embed/',
+      title: 'Instagram highlight reel',
+      tagline: 'Tap to open on Instagram.',
+    },
+    {
+      href: 'https://www.instagram.com/reel/DQlpyPsjQYm/',
+      embedSrc: 'https://www.instagram.com/reel/DQlpyPsjQYm/embed/',
+      title: 'Instagram highlight reel',
+      tagline: 'Tap to open on Instagram.',
+    },
+  ]
 
   return (
     <section className="border-y border-burgundy/10 bg-[#faf7f2] py-16 md:py-24">
@@ -32,45 +52,37 @@ export function PortfolioPreviewSection() {
           </p>
         </div>
 
-        {/* Narrower max width on md+ so 9:16 frames stay phone-like, not skyscraper-tall in 3 columns */}
-        <div className="mt-12 grid justify-items-center gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
-          {invitationVideoItems.map((item) => (
-            <article
-              key={item.src}
-              className="w-full max-w-[min(100%,300px)] overflow-hidden rounded-lg border border-burgundy/12 bg-white shadow-md ring-1 ring-black/[0.03] md:max-w-[min(100%,232px)] lg:max-w-[min(100%,248px)] xl:max-w-[min(100%,268px)]"
+        {/* Reels only — no extra card chrome */}
+        <div className="mt-12 grid justify-items-center gap-6 md:grid-cols-3 md:gap-6 lg:gap-8">
+          {reels.map((item, idx) => (
+            <div
+              key={`${item.href}#${idx}`}
+              className="w-full max-w-[min(100%,320px)] overflow-hidden rounded-lg bg-black shadow-[0_18px_55px_-35px_rgba(0,0,0,0.55)] md:max-w-[min(100%,232px)] lg:max-w-[min(100%,248px)] xl:max-w-[min(100%,268px)]"
             >
               <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
                 {reduceMotion ? (
-                  <img
-                    src={item.poster}
-                    alt={item.title}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                  />
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0 grid place-items-center bg-black/60 px-6 text-center"
+                  >
+                    <span className="rounded-sm bg-white/10 px-4 py-2 font-nav text-[10px] font-semibold tracking-[0.22em] text-cream uppercase ring-1 ring-white/15">
+                      Open Reel
+                    </span>
+                  </a>
                 ) : (
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover"
-                    src={item.src}
-                    poster={item.poster}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    aria-label={`Highlight preview — ${item.title}`}
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={item.embedSrc}
+                    title={item.title}
+                    loading="lazy"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
                   />
                 )}
-                {!reduceMotion && (
-                  <span className="pointer-events-none absolute right-2 top-2 rounded bg-black/55 px-2 py-0.5 font-nav text-[9px] font-semibold tracking-wide text-white/90 uppercase backdrop-blur-sm">
-                    Highlight
-                  </span>
-                )}
               </div>
-              <div className="px-4 py-3">
-                <h3 className="font-serif text-lg font-semibold text-burgundy">{item.title}</h3>
-                <p className="mt-1 font-serif text-sm text-burgundy/70">{item.tagline}</p>
-              </div>
-            </article>
+            </div>
           ))}
         </div>
 
