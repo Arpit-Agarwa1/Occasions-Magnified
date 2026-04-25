@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { SITE_LINKS } from '../../constants/site.js'
 
 /**
  * Home — custom motion invitations as muted autoplay highlight loops (like story highlights).
@@ -87,18 +88,22 @@ export function PortfolioPreviewSection() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            to="/contact"
+          <a
+            href={SITE_LINKS.etsy}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-xs font-bold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:bg-burgundy-deep"
           >
-            Download Brochure
-          </Link>
-          <Link
-            to="/work"
+            Order Now
+          </a>
+          <a
+            href={SITE_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border-2 border-burgundy/30 bg-white px-8 py-3.5 font-nav text-xs font-bold tracking-[0.18em] text-burgundy uppercase transition hover:border-burgundy"
           >
-            View All Highlights
-          </Link>
+            Instagram
+          </a>
         </div>
       </div>
     </section>
