@@ -50,34 +50,34 @@ export const magazineGalleryItems = [
 /** Printed spreads & covers for O’Mag “Samples” (thumbs from real multi-page PDFs). */
 export const omagSampleCarouselItems = [
   {
-    src: '/work/magazine/samples/sample-12-pages.jpg',
+    src: '/work/magazine/samples/mag-aashi-12.jpg',
     href: 'https://heyzine.com/flip-book/a85318a2cd.html',
-    title: "O'Mag — 12-page issue (sample)",
+    title: "O'Mag — Aashi (12 pages)",
     badge: '12 pages',
   },
   {
-    src: '/work/magazine/samples/sample-16-pages.jpg',
+    src: '/work/magazine/samples/mag-amit-manju-16.jpg',
     href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
-    title: "O'Mag — 16-page issue (sample)",
+    title: "O'Mag — Amit & Manju (16 pages)",
     badge: '16 pages',
   },
   {
-    src: '/work/magazine/samples/sample-20-pages.jpg',
+    src: '/work/magazine/samples/mag-anniversary-20.jpg',
     href: 'https://heyzine.com/flip-book/38540cdbaa.html',
-    title: "O'Mag — 20-page issue (sample)",
+    title: "O'Mag — Anniversary (20 pages)",
     badge: '20 pages',
   },
   {
-    src: '/work/magazine/samples/sample-24-pages.jpg',
+    src: '/work/magazine/samples/mag-kavya-manjunath-24.jpg',
     href: 'https://heyzine.com/flip-book/ec694af2e0.html',
-    title: "O'Mag — 24-page issue (sample)",
+    title: "O'Mag — Kavya & Manjunath (24 pages)",
     badge: '24 pages',
   },
   {
-    src: '/work/magazine/cover.jpg',
+    src: '/work/magazine/samples/mag-ayushi-12.jpg',
     href: 'https://heyzine.com/flip-book/068c607c1a.html',
-    title: "O'Mag — sample issue (flip book)",
-    badge: 'sample',
+    title: "O'Mag — Ayushi (12 pages)",
+    badge: '12 pages',
   },
 ]
 
