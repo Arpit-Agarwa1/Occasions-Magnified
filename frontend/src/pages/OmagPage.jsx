@@ -260,7 +260,7 @@ export function OmagPage() {
           >
             {slides.map((s) => (
               <a
-                key={s.src}
+                key={s.href ?? s.src}
                 data-omag-sample-card
                 href={s.href ?? SITE_LINKS.etsy}
                 target="_blank"

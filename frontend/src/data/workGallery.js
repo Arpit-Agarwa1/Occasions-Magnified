@@ -5,7 +5,7 @@
 
 /**
  * @typedef {Object} WorkMediaItem
- * @property {string} src
+ * @property {string} src Thumbnail — local path under `public/` or absolute URL (e.g. Heyzine CDN cover)
  * @property {string} title
  * @property {string} [badge] Optional ribbon on shop grid cards
  * @property {string} [href] Optional external link (opens in new tab)
@@ -47,37 +47,59 @@ export const magazineGalleryItems = [
   { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
 ]
 
-/** Printed spreads & covers for O’Mag “Samples” (thumbs from real multi-page PDFs). */
+/**
+ * O’Mag “Samples” — titles and cover thumbs match each Heyzine flipbook (metadata from heyzine.com).
+ * Thumbnails use Heyzine CDN `og:image` so the card always matches what opens.
+ */
 export const omagSampleCarouselItems = [
   {
-    src: '/work/magazine/samples/mag-aashi-12.jpg',
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/a85318a2cd623217b6f67660dacaaa5b853741cb.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/a85318a2cd.html',
-    title: "O'Mag — Aashi (12 pages)",
-    badge: '12 pages',
-  },
-  {
-    src: '/work/magazine/samples/mag-amit-manju-16.jpg',
-    href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
-    title: "O'Mag — Amit & Manju (16 pages)",
+    title: "O'Mag — Kapil & Bhawana (16 pages)",
     badge: '16 pages',
   },
   {
-    src: '/work/magazine/samples/mag-anniversary-20.jpg',
-    href: 'https://heyzine.com/flip-book/38540cdbaa.html',
-    title: "O'Mag — Anniversary (20 pages)",
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/07cdbd76ed069132e84773a3ff883941c8416b12.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
+    title: "O'Mag — Sheetal & Rahul (20 pages)",
     badge: '20 pages',
   },
   {
-    src: '/work/magazine/samples/mag-kavya-manjunath-24.jpg',
-    href: 'https://heyzine.com/flip-book/ec694af2e0.html',
-    title: "O'Mag — Kavya & Manjunath (24 pages)",
-    badge: '24 pages',
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/38540cdbaa3cf47cc3fdbe9629c30bcc56ebb26f.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/38540cdbaa.html',
+    title: "O'Mag — 20 pages (flip book)",
+    badge: '20 pages',
   },
   {
-    src: '/work/magazine/samples/mag-ayushi-12.jpg',
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/ec694af2e0f965858b47f7e780058e4abf633c12.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/ec694af2e0.html',
+    title: "O'Mag — Family magazine (16 pages)",
+    badge: '16 pages',
+  },
+  {
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/068c607c1a27b8f337c08b50e295c2c99199ca79.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/068c607c1a.html',
-    title: "O'Mag — Ayushi (12 pages)",
-    badge: '12 pages',
+    title: "O'Mag — Wedding magazine (16 pages)",
+    badge: '16 pages',
+  },
+  // Repeats (you pasted 8 links total; adding them in the same order)
+  {
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/a85318a2cd623217b6f67660dacaaa5b853741cb.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/a85318a2cd.html',
+    title: "O'Mag — Kapil & Bhawana (16 pages)",
+    badge: '16 pages',
+  },
+  {
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/07cdbd76ed069132e84773a3ff883941c8416b12.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
+    title: "O'Mag — Sheetal & Rahul (20 pages)",
+    badge: '20 pages',
+  },
+  {
+    src: 'https://cdnc.heyzine.com/files/uploaded/v3/38540cdbaa3cf47cc3fdbe9629c30bcc56ebb26f.pdf-thumb.jpg',
+    href: 'https://heyzine.com/flip-book/38540cdbaa.html',
+    title: "O'Mag — 20 pages (flip book)",
+    badge: '20 pages',
   },
 ]
 
