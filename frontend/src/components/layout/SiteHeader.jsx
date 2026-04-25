@@ -2,15 +2,14 @@ import { useCallback, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { SiteLogo } from './SiteLogo.jsx'
 
-/** Home mock: HOME · OUR WORK · O’MAG · SHOP · ABOUT US · TESTIMONIAL · CONTACT US */
+/** Main nav (home is the logo only — no separate HOME label) */
 const links = [
-  { to: '/', navText: 'HOME', end: true },
-  { to: '/work', navText: 'OUR WORK', end: false },
-  { to: '/omag', navText: "O'MAG", end: false },
-  { to: '/shop', navText: 'SHOP', end: false },
-  { to: '/about', navText: 'ABOUT US', end: false },
-  { to: '/testimonials', navText: 'TESTIMONIAL', end: false },
-  { to: '/contact', navText: 'CONTACT US', end: false },
+  { to: '/work', navText: 'OUR WORK' },
+  { to: '/omag', navText: "O'MAG" },
+  { to: '/shop', navText: 'SHOP' },
+  { to: '/about', navText: 'ABOUT US' },
+  { to: '/testimonials', navText: 'TESTIMONIAL' },
+  { to: '/contact', navText: 'CONTACT US' },
 ]
 
 /**
@@ -51,8 +50,8 @@ export function SiteHeader() {
           className="hidden min-w-0 flex-1 flex-nowrap items-center justify-end gap-x-4 gap-y-1 overflow-x-auto pl-4 lg:flex lg:gap-x-5 xl:gap-x-6 2xl:gap-x-7 [&::-webkit-scrollbar]:h-0"
           aria-label="Main"
         >
-          {links.map(({ to, navText, end }) => (
-            <NavLink key={to} to={to} className={navClass} end={end}>
+          {links.map(({ to, navText }) => (
+            <NavLink key={to} to={to} className={navClass}>
               {navText}
             </NavLink>
           ))}
@@ -83,7 +82,7 @@ export function SiteHeader() {
           className="flex w-full flex-col gap-2 px-4 py-4 text-left sm:px-6 md:px-8"
           aria-label="Mobile"
         >
-          {links.map(({ to, navText, end }) => (
+          {links.map(({ to, navText }) => (
             <NavLink
               key={to}
               to={to}
@@ -94,7 +93,6 @@ export function SiteHeader() {
                     : 'text-cream/80 hover:bg-white/5 hover:text-cream'
                 }`
               }
-              end={end}
               onClick={close}
             >
               {navText}

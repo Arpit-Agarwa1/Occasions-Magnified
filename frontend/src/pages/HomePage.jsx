@@ -46,13 +46,21 @@ export function HomePage() {
                   Elegant Designs
                 </span>
               </h1>
-              <div className="mt-6 flex justify-end md:mt-8">
+              <div className="mt-6 flex flex-col items-end justify-end gap-3 md:mt-8 sm:flex-row sm:flex-wrap sm:justify-end">
                 <Link
                   to="/work"
                   className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/55 px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
                 >
                   Explore Our Work
                 </Link>
+                <a
+                  href={SITE_LINKS.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#4A0404] px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:bg-[#310B0B] md:px-10 md:py-3 md:text-xs"
+                >
+                  Request Custom Order
+                </a>
               </div>
             </div>
           </div>
@@ -88,7 +96,6 @@ export function HomePage() {
           style={{ backgroundImage: 'url(/brand/bg-grid.png)' }}
         />
         <div className="relative z-10 flex min-h-0 flex-1 flex-col">
-          <MarqueeRibbon className="relative z-20 shrink-0" />
           <div className="flex flex-1 flex-col items-center justify-center px-4 py-12 md:px-8 md:py-16">
             <h2 className="max-w-4xl text-center font-nav text-lg font-bold leading-snug tracking-[0.18em] sm:text-xl md:text-2xl">
               YOUR DREAM DESIGN, JUST A CLICK AWAY
@@ -97,7 +104,6 @@ export function HomePage() {
               Browse through our past creations and place your custom order easily.
             </p>
           </div>
-          <MarqueeRibbon className="relative z-20 shrink-0" />
         </div>
       </section>
 
@@ -126,8 +132,8 @@ export function HomePage() {
           <Link to="/omag" className="mx-auto block w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 md:p-8">
             <div className="relative mx-auto max-w-md overflow-hidden rounded-xl bg-[#f6f2ea] shadow-inner ring-1 ring-black/5">
               <img
-                src="/work/magazine/cover.jpg"
-                alt="O'Mag cover sample"
+                src="/work/magazine/mockup3.jpg"
+                alt="O'Mag magazine mockup — printed keepsake in hand"
                 className="aspect-[4/5] w-full object-cover"
                 loading="lazy"
               />
