@@ -3,12 +3,7 @@ import { HomeServicesStrip } from '../components/home/HomeServicesStrip.jsx'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { SITE_LINKS } from '../constants/site.js'
-import { SITE_LOGO_NAV_PULL_CLASSES } from '../components/layout/SiteLogo.jsx'
-
 const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions Magnified. I love turning life's biggest chapters into tangible art: invitations that feel like the first page of your story, and O'Mag magazines you can hold again and again.`
-
-/** Hero lifestyle visual — `public/brand/hero-banner.jpg` */
-const HERO_BANNER_SRC = '/brand/hero-banner.jpg'
 
 /** Faint motion texture behind the “dream design” band (reduces weight vs full-bleed video on every load). */
 const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
@@ -20,65 +15,6 @@ const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 export function HomePage() {
   return (
     <>
-      {/* Hero — full-bleed lifestyle visual with right overlay copy (matches reference). */}
-      <section className={`relative w-full ${SITE_LOGO_NAV_PULL_CLASSES}`}>
-        <div className="om-hero-viewport relative isolate w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)]">
-          <img
-            src={HERO_BANNER_SRC}
-            alt="Wedding poster, stationery, and O'Mag spreads on a bright surface"
-            className="absolute inset-0 h-full w-full object-cover object-[38%_center] transition-transform duration-[1400ms] ease-out motion-safe:scale-[1.02] motion-safe:hover:scale-[1.035] sm:object-left"
-            width={1890}
-            height={1200}
-            sizes="100vw"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#2a0808]/35 via-transparent to-[#2a0808]/10" aria-hidden />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(100%,24rem)] bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/55 to-transparent sm:max-w-[420px] md:max-w-[520px]" aria-hidden />
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-16 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-20" aria-hidden />
-
-          <div className="absolute inset-0 z-10 flex items-center justify-center px-4 pt-14 max-sm:pb-16 sm:items-start sm:justify-end sm:px-6 sm:pr-12 sm:pt-20 md:px-10 md:pr-16 md:pt-24 lg:px-12 lg:pr-20">
-            <div className="w-full max-w-[min(100%,21rem)] text-center sm:max-w-[min(100%,22rem)] sm:text-left md:max-w-md">
-              <div className="rounded-md bg-[#FAF7F2]/35 p-4 shadow-[0_18px_60px_-40px_rgba(74,4,4,0.45)] ring-1 ring-[#4A0404]/10 backdrop-blur-sm sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 sm:backdrop-blur-0">
-                <p className="font-nav text-[10px] font-semibold tracking-[0.38em] text-[#4A0404]/65 uppercase">
-                  Occasions Magnified
-                </p>
-                <h1 className="mt-3 font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.6)]">
-                  <span className="block text-[1.15rem] font-medium leading-snug tracking-[0.02em] text-[#4A0404]/92 md:text-[1.75rem]">
-                  Crafting Memories through
-                  </span>
-                  <span className="mt-2 block text-[2.25rem] font-semibold leading-[0.98] tracking-[-0.02em] sm:text-5xl md:mt-3 md:text-6xl">
-                    <span className="relative inline-block">
-                      Elegant Designs
-                      <span
-                        className="pointer-events-none absolute -bottom-2 left-0 h-[2px] w-full bg-[#4A0404]/40"
-                        aria-hidden
-                      />
-                    </span>
-                  </span>
-                </h1>
-                <div className="mt-6 flex flex-col items-center justify-center gap-3 md:mt-8 sm:flex-row sm:flex-wrap sm:items-start sm:justify-start">
-                  <Link
-                    to="/work"
-                    className="inline-flex w-full items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/65 px-7 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[#FAF7F2]/80 sm:w-auto sm:px-8 md:px-10 md:py-3 md:text-xs"
-                  >
-                    Explore Our Work
-                  </Link>
-                  <a
-                    href={SITE_LINKS.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#4A0404] px-7 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:-translate-y-0.5 hover:bg-[#310B0B] sm:w-auto sm:px-8 md:px-10 md:py-3 md:text-xs"
-                  >
-                    Request Custom Order
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* “Your dream design…” — burgundy + marquees + soft stationery motion */}
       <section className="relative flex min-h-[min(48vh,520px)] flex-col overflow-hidden text-white md:min-h-[min(50vh,600px)]">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
