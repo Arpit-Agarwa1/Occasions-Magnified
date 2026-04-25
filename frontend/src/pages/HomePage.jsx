@@ -36,7 +36,7 @@ export function HomePage() {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(100%,24rem)] bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/55 to-transparent sm:max-w-[420px] md:max-w-[520px]" aria-hidden />
           <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-16 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-20" aria-hidden />
 
-          <div className="absolute inset-0 z-10 flex items-center justify-center px-4 pt-14 max-sm:pb-20 sm:items-start sm:justify-end sm:px-6 sm:pr-12 sm:pt-20 md:px-10 md:pr-16 md:pt-24 lg:px-12 lg:pr-20">
+          <div className="absolute inset-0 z-10 flex items-start justify-end px-4 pr-7 pt-14 sm:px-6 sm:pr-12 sm:pt-20 md:px-10 md:pr-16 md:pt-24 lg:px-12 lg:pr-20">
             <div className="w-full max-w-[min(100%,20rem)] text-center sm:max-w-[min(100%,22rem)] sm:text-left md:max-w-md">
               <h1 className="font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.6)]">
                 <span className="block text-[1.15rem] font-medium leading-snug tracking-[0.02em] text-[#4A0404]/92 md:text-[1.75rem]">
