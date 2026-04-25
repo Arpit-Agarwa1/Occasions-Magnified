@@ -6,7 +6,7 @@ import { SiteLogo } from './SiteLogo.jsx'
 const links = [
   { to: '/', navText: 'HOME', end: true },
   { to: '/work', navText: 'OUR WORK', end: false },
-  { to: '/omag', navText: 'E-MAG', end: false },
+  { to: '/omag', navText: "O'MAG", end: false },
   { to: '/shop', navText: 'SHOP', end: false },
   { to: '/about', navText: 'ABOUT US', end: false },
   { to: '/testimonials', navText: 'TESTIMONIAL', end: false },

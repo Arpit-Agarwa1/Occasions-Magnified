@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { HomeServiceGrid } from '../components/home/HomeServiceGrid.jsx'
+import { HomeServicesStrip } from '../components/home/HomeServicesStrip.jsx'
 import { HomeThemeSection } from '../components/home/HomeThemeSection.jsx'
 import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
-import { brandShowcaseLoop } from '../data/workGallery.js'
+import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { SITE_LINKS } from '../constants/site.js'
 import { SITE_LOGO_NAV_PULL_CLASSES } from '../components/layout/SiteLogo.jsx'
 
@@ -21,37 +21,40 @@ const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 export function HomePage() {
   return (
     <>
-      {/* Hero — cream field, art left + headline right (desktop) */}
-      <section className={`bg-[#f9f7f2] ${SITE_LOGO_NAV_PULL_CLASSES}`}>
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-4 md:grid-cols-2 md:gap-12 md:px-8 md:pb-20 md:pt-2 lg:gap-16">
-          <div className="order-1 min-w-0 md:order-none">
-            <div className="overflow-hidden rounded-sm shadow-[0_20px_50px_-24px_rgba(74,4,4,0.35)] ring-1 ring-[#4A0404]/10">
-              <img
-                src={HERO_BANNER_SRC}
-                alt="Wedding poster, stationery, and O'Mag spread on a bright surface"
-                className="h-full w-full object-cover object-left"
-                width={1890}
-                height={1200}
-                sizes="(min-width: 768px) 50vw, 100vw"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-          </div>
-          <div className="order-2 text-center md:order-none md:text-left">
-            <h1 className="font-serif text-[#4A0404]">
-              <span className="block text-base font-medium leading-snug tracking-[0.12em] md:text-lg">Crafting Memories through</span>
-              <span className="mt-2 block text-[2.1rem] font-semibold leading-[0.98] tracking-[-0.02em] sm:text-5xl md:mt-3 md:text-6xl lg:text-7xl">
-                Elegant Designs
-              </span>
-            </h1>
-            <div className="mt-8 flex justify-center md:mt-10 md:justify-start">
-              <Link
-                to="/work"
-                className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-white px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm transition hover:bg-[#4A0404] hover:text-cream md:px-10 md:py-3 md:text-xs"
-              >
-                Explore Our Work
-              </Link>
+      {/* Hero — full-bleed lifestyle visual with right overlay copy (matches reference). */}
+      <section className={`relative w-full ${SITE_LOGO_NAV_PULL_CLASSES}`}>
+        <div className="relative isolate min-h-[min(66svh,520px)] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(86vh,980px)]">
+          <img
+            src={HERO_BANNER_SRC}
+            alt="Wedding poster, stationery, and O'Mag spreads on a bright surface"
+            className="absolute inset-0 h-full w-full object-cover object-[38%_center] sm:object-left"
+            width={1890}
+            height={1200}
+            sizes="100vw"
+            loading="eager"
+            decoding="async"
+          />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[min(100%,24rem)] bg-gradient-to-l from-[#FAF7F2]/92 via-[#FAF7F2]/55 to-transparent sm:max-w-[420px] md:max-w-[520px]" aria-hidden />
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-16 bg-gradient-to-b from-[#faf8f4]/40 to-transparent md:h-20" aria-hidden />
+
+          <div className="absolute inset-0 z-10 flex items-start justify-end px-4 pt-16 sm:px-6 sm:pt-20 md:px-10 md:pt-24 lg:px-12">
+            <div className="w-full max-w-[min(100%,22rem)] text-right md:max-w-md">
+              <h1 className="font-serif text-[#4A0404] drop-shadow-[0_1px_12px_rgba(250,247,242,0.6)]">
+                <span className="block text-[0.95rem] font-medium leading-snug tracking-[0.02em] text-[#4A0404]/92 md:text-lg">
+                  Crafting Memories through
+                </span>
+                <span className="mt-2 block text-[2.2rem] font-semibold leading-[0.98] tracking-[-0.02em] sm:text-5xl md:mt-3 md:text-6xl">
+                  Elegant Designs
+                </span>
+              </h1>
+              <div className="mt-6 flex justify-end md:mt-8">
+                <Link
+                  to="/work"
+                  className="inline-flex items-center justify-center rounded-sm border-2 border-[#4A0404] bg-[#FAF7F2]/55 px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm backdrop-blur-sm transition hover:bg-[#4A0404]/12 md:px-10 md:py-3 md:text-xs"
+                >
+                  Explore Our Work
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -99,9 +102,9 @@ export function HomePage() {
         </div>
       </section>
 
-      <HomeServiceGrid />
+      <HomeServicesStrip />
 
-      {/* O’Mag — text left, magazine on white plinth + callouts (mock) */}
+      {/* O’Mag — burgundy band with white image card (matches reference). */}
       <section className="bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <div>
@@ -121,43 +124,20 @@ export function HomePage() {
             </a>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg">
-            <div
-              className="relative overflow-visible rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 md:p-8"
-              style={{ minHeight: 'min(28rem, 70vw)' }}
-            >
-              <Link to="/omag" className="group block" aria-label="View O'Mag product page">
-                <div className="relative flex items-center justify-center [perspective:800px]">
-                  <div className="rotate-[-5deg] transition-transform duration-500 group-hover:rotate-[-3deg]">
-                    <div className="overflow-hidden rounded-md shadow-2xl ring-1 ring-black/10">
-                      <video
-                        className="w-full max-w-[20rem] object-contain sm:max-w-[22rem]"
-                        src={brandShowcaseLoop.src}
-                        poster={brandShowcaseLoop.poster}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        aria-label="O'Mag layout preview on screen"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              {/* Callout labels — design-language hints (mock annotations) */}
-              <p className="pointer-events-none absolute right-1 top-6 max-w-[7rem] rounded-sm border border-dashed border-[#4A0404]/25 bg-cream/95 px-1.5 py-1 text-[9px] font-nav font-semibold leading-tight text-[#4A0404] shadow-sm md:top-10 md:max-w-[8rem] md:text-[10px]">
-                Fully customisable
-                <span className="absolute -left-2 top-full block h-6 w-6 rotate-12 border-b border-dashed border-[#4A0404]/30" aria-hidden />
-              </p>
-              <p className="pointer-events-none absolute bottom-8 left-0 max-w-[7rem] rounded-sm border border-dashed border-[#4A0404]/25 bg-cream/95 px-1.5 py-1 text-[9px] font-nav font-semibold leading-tight text-[#4A0404] shadow-sm md:bottom-12 md:max-w-[8rem] md:text-[10px]">
-                High-quality print
-                <span className="absolute -right-1 bottom-full block h-6 w-6 -rotate-6 border-b border-dashed border-[#4A0404]/30" aria-hidden />
-              </p>
+          <Link to="/omag" className="mx-auto block w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 md:p-8">
+            <div className="relative mx-auto max-w-md overflow-hidden rounded-xl bg-[#f6f2ea] shadow-inner ring-1 ring-black/5">
+              <img
+                src="/work/magazine/cover.jpg"
+                alt="O'Mag cover sample"
+                className="aspect-[4/5] w-full object-cover"
+                loading="lazy"
+              />
             </div>
-          </div>
+          </Link>
         </div>
       </section>
+
+      <PortfolioPreviewSection />
 
       <HomeThemeSection />
 
