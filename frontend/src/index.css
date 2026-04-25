@@ -74,10 +74,13 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  /* Safari versions differ on dvh; keep a stable fallback. */
+  min-height: 100vh;
   min-height: 100dvh;
   font-family: var(--font-sans);
   color: var(--color-burgundy);
@@ -93,7 +96,23 @@ body {
 }
 
 #root {
+  min-height: 100vh;
   min-height: 100dvh;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Backdrop blur needs -webkit- prefix for Safari consistency. */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-\[2px\] {
+    -webkit-backdrop-filter: blur(12px);
+  }
 }
 
 details > summary {

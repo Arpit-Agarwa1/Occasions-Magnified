@@ -22,7 +22,7 @@ export function HomePage() {
     <>
       {/* Hero — full-bleed lifestyle visual with right overlay copy (matches reference). */}
       <section className={`relative w-full ${SITE_LOGO_NAV_PULL_CLASSES}`}>
-        <div className="relative isolate min-h-[min(66svh,520px)] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)] md:min-h-[min(86vh,980px)]">
+        <div className="relative isolate h-[100vh] min-h-[100vh] w-full overflow-hidden bg-[#2a0808] shadow-[0_20px_50px_-28px_rgba(74,4,4,0.22)]">
           <img
             src={HERO_BANNER_SRC}
             alt="Wedding poster, stationery, and O'Mag spreads on a bright surface"
