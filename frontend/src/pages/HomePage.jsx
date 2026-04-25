@@ -131,14 +131,12 @@ export function HomePage() {
               Turn your memories into a <strong className="font-semibold text-white">keepsake</strong> with our custom
               magazines — fully tailored layouts and premium print you can return to for years.
             </p>
-            <a
-              href={SITE_LINKS.etsy}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/omag"
               className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-xs font-bold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white"
             >
               SHOP NOW
-            </a>
+            </Link>
           </div>
 
           <Link to="/omag" className="mx-auto block w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 md:p-8">
