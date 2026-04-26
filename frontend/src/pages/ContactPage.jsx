@@ -4,9 +4,11 @@ import { SITE_EMAIL, SITE_LINKS, SITE_PHONE_DISPLAY } from '../constants/site.js
 export function ContactPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 md:px-8 md:py-20">
-      <h1 className="text-center font-serif text-4xl text-burgundy md:text-5xl">Contact us</h1>
+      <h1 className="text-center font-serif text-4xl text-burgundy md:text-5xl">
+        Let&apos;s Create Something Beautiful Together
+      </h1>
       <p className="mt-4 text-center font-serif text-lg text-burgundy/80">
-        Tell us about your occasion — we will respond as soon as we can.
+        Share your details and we&apos;ll get back to you to start your custom design journey.
       </p>
 
       <dl className="mt-12 space-y-6 rounded-sm border border-burgundy/10 bg-white p-8 shadow-sm md:p-10">

@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom'
 import { HomeServicesStrip } from '../components/home/HomeServicesStrip.jsx'
-import { MarqueeRibbon } from '../components/home/MarqueeRibbon.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { SITE_LINKS } from '../constants/site.js'
-const FOUNDER_BIO = `I'm Shristi Jhalani — designer and founder of Occasions Magnified. I love turning life's biggest chapters into tangible art: invitations that feel like the first page of your story, and O'Mag magazines you can hold again and again.`
+
+const FOUNDER_HEADING = 'Meet the Designer'
+const FOUNDER_BODY = [
+  'Hi, I\u2019m Shristi \u2014 the creative mind behind Occasions Magnified.',
+  'I believe that every special moment deserves more than just a design \u2014 it deserves a story. Through my work, I aim to turn emotions, memories, and milestones into something you can see, feel, and hold onto forever.',
+  'From wedding invitations that feel like the first page of your journey, to O\u2019Mag magazines that preserve your most cherished memories \u2014 every creation is designed with intention, detail, and heart.',
+].join('\n\n')
 
 /** Faint motion texture behind the “dream design” band (reduces weight vs full-bleed video on every load). */
 const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 
 /**
- * Home — sequence matches client layout: hero → dream-design band → service strip → O’Mag →
- * our work (highlights) → founder → testimonial. Newsletter + footer live in `SiteFooter`.
+ * Home — dream band → category strip → O’Mag → highlights → founder → contact CTA → testimonials.
+ * Newsletter + footer live in `SiteFooter`.
  */
 export function HomePage() {
   return (
     <>
-      {/* “Your dream design…” — burgundy + marquees + soft stationery motion */}
+      {/* Hero — dream design + CTA to portfolio overview */}
       <section className="relative flex min-h-[min(48vh,520px)] flex-col overflow-hidden text-white md:min-h-[min(50vh,600px)]">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <video
@@ -45,16 +50,16 @@ export function HomePage() {
         />
         <div className="relative z-10 flex min-h-0 flex-1 flex-col">
           <div className="flex flex-1 flex-col items-center justify-center px-4 py-12 md:px-8 md:py-16">
-            <h2 className="max-w-4xl text-center font-nav text-lg font-bold leading-snug tracking-[0.18em] sm:text-xl md:text-2xl">
-              YOUR DREAM DESIGN, JUST A CLICK AWAY
+            <h2 className="max-w-4xl text-center font-serif text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl md:text-[2.15rem]">
+              Your Dream Design, Just a Click Away
             </h2>
-            <p className="mt-4 max-w-2xl text-center font-serif text-base text-white/90 md:text-lg">
-              Browse through our past creations and place your custom order easily.
+            <p className="mt-5 max-w-2xl text-center font-serif text-base leading-relaxed text-white/90 md:text-lg">
+              Explore our past designs and find something that feels just right for your special moment.
             </p>
             <div className="mt-8 flex justify-center">
               <Link
                 to="/work"
-                className="inline-flex items-center justify-center rounded-sm border-2 border-cream/80 bg-cream px-8 py-2.5 font-nav text-[10px] font-semibold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white md:px-10 md:py-3 md:text-xs"
+                className="inline-flex items-center justify-center rounded-sm border-2 border-cream/80 bg-cream px-8 py-2.5 font-nav text-sm font-semibold tracking-wide text-[#4A0404] shadow-sm transition hover:bg-white md:px-10 md:py-3 md:text-base"
               >
                 Explore Our Designs
               </Link>
@@ -65,21 +70,21 @@ export function HomePage() {
 
       <HomeServicesStrip />
 
-      {/* O’Mag — burgundy band with white image card (matches reference). */}
+      {/* O’Mag — headline, customised magazine, CTA */}
       <section className="bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
           <div>
-            <p className="font-serif text-[2.75rem] leading-none tracking-tight md:text-[3.5rem]">O&apos;MAG</p>
-            <p className="mt-1 font-nav text-xs font-medium tracking-[0.28em] text-[#F5F5F5]/90 md:text-sm">Occasions Magazine</p>
+            <h2 className="font-serif text-[2.75rem] leading-none tracking-tight md:text-[3.5rem]">O&apos;Mag</h2>
+            <p className="mt-2 font-nav text-xs font-medium tracking-[0.28em] text-[#F5F5F5]/90 md:text-sm">Customised Magazine</p>
             <p className="mt-6 max-w-lg font-serif text-lg leading-relaxed text-[#F5F5F5]/95 md:text-xl">
-              Turn your memories into a <strong className="font-semibold text-white">keepsake</strong> with our custom
-              magazines — fully tailored layouts and premium print you can return to for years.
+              Turn your memories into a keepsake with our custom-designed magazines — thoughtfully curated layouts,
+              meaningful storytelling, and premium print quality that you can revisit for years.
             </p>
             <Link
               to="/omag"
-              className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-xs font-bold tracking-[0.22em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white"
+              className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-[#4A0404] shadow-sm transition hover:bg-white md:text-base"
             >
-              SHOP NOW
+              Create Your O&apos;Mag
             </Link>
           </div>
 
@@ -98,7 +103,7 @@ export function HomePage() {
 
       <PortfolioPreviewSection />
 
-      {/* Meet our founder — portrait + copy */}
+      {/* Meet the designer */}
       <section className="relative overflow-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-35"
@@ -111,26 +116,47 @@ export function HomePage() {
           <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center md:mx-0 md:items-start">
             <img
               src="/brand/founder-shristi.png"
-              alt="Shristi Jhalani, founder of Occasions Magnified"
+              alt="Shristi — designer behind Occasions Magnified"
               className="w-full max-w-[380px] object-contain drop-shadow-xl"
               width={420}
               height={520}
               loading="lazy"
             />
-            <p className="mt-3 font-[family-name:var(--font-signature)] text-2xl text-cream/95 md:text-3xl">Shristi Jhalani</p>
           </div>
           <div>
-            <h2 className="font-nav text-xs font-semibold tracking-[0.32em] text-[#F5F5F5]/90 uppercase">MEET OUR FOUNDER</h2>
-            <p className="mt-6 font-serif text-[1.1rem] leading-relaxed text-[#F5F5F5]/95 md:text-xl">{FOUNDER_BIO}</p>
+            <h2 className="font-nav text-xs font-semibold tracking-[0.32em] text-[#F5F5F5]/90 uppercase">
+              {FOUNDER_HEADING}
+            </h2>
+            <p className="mt-6 whitespace-pre-line font-serif text-[1.05rem] leading-relaxed text-[#F5F5F5]/95 md:text-lg">
+              {FOUNDER_BODY}
+            </p>
             <a
-              href={SITE_LINKS.linkedin}
+              href={SITE_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block font-serif text-lg text-[#F5F5F5] underline decoration-[#F5F5F5]/45 underline-offset-[10px] hover:decoration-white"
+              className="mt-8 inline-block font-serif text-lg text-[#F5F5F5] underline decoration-[#F5F5F5]/45 underline-offset-[10px] transition hover:decoration-white"
             >
-              [Connect with Me]
+              Connect with Me
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Contact CTA — leads to full contact page */}
+      <section className="border-y border-burgundy/10 bg-[#faf7f2] py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-4 text-center md:px-8">
+          <h2 className="font-serif text-3xl font-semibold text-burgundy md:text-[2.15rem]">
+            Let&apos;s Create Something Beautiful Together
+          </h2>
+          <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
+            Share your details and we&apos;ll get back to you to start your custom design journey.
+          </p>
+          <Link
+            to="/contact"
+            className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-cream shadow-sm transition hover:bg-burgundy-deep md:text-base"
+          >
+            Contact Us
+          </Link>
         </div>
       </section>
 

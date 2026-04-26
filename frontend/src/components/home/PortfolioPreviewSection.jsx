@@ -1,5 +1,4 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { SITE_LINKS } from '../../constants/site.js'
 import { invitationVideoItems } from '../../data/workGallery.js'
 
@@ -123,10 +122,8 @@ export function PortfolioPreviewSection() {
             Celebrate Memorable Occasions
           </h2>
           <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
-            Cinematic highlight reels and motion stories — each crafted for the couple, their palette, and their day.
-          </p>
-          <p className="mt-2 font-nav text-[10px] font-medium tracking-wide text-burgundy/50">
-            Highlights autoplay muted · Open the portfolio for full films with sound
+            From cinematic invites to personalized magazines, every design is crafted to capture emotions, stories, and
+            moments that matter.
           </p>
         </div>
 
@@ -148,17 +145,17 @@ export function PortfolioPreviewSection() {
             href={SITE_LINKS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-xs font-bold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:bg-burgundy-deep"
+            className="inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-cream shadow-sm transition hover:bg-burgundy-deep md:text-base"
           >
-            Order Now
+            Start Your Custom Design
           </a>
           <a
             href={SITE_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border-2 border-burgundy/30 bg-white px-8 py-3.5 font-nav text-xs font-bold tracking-[0.18em] text-burgundy uppercase transition hover:border-burgundy"
+            className="inline-flex items-center justify-center rounded-full border-2 border-burgundy/30 bg-white px-8 py-3.5 font-nav text-sm font-bold tracking-wide text-burgundy transition hover:border-burgundy md:text-base"
           >
-            Instagram
+            Visit Instagram
           </a>
         </div>
       </div>
