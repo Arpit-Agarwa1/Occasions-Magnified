@@ -107,21 +107,21 @@ export const omagSampleCarouselItems = [
 export const invitationVideoItems = [
   {
     src: '/work/invitations/rupal.mp4',
-    title: 'Rupal — motion story',
+    title: 'Customised magazine',
     poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
-    tagline: 'Save-the-date film with custom type and colour grade.',
+    tagline: 'Editorial layouts, storytelling, and print-ready spreads tailored to your occasion.',
   },
   {
     src: '/work/invitations/save-the-date-1.mp4',
-    title: 'Save the Date — motion story',
+    title: 'Save the Date Invite',
     poster: '/work/magazine/cover2.png',
-    tagline: 'Pacing and layout aligned to their celebration theme.',
+    tagline: 'Cinematic save-the-date with custom typography, palette, and pacing for your guests.',
   },
   {
     src: '/work/invitations/whatsapp-video-2025-04-02-132019.mp4',
-    title: 'Motion story — WhatsApp reel',
+    title: 'Welcome Board Design',
     poster: '/work/magazine/back-cover.jpg',
-    tagline: 'Warm tones and elegant transitions for family sharing.',
+    tagline: 'Statement welcome visuals with refined composition and cohesive styling for your venue.',
   },
 ]
 

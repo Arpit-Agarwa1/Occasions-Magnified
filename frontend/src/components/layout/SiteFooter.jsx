@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom'
-import { NewsletterForm } from '../forms/NewsletterForm.jsx'
+import { getWhatsAppContactUrl } from '../../constants/site.js'
 import { SocialIconRow } from './SocialIconRow.jsx'
 
-/** Footer CTA + bar — newsletter, © year, socials, legal. */
+/** Footer CTA + bar — contact prompt, © year, socials, legal. */
 export function SiteFooter() {
   const currentYear = new Date().getFullYear()
 
@@ -21,14 +21,20 @@ export function SiteFooter() {
           <img src="/brand/dark-texture.jpg" alt="" className="h-full w-full object-cover" loading="lazy" />
         </div>
         <div className="relative z-10 mx-auto max-w-3xl px-4 text-center md:px-8">
-          <h2 className="font-serif text-3xl font-medium text-white md:text-[2.35rem]">Have any Questions?</h2>
-          <p className="mt-3 font-serif text-lg text-cream/90">
-            Enter your email and we&apos;ll get back to you about invitations, O&apos;Mag, or custom
-            projects.
+          <h2 className="font-serif text-3xl font-semibold text-white md:text-[2.15rem]">
+            Let&apos;s Create Something Beautiful Together
+          </h2>
+          <p className="mt-4 font-serif text-lg leading-relaxed text-cream/90">
+            Share your details and we&apos;ll get back to you to start your custom design journey.
           </p>
-          <div className="mt-8">
-            <NewsletterForm />
-          </div>
+          <a
+            href={getWhatsAppContactUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-[#4A0404] shadow-sm outline-none transition hover:bg-white focus-visible:ring-2 focus-visible:ring-cream/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#4A0404] md:text-base"
+          >
+            Contact Us
+          </a>
         </div>
       </section>
 

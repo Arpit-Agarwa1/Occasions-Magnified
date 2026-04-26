@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { SITE_LINKS } from '../../constants/site.js'
+import { getWhatsAppContactUrl, SITE_LINKS } from '../../constants/site.js'
 import { invitationVideoItems } from '../../data/workGallery.js'
 
 /**
@@ -117,13 +117,13 @@ export function PortfolioPreviewSection() {
     <section className="border-y border-burgundy/10 bg-[#faf7f2] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-burgundy/55 uppercase">Our work</p>
-          <h2 className="mt-3 font-serif text-3xl font-semibold text-burgundy md:text-[2.35rem]">
+          <h2 className="font-serif text-3xl font-semibold text-burgundy md:text-[2.35rem]">
             Celebrate Memorable Occasions
           </h2>
           <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
-            From cinematic invites to personalized magazines, every design is crafted to capture emotions, stories, and
-            moments that matter.
+            From cinematic invites to personalized magazines, every design is crafted to capture emotions, stories,
+            <br />
+            and moments that matter.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export function PortfolioPreviewSection() {
 
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href={SITE_LINKS.whatsapp}
+            href={getWhatsAppContactUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-cream shadow-sm transition hover:bg-burgundy-deep md:text-base"

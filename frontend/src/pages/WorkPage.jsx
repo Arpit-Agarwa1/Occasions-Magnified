@@ -132,9 +132,10 @@ export function WorkPage() {
             <p className="font-nav text-[11px] font-semibold tracking-[0.32em] text-om-gold/85 uppercase">
               Motion
             </p>
-            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.55rem]">Custom motion invitations</h2>
+            <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.55rem]">Magazines, motion &amp; welcome boards</h2>
             <p className="mt-4 font-serif text-lg leading-relaxed text-cream/82 md:text-xl md:leading-relaxed">
-              Save-the-date and invitation films — typography, pacing, and colour graded for every screen.
+              Customised magazine, save the date invite, and welcome board design — motion, type, and finishing tuned
+              for your celebration.
             </p>
           </div>
           <div className="mt-14 grid justify-items-center gap-10 sm:gap-12 lg:grid-cols-3 lg:justify-items-stretch lg:gap-8">

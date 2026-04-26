@@ -14,8 +14,8 @@ const FOUNDER_BODY = [
 const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 
 /**
- * Home — dream band → category strip → O’Mag → highlights → founder → contact CTA → testimonials.
- * Newsletter + footer live in `SiteFooter`.
+ * Home — dream band → category strip → O’Mag → highlights → founder → testimonials.
+ * Contact CTA lives in `SiteFooter`.
  */
 export function HomePage() {
   return (
@@ -70,34 +70,54 @@ export function HomePage() {
 
       <HomeServicesStrip />
 
-      {/* O’Mag — headline, customised magazine, CTA */}
-      <section className="bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
-          <div>
-            <h2 className="font-serif text-[2.75rem] leading-none tracking-tight md:text-[3.5rem]">O&apos;Mag</h2>
-            <p className="mt-2 font-nav text-xs font-medium tracking-[0.28em] text-[#F5F5F5]/90 md:text-sm">Customised Magazine</p>
-            <p className="mt-6 max-w-lg font-serif text-lg leading-relaxed text-[#F5F5F5]/95 md:text-xl">
-              Turn your memories into a keepsake with our custom-designed magazines — thoughtfully curated layouts,
-              meaningful storytelling, and premium print quality that you can revisit for years.
-            </p>
-            <Link
-              to="/omag"
-              className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-[#4A0404] shadow-sm transition hover:bg-white md:text-base"
-            >
-              Create Your O&apos;Mag
-            </Link>
-          </div>
-
-          <Link to="/omag" className="mx-auto block w-full max-w-lg rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-black/10 md:p-8">
-            <div className="relative mx-auto max-w-md overflow-hidden rounded-xl bg-[#f6f2ea] shadow-inner ring-1 ring-black/5">
-              <img
-                src="/work/magazine/mockup3.jpg"
-                alt="O'Mag magazine mockup — printed keepsake in hand"
-                className="aspect-[4/5] w-full object-cover"
-                loading="lazy"
-              />
+      {/* O’Mag — editorial split: texture, readable measure, image with depth (no light “card” frame). */}
+      <section className="relative overflow-hidden bg-[#4A0404] py-10 text-[#F5F5F5] md:py-12 lg:py-14">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{ backgroundImage: 'url(/brand/bg-grid.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+          <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] md:gap-x-7 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-x-8">
+            <div className="max-w-md md:max-w-none lg:max-w-lg">
+              <h2 className="font-serif text-[2.1rem] leading-[1.05] tracking-tight text-white md:text-[2.4rem] lg:text-[2.55rem]">
+                O&apos;Mag
+              </h2>
+              <p className="mt-2 font-nav text-[10px] font-semibold uppercase tracking-[0.32em] text-cream/75 md:text-[11px] md:tracking-[0.34em]">
+                Customised Magazine
+              </p>
+              <div className="mt-4 h-px w-10 bg-cream/35" aria-hidden />
+              <p className="mt-4 font-serif text-[0.95rem] leading-[1.6] text-cream/95 md:text-base md:leading-[1.65]">
+                Turn your memories into a keepsake with our custom-designed magazines — thoughtfully curated layouts,
+                meaningful storytelling, and premium print quality that you can revisit for years.
+              </p>
+              <Link
+                to="/omag"
+                className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-cream px-7 py-2.5 font-nav text-[13px] font-semibold tracking-wide text-[#4A0404] shadow-md transition hover:bg-white hover:shadow-lg md:mt-7 md:px-8 md:py-3 md:text-sm"
+              >
+                Create Your O&apos;Mag
+              </Link>
             </div>
-          </Link>
+
+            <div className="flex justify-center md:justify-end">
+              <Link
+                to="/omag"
+                className="relative block aspect-[4/3] w-full max-w-[18rem] overflow-hidden rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cream/45 sm:max-w-[20rem] md:w-full md:max-w-none"
+              >
+                {/** Rounded clip only — image fills the frame (`object-cover`) so there is no ring, shadow, or extra fill. */}
+                <img
+                  src="/work/magazine/omag-home-spread.png"
+                  alt="O'Mag open spread — custom wedding magazine in hand"
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                  loading="lazy"
+                />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -139,24 +159,6 @@ export function HomePage() {
               Connect with Me
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Contact CTA — leads to full contact page */}
-      <section className="border-y border-burgundy/10 bg-[#faf7f2] py-16 md:py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center md:px-8">
-          <h2 className="font-serif text-3xl font-semibold text-burgundy md:text-[2.15rem]">
-            Let&apos;s Create Something Beautiful Together
-          </h2>
-          <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
-            Share your details and we&apos;ll get back to you to start your custom design journey.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-burgundy bg-burgundy px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-cream shadow-sm transition hover:bg-burgundy-deep md:text-base"
-          >
-            Contact Us
-          </Link>
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { omagSampleCarouselItems } from '../data/workGallery.js'
-import { SITE_LINKS } from '../constants/site.js'
+import { getWhatsAppContactUrl, SITE_LINKS } from '../constants/site.js'
 import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
 
 /** Hero frame — printed cover (`public/work/magazine/cover.jpg`). */
@@ -376,7 +376,7 @@ export function OmagPage() {
                 or{' '}
                 <a
                   className="font-semibold underline decoration-[#4A0404]/30 underline-offset-2"
-                  href={SITE_LINKS.whatsapp}
+                  href={getWhatsAppContactUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
