@@ -4,14 +4,17 @@ import { MainLayout } from './layouts/MainLayout.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 
 /** Below-the-fold routes are lazy so the first JS payload stays small (home stays eager for LCP). */
-const WorkPage = lazy(() => import('./pages/WorkPage.jsx'))
-const OmagPage = lazy(() => import('./pages/OmagPage.jsx'))
-const ShopPage = lazy(() => import('./pages/ShopPage.jsx'))
-const MagazineShopPage = lazy(() => import('./pages/MagazineShopPage.jsx'))
-const AboutPage = lazy(() => import('./pages/AboutPage.jsx'))
-const TestimonialsPage = lazy(() => import('./pages/TestimonialsPage.jsx'))
-const ContactPage = lazy(() => import('./pages/ContactPage.jsx'))
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx'))
+/** Maps a page module’s named export to `default` for `React.lazy` (our pages use `export function Page`). */
+const withDefault = (importFn, name) => lazy(() => importFn().then((m) => ({ default: m[name] })))
+
+const WorkPage = withDefault(() => import('./pages/WorkPage.jsx'), 'WorkPage')
+const OmagPage = withDefault(() => import('./pages/OmagPage.jsx'), 'OmagPage')
+const ShopPage = withDefault(() => import('./pages/ShopPage.jsx'), 'ShopPage')
+const MagazineShopPage = withDefault(() => import('./pages/MagazineShopPage.jsx'), 'MagazineShopPage')
+const AboutPage = withDefault(() => import('./pages/AboutPage.jsx'), 'AboutPage')
+const TestimonialsPage = withDefault(() => import('./pages/TestimonialsPage.jsx'), 'TestimonialsPage')
+const ContactPage = withDefault(() => import('./pages/ContactPage.jsx'), 'ContactPage')
+const NotFoundPage = withDefault(() => import('./pages/NotFoundPage.jsx'), 'NotFoundPage')
 
 /** Application routes under the shared marketing layout. */
 export default function App() {
