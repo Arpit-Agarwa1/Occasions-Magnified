@@ -2,8 +2,9 @@
  * Layout footprint for the wordmark (sets nav row height with header `py-0`).
  * Visual size is boosted with `scale` on the `<img>` so the mark reads larger without growing the bar.
  */
+/** `max-w-none` avoids global `img { max-width: 100% }` — Safari was squashing/clipping the scaled wordmark in flex. */
 export const SITE_LOGO_IMG_CLASSES =
-  'h-11 w-auto shrink-0 origin-left sm:h-12 md:h-14 lg:h-16 xl:h-[4.25rem] 2xl:h-20'
+  'h-11 w-auto max-w-none shrink-0 origin-left sm:h-12 md:h-14 lg:h-16 xl:h-[4.25rem] 2xl:h-20'
 
 /** CSS scale on the img — larger mark without changing the layout box (`h-*` above). */
 const SITE_LOGO_VISUAL_SCALE_CLASSES =
@@ -27,7 +28,7 @@ export function SiteLogo({ variant = 'default', className = '', imgClassName = '
   const inverted = variant === 'inverted'
 
   return (
-    <span className={`inline-flex items-center ${className}`.trim()}>
+    <span className={`inline-flex items-center overflow-visible leading-none ${className}`.trim()}>
       <img
         src="/brand/logo.png"
         alt="Occasions Magnified"

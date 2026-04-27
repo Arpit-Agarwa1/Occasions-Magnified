@@ -36,10 +36,14 @@ export function SiteHeader() {
     <header className={shell}>
       {/* Logo left · desktop nav right · burger right on small screens */}
       {/* py-0: row height follows the logo (tallest item); links + burger stay visually centered */}
-      <div className="flex w-full min-w-0 items-center justify-between gap-3 overflow-visible px-4 py-0 sm:gap-4 sm:px-5 md:gap-5 md:px-6 lg:px-8 xl:gap-6 xl:px-10 2xl:px-12">
+      {/*
+        Asymmetric horizontal padding below lg: burger sits at the trailing edge of the header (body edge);
+        logo keeps start padding. From lg, symmetric padding again for desktop nav.
+      */}
+      <div className="flex w-full min-w-0 items-center justify-between gap-3 overflow-visible py-0 ps-4 pe-0 sm:gap-4 sm:ps-5 md:gap-5 md:ps-6 lg:gap-6 lg:px-8 xl:px-10 2xl:px-12">
         <NavLink
           to="/"
-          className="flex shrink-0 items-center overflow-visible rounded-sm outline-none drop-shadow-sm transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/80 focus-visible:ring-offset-2 focus-visible:ring-offset-om-header"
+          className="flex shrink-0 items-center overflow-visible rounded-sm outline-none shadow-sm transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/80 focus-visible:ring-offset-2 focus-visible:ring-offset-om-header"
           onClick={close}
           aria-label="Home"
         >
@@ -59,7 +63,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-white/5 font-nav outline-none ring-1 ring-inset ring-white/15 transition-colors focus-visible:ring-2 focus-visible:ring-cream/90 focus-visible:ring-offset-2 focus-visible:ring-offset-om-header sm:h-12 sm:w-12 md:h-14 md:w-14 lg:hidden"
+          className="inline-flex h-11 min-w-11 shrink-0 items-center justify-end rounded-md border-0 bg-transparent pe-2 ps-0 font-nav outline-none ring-0 transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-cream/90 focus-visible:ring-offset-2 focus-visible:ring-offset-om-header sm:h-12 sm:min-w-12 sm:pe-3 md:h-14 md:min-w-14 md:pe-4 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
