@@ -36,23 +36,22 @@
 
 /** @type {WorkMediaItem[]} */
 export const magazineGalleryItems = [
+  { src: '/work/magazine/omag-home-spread.png', title: 'O’Mag — hero spread' },
+  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
+  { src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand' },
+  { src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack' },
+  { src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup' },
+  { src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover' },
+  { src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue' },
   { src: '/work/magazine/1.png', title: 'Spread — editorial layout' },
   { src: '/work/magazine/15.png', title: 'Feature spread' },
   { src: '/work/magazine/20.png', title: 'Celebration layout' },
   { src: '/work/magazine/4.png', title: 'Typography study' },
+  { src: '/work/magazine/cover2.png', title: 'Cover — alternate' },
+  { src: '/work/magazine/cover.jpg', title: 'Cover — classic' },
   { src: '/work/magazine/7.jpg', title: 'Print finish detail' },
   { src: '/work/magazine/8.jpg', title: 'Cover concept' },
   { src: '/work/magazine/aashi-back-cover.jpg', title: 'Aashi — back cover' },
-  { src: '/work/magazine/back-cover.jpg', title: 'Back cover' },
-  { src: '/work/magazine/cover.jpg', title: 'Cover — classic' },
-  { src: '/work/magazine/cover2.png', title: 'Cover — alternate' },
-  { src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover' },
-  { src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue' },
-  { src: '/work/magazine/mockup.jpg', title: 'Desk mockup' },
-  { src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup' },
-  { src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand' },
-  { src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack' },
-  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
 ]
 
 /**

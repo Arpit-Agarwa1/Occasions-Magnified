@@ -208,9 +208,9 @@ export function WorkPage() {
 
           <div className="mt-12 overflow-hidden rounded-2xl border border-burgundy/10 shadow-xl ring-1 ring-burgundy/[0.04]">
             <img
-              src="/layout/explore-work.jpg"
-              alt="Collage of Occasions Magnified design work"
-              className="h-auto w-full object-cover"
+              src="/work/magazine/mockup.jpg"
+              alt="Desk mockup of custom magazines and stationery"
+              className="aspect-[21/9] w-full object-cover object-center sm:aspect-[24/9]"
               loading="lazy"
             />
           </div>
@@ -227,7 +227,7 @@ export function WorkPage() {
                 <span className="relative block">
                   <img
                     src={item.src}
-                    alt=""
+                    alt={item.title}
                     className="w-full object-cover transition duration-300 group-hover:scale-[1.02]"
                     loading="lazy"
                   />
