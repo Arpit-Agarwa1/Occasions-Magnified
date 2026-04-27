@@ -157,8 +157,8 @@ export function OmagPage() {
       const el = scrollerRef.current
       if (!el) return
       const first = el.querySelector('[data-omag-sample-card]')
-      const gap = 16
-      const step = first instanceof HTMLElement ? first.offsetWidth + gap : Math.min(el.clientWidth * 0.88, 380)
+      const gap = 24
+      const step = first instanceof HTMLElement ? first.offsetWidth + gap : Math.min(el.clientWidth * 0.76, 320)
       el.scrollBy({ left: dir * step, behavior: reduceMotion ? 'auto' : 'smooth' })
     },
     [reduceMotion],
@@ -243,27 +243,35 @@ export function OmagPage() {
         </div>
       </section>
 
-      {/* Samples — burgundy rail + horizontal smooth scroll (multi-page issue thumbs) */}
+      {/* Samples — editorial carousel: fixed portrait stage + mat padding so every cover reads full-frame */}
       <section
         id="omag-samples"
-        className="scroll-mt-24 border-b border-[#4A0404]/15 bg-[#4A0404] px-4 py-12 text-cream md:px-8 md:py-16"
+        className="scroll-mt-24 border-b border-black/20 bg-[#3d0303] px-4 py-14 text-cream md:px-8 md:py-20"
       >
-        <h2 className="text-center font-serif text-3xl tracking-[0.18em] text-cream md:text-4xl">SAMPLES</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center font-serif text-sm text-cream/80 md:text-base">
-          Real page counts we print — drag the row or use arrows. Tap a card to open the flipbook in a new tab.
+        <p className="text-center font-nav text-[10px] font-semibold tracking-[0.38em] text-cream/50 uppercase">
+          Live flipbooks
         </p>
-        <div className="mx-auto mt-10 flex max-w-6xl items-stretch gap-3 md:gap-5">
+        <h2 className="mt-2 text-center font-serif text-3xl font-semibold tracking-[0.12em] text-cream md:text-4xl md:tracking-[0.14em]">
+          Samples
+        </h2>
+        <p className="mx-auto mt-4 max-w-lg text-center font-serif text-sm leading-relaxed text-cream/75 md:text-base md:leading-relaxed">
+          Swipe or use the arrows. Each card opens the real Heyzine issue in a new tab — same spreads we print.
+        </p>
+
+        <div className="mx-auto mt-12 flex max-w-6xl items-center gap-2 sm:gap-4 md:gap-6">
           <button
             type="button"
             onClick={() => scrollSamples(-1)}
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-full border border-cream/35 bg-cream/10 text-xl text-cream transition-colors duration-200 hover:bg-cream/20 md:h-12 md:w-12"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cream/20 bg-cream/[0.07] text-lg text-cream shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm transition hover:border-cream/35 hover:bg-cream/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/40 sm:h-11 sm:w-11 md:h-12 md:w-12"
             aria-label="Scroll samples left"
           >
             ‹
           </button>
+
           <div
             ref={scrollerRef}
-            className="flex min-h-0 flex-1 snap-x snap-mandatory items-center gap-4 overflow-x-auto overscroll-x-contain scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex min-h-0 flex-1 snap-x snap-mandatory gap-5 overflow-x-auto overscroll-x-contain scroll-smooth py-2 pl-1 pr-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-6 sm:px-2 [&::-webkit-scrollbar]:hidden"
+            style={{ scrollPaddingInline: '12px' }}
           >
             {slides.map((s, idx) => (
               <a
@@ -272,33 +280,47 @@ export function OmagPage() {
                 href={s.href ?? SITE_LINKS.etsy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
+                className="group flex w-[min(76vw,17.5rem)] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-cream/[0.12] bg-[#0c0505] shadow-[0_28px_60px_-28px_rgba(0,0,0,0.75)] ring-1 ring-black/40 transition-[transform,box-shadow,border-color] duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:border-cream/25 motion-safe:hover:shadow-[0_36px_70px_-28px_rgba(0,0,0,0.85)] sm:w-[min(72vw,18rem)] md:w-[18.25rem]"
               >
-                {/*
-                  Mobile: never use w-full + max-h together on wide Heyzine thumbs — width stays 100% while height
-                  is capped, so sides overflow and overflow-hidden clips (logo / “Drama Queen” cut off). Use
-                  w-auto max-w-full so width shrinks with the height cap. lg+: fixed 3:4 + cover as before.
-                */}
-                <div className="relative flex w-full max-lg:min-h-0 max-lg:overflow-visible items-center justify-center bg-black/35 py-2 max-lg:px-1 lg:block lg:aspect-[3/4] lg:overflow-hidden lg:py-0 lg:px-0">
-                  <img
-                    src={s.src}
-                    alt={s.title}
-                    className="mx-auto block h-auto w-auto max-h-[min(44dvh,300px)] max-w-full object-contain object-center lg:absolute lg:inset-0 lg:mx-0 lg:h-full lg:w-full lg:max-h-none lg:max-w-none lg:object-cover"
-                    loading="lazy"
-                  />
+                <div className="relative w-full bg-gradient-to-b from-[#1f1212] via-[#140a0a] to-[#0a0606] p-3 sm:p-3.5">
+                  <div
+                    className="relative flex aspect-[4/5] w-full min-h-0 items-center justify-center overflow-hidden rounded-xl bg-[#050303] ring-1 ring-white/[0.06]"
+                    style={{
+                      boxShadow: 'inset 0 0 0 1px rgba(255,245,230,0.04), inset 0 18px 40px -28px rgba(0,0,0,0.65)',
+                    }}
+                  >
+                    <img
+                      src={s.src}
+                      alt={s.title}
+                      className="max-h-full max-w-full object-contain object-center transition duration-300 motion-safe:group-hover:scale-[1.02]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
-                {s.badge ? (
-                  <p className="border-t border-cream/10 bg-black/40 px-3 py-2 text-center font-nav text-[10px] font-semibold tracking-[0.2em] text-cream/95 uppercase">
-                    {s.badge}
+                <div className="flex flex-col gap-1 border-t border-cream/[0.08] bg-black/55 px-3.5 py-3 sm:px-4 sm:py-3.5">
+                  <p className="line-clamp-2 text-left font-serif text-[0.8125rem] font-medium leading-snug tracking-tight text-cream/95 sm:text-sm">
+                    {s.title}
                   </p>
-                ) : null}
+                  <div className="flex items-center gap-2 pt-0.5">
+                    {s.badge ? (
+                      <span className="min-w-0 font-nav text-[9px] font-semibold tracking-[0.22em] text-om-gold/95 uppercase">
+                        {s.badge}
+                      </span>
+                    ) : null}
+                    <span className="ml-auto shrink-0 font-nav text-[9px] font-semibold tracking-[0.18em] text-cream/40 transition group-hover:text-cream/70 uppercase">
+                      Open ↗
+                    </span>
+                  </div>
+                </div>
               </a>
             ))}
           </div>
+
           <button
             type="button"
             onClick={() => scrollSamples(1)}
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-full border border-cream/35 bg-cream/10 text-xl text-cream transition-colors duration-200 hover:bg-cream/20 md:h-12 md:w-12"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cream/20 bg-cream/[0.07] text-lg text-cream shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-sm transition hover:border-cream/35 hover:bg-cream/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/40 sm:h-11 sm:w-11 md:h-12 md:w-12"
             aria-label="Scroll samples right"
           >
             ›
