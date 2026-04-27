@@ -50,12 +50,12 @@ const HighlightVideoCard = memo(function HighlightVideoCard({ src, poster, title
     <article className="w-full max-w-[min(100%,300px)] overflow-hidden rounded-lg border border-burgundy/12 bg-white shadow-md ring-1 ring-black/[0.03] md:max-w-[min(100%,232px)] lg:max-w-[min(100%,248px)] xl:max-w-[min(100%,268px)]">
       <div className="relative aspect-[9/16] w-full overflow-hidden bg-black">
         {reduceMotion ? (
-          <img src={poster} alt={title} className="absolute inset-0 h-full w-full object-contain md:object-cover" loading="lazy" />
+          <img src={poster} alt={title} className="absolute inset-0 h-full w-full object-contain" loading="lazy" />
         ) : (
           <>
             <video
               ref={videoRef}
-              className="absolute inset-0 h-full w-full object-contain md:object-cover"
+              className="absolute inset-0 h-full w-full object-contain"
               src={src}
               poster={poster}
               autoPlay

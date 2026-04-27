@@ -20,26 +20,24 @@ const SERVICES_BG_VIDEO_SRC = '/brand/services-bg.mp4'
 export function HomePage() {
   return (
     <>
-      {/* Hero — dream design + CTA to portfolio overview */}
-      <section className="relative flex min-h-[min(52vh,560px)] flex-col overflow-hidden text-white md:min-h-[min(54vh,620px)]">
-        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      {/* Hero — dream design + CTA; background video fills the band (cover), subject stays centered. */}
+      <section className="relative flex min-h-[min(52vh,560px)] flex-col overflow-hidden text-white supports-[height:100dvh]:min-h-[min(52dvh,560px)] md:min-h-[min(54vh,620px)] md:supports-[height:100dvh]:min-h-[min(54dvh,620px)]">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#1a0505]">
           <video
             aria-hidden
             autoPlay
-            className="absolute inset-0 h-full w-full object-contain object-center opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden md:object-cover"
+            className="absolute inset-0 max-h-none max-w-none h-full w-full min-h-full min-w-full object-cover object-center opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden"
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="none"
             src={SERVICES_BG_VIDEO_SRC}
-            style={{ transform: 'scale(1.05)' }}
           />
           <div
             aria-hidden
             className="absolute inset-0 hidden bg-cover bg-center opacity-95 [@media(prefers-reduced-motion:reduce)]:block"
             style={{
               backgroundImage: 'url(/brand/dark-texture.jpg)',
-              transform: 'scale(1.05)',
             }}
           />
         </div>

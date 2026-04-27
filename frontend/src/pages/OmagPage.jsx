@@ -224,7 +224,7 @@ export function OmagPage() {
                 />
               ) : (
                 <video
-                  className="absolute inset-0 h-full w-full object-contain md:object-cover"
+                  className="absolute inset-0 h-full w-full object-contain"
                   src="/brand/omag-section-loop.mp4"
                   poster="/how-it-works/how-it-works.png"
                   controls
@@ -272,9 +272,18 @@ export function OmagPage() {
                 href={s.href ?? SITE_LINKS.etsy}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[min(88vw,22rem)] shrink-0 snap-center overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
+                className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
               >
-                <img src={s.src} alt={s.title} className="aspect-[3/4] w-full object-contain md:object-cover" loading="lazy" />
+                {/*
+                  Heyzine thumbs are landscape; fixed 3/4 + cover cropped them on phones/tablets.
+                  Mobile: intrinsic height (no aspect box). md+: uniform card height with object-contain only.
+                */}
+                <img
+                  src={s.src}
+                  alt={s.title}
+                  className="block max-h-[min(52vh,380px)] w-full bg-black/30 object-contain object-center md:aspect-[3/4] md:max-h-[min(64vh,520px)]"
+                  loading="lazy"
+                />
                 {s.badge ? (
                   <p className="border-t border-cream/10 bg-black/40 px-3 py-2 text-center font-nav text-[10px] font-semibold tracking-[0.2em] text-cream/95 uppercase">
                     {s.badge}

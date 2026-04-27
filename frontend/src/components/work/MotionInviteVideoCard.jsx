@@ -18,7 +18,7 @@ export function MotionInviteVideoCard({ src, title, poster, tagline, tone = 'lig
         className={`relative aspect-[9/16] w-full overflow-hidden ${isDark ? 'bg-black' : 'bg-[#1a0505]'}`}
       >
         <video
-          className="absolute inset-0 h-full w-full object-contain md:object-cover"
+          className="absolute inset-0 h-full w-full object-contain"
           src={src}
           poster={poster}
           controls

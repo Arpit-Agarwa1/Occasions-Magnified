@@ -9,8 +9,8 @@ export function ScrollToTop() {
   const { pathname, search } = useLocation()
 
   useLayoutEffect(() => {
-    const smooth = !window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
-    window.scrollTo({ top: 0, left: 0, behavior: smooth ? 'smooth' : 'auto' })
+    // Instant scroll keeps route changes snappy; in-page anchors still use html { scroll-behavior: smooth }.
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [pathname, search])
 
   return null
