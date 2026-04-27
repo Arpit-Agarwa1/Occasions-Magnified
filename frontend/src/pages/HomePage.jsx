@@ -71,7 +71,7 @@ export function HomePage() {
       <HomeServicesStrip />
 
       {/* O’Mag — editorial split: texture, readable measure, image with depth (no light “card” frame). */}
-      <section className="relative overflow-hidden bg-[#4A0404] py-10 text-[#F5F5F5] md:py-12 lg:py-14">
+      <section className="relative overflow-hidden bg-[#4A0404] py-14 text-[#F5F5F5] md:py-18 lg:py-22">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -82,9 +82,9 @@ export function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] md:gap-x-7 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-x-8">
-            <div className="max-w-md md:max-w-none lg:max-w-lg">
-              <h2 className="font-serif text-[2.1rem] leading-[1.05] tracking-tight text-white md:text-[2.4rem] lg:text-[2.55rem]">
+          <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] md:gap-x-9 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:gap-x-10">
+            <div className="max-w-md md:max-w-none lg:max-w-xl">
+              <h2 className="font-serif text-[2.2rem] leading-[1.05] tracking-tight text-white md:text-[2.5rem] lg:text-[2.7rem]">
                 O&apos;Mag
               </h2>
               <p className="mt-2 font-nav text-[10px] font-semibold uppercase tracking-[0.32em] text-cream/75 md:text-[11px] md:tracking-[0.34em]">
@@ -106,13 +106,13 @@ export function HomePage() {
             <div className="flex justify-center md:justify-end">
               <Link
                 to="/omag"
-                className="relative block aspect-[4/3] w-full max-w-[18rem] overflow-hidden rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cream/45 sm:max-w-[20rem] md:w-full md:max-w-none"
+                className="block w-full max-w-[22rem] outline-none focus-visible:rounded-2xl focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[24rem] md:max-w-none md:w-full"
               >
-                {/** Rounded clip only — image fills the frame (`object-cover`) so there is no ring, shadow, or extra fill. */}
+                {/** Natural image size — no aspect box or fill colour, so only the photo shows (rounded corners on the asset). */}
                 <img
                   src="/work/magazine/omag-home-spread.png"
                   alt="O'Mag open spread — custom wedding magazine in hand"
-                  className="absolute inset-0 h-full w-full object-cover object-center"
+                  className="block h-auto w-full rounded-2xl"
                   loading="lazy"
                 />
               </Link>
@@ -132,18 +132,18 @@ export function HomePage() {
             backgroundSize: 'cover',
           }}
         />
-        <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 px-4 md:grid-cols-2 md:gap-16 md:px-8">
-          <div className="mx-auto flex w-full max-w-md flex-col items-center justify-center md:mx-0 md:items-start">
+        <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 px-4 md:grid-cols-2 md:items-start md:gap-16 md:px-8">
+          <div className="mx-auto w-full max-w-[380px] md:mx-0 md:max-w-[420px]">
             <img
               src="/brand/founder-shristi.png"
               alt="Shristi — designer behind Occasions Magnified"
-              className="w-full max-w-[380px] object-contain drop-shadow-xl"
+              className="block w-full object-contain drop-shadow-xl"
               width={420}
               height={520}
               loading="lazy"
             />
           </div>
-          <div>
+          <div className="flex min-h-0 flex-col md:justify-start">
             <h2 className="font-nav text-xs font-semibold tracking-[0.32em] text-[#F5F5F5]/90 uppercase">
               {FOUNDER_HEADING}
             </h2>
