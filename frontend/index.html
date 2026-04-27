@@ -17,8 +17,89 @@
       rel="stylesheet"
     />
     <title>Occasions Magnified | Design Studio</title>
+    <!-- Initial shell: visible before JS bundle; removed from main.jsx after first paint. -->
+    <style>
+      #site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483646;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        background: linear-gradient(165deg, #310b0b 0%, #2a0808 45%, #1a0404 100%);
+        transition: opacity 420ms ease, visibility 420ms ease;
+        visibility: visible;
+        opacity: 1;
+      }
+      #site-loader.om-site-loader--exit {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #site-loader {
+          transition-duration: 0.01ms;
+        }
+      }
+      /* Wordmark on dark bar — same treatment as header `SiteLogo` inverted variant. */
+      #site-loader .om-site-loader__inner {
+        text-align: center;
+        padding: 1.5rem;
+        max-width: min(22rem, 92vw);
+      }
+      #site-loader .om-site-loader__logo-wrap {
+        margin: 0 auto 1.15rem;
+        filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.45));
+      }
+      #site-loader .om-site-loader__logo {
+        display: block;
+        width: min(78vw, 260px);
+        height: auto;
+        margin: 0 auto;
+        filter: brightness(0) invert(1);
+      }
+      @keyframes om-site-loader-logo-pulse {
+        0%,
+        100% {
+          opacity: 0.86;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #site-loader .om-site-loader__logo {
+          animation: om-site-loader-logo-pulse 1.75s ease-in-out infinite;
+        }
+      }
+      #site-loader .om-site-loader__hint {
+        margin: 0;
+        color: rgba(229, 220, 200, 0.62);
+        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+      }
+    </style>
   </head>
   <body>
+    <div id="site-loader" aria-live="polite" aria-busy="true">
+      <div class="om-site-loader__inner">
+        <div class="om-site-loader__logo-wrap">
+          <img
+            class="om-site-loader__logo"
+            src="/brand/logo.png"
+            alt="Occasions Magnified"
+            width="360"
+            height="108"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+        <p class="om-site-loader__hint">Loading</p>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

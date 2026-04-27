@@ -31,7 +31,7 @@ export function SiteFooter() {
             href={getWhatsAppContactUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-[#4A0404] shadow-sm outline-none transition hover:bg-white focus-visible:ring-2 focus-visible:ring-cream/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#4A0404] md:text-base"
+            className="mt-10 inline-flex items-center justify-center rounded-full border-2 border-cream/90 bg-cream px-10 py-3.5 font-nav text-sm font-bold tracking-wide text-[#4A0404] shadow-sm outline-none transition-colors duration-200 ease-out hover:bg-white focus-visible:ring-2 focus-visible:ring-cream/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#4A0404] md:text-base"
           >
             Contact Us
           </a>
@@ -47,7 +47,10 @@ export function SiteFooter() {
             <SocialIconRow />
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-nav text-cream/75 md:justify-end">
-            <NavLink to="/contact" className="rounded-sm px-1 py-0.5 outline-none transition-colors hover:text-cream focus-visible:ring-2 focus-visible:ring-cream/50">
+            <NavLink
+              to="/contact"
+              className="rounded-sm px-1 py-0.5 outline-none transition-colors duration-200 ease-out hover:text-cream focus-visible:ring-2 focus-visible:ring-cream/50"
+            >
               Contact
             </NavLink>
             <span aria-hidden className="text-cream/40">

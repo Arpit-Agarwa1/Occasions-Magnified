@@ -1,5 +1,29 @@
 @import 'tailwindcss';
 
+/* Motion: page shell + gentle link feedback (honours reduced motion below). */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes om-page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .om-page-enter {
+    animation: om-page-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .om-page-enter {
+    animation: none;
+  }
+}
+
 @theme {
   --color-burgundy: #450201;
   --color-burgundy-deep: #2e0101;
@@ -89,6 +113,15 @@ body {
   line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Default link / control easing sitewide — components can override duration. */
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    transition-property: color, background-color, border-color, text-decoration-color, box-shadow, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 ::selection {
