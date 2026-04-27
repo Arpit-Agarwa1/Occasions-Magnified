@@ -26,6 +26,14 @@
  * @property {string} [description]
  */
 
+/**
+ * @typedef {Object} ProcessShowcaseItem
+ * @property {string} src
+ * @property {string} title
+ * @property {string} caption
+ * @property {string} [alt] Image description for accessibility
+ */
+
 /** @type {WorkMediaItem[]} */
 export const magazineGalleryItems = [
   { src: '/work/magazine/1.png', title: 'Spread — editorial layout' },
@@ -107,45 +115,65 @@ export const omagSampleCarouselItems = [
 export const invitationVideoItems = [
   {
     src: '/work/invitations/rupal.mp4',
-    title: 'Customised magazine',
+    title: 'Magazine',
     poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
-    tagline: 'Editorial layouts, storytelling, and print-ready spreads tailored to your occasion.',
+    tagline: "Designed to turn your memories into a timeless keepsake you'll cherish forever.",
   },
   {
     src: '/work/invitations/save-the-date-1.mp4',
-    title: 'Save the Date Invite',
+    title: 'Save the Date',
     poster: '/work/magazine/cover2.png',
-    tagline: 'Cinematic save-the-date with custom typography, palette, and pacing for your guests.',
+    tagline: 'A beautifully crafted invite to announce your special day with elegance and charm.',
   },
   {
     src: '/work/invitations/whatsapp-video-2025-04-02-132019.mp4',
-    title: 'Welcome Board Design',
+    title: 'Welcome Board',
     poster: '/work/magazine/back-cover.jpg',
-    tagline: 'Statement welcome visuals with refined composition and cohesive styling for your venue.',
+    tagline: 'Statement designs that welcome your guests with elegance and style.',
   },
 ]
 
-/** Studio / process imagery for “how we work” sections */
+/** Studio / process — print-forward stills (replaced legacy how-it-works stock). */
 export const processShowcaseItems = [
   {
-    src: '/how-it-works/working-omag.jpg',
+    src: '/work/magazine/1.png',
     title: 'In the studio',
-    caption: 'Spreads are composed like editorial features — hierarchy, rhythm, and print-safe margins.',
+    caption:
+      'Spreads are composed like editorial features — hierarchy, rhythm, and print-safe margins.',
+    alt: 'Editorial magazine spread showing typography hierarchy and layout grid.',
   },
   {
-    src: '/how-it-works/how-it-works.png',
+    src: '/work/magazine/mockup-magazine.jpg',
     title: 'From brief to bound',
-    caption: 'Milestones, imagery, and copy come together in a guided layout pass you can review.',
+    caption:
+      'Milestones, imagery, and copy come together in a guided layout pass you can review.',
+    alt: 'Stack of finished custom magazines with covers and binding visible.',
   },
 ]
 
 /** @type {ServiceStillItem[]} */
 export const serviceGalleryItems = [
-  { src: '/services/e-invites.png', label: 'Digital & e-invites', description: 'Animated and static invites for every channel.' },
-  { src: '/services/5.png', label: 'Print stationery', description: 'Cohesive suites for day-of and pre-wedding.' },
-  { src: '/services/6.png', label: 'Wedding stationery', description: 'Menus, programs, and place settings.' },
+  {
+    src: '/services/home-categories/wedding-invitation-suite.png',
+    label: 'Digital & e-invites',
+    description: 'Animated and static invites for every channel.',
+  },
+  {
+    src: '/work/magazine/mockup1.jpg',
+    label: 'Print stationery',
+    description: 'Cohesive suites for day-of and pre-wedding.',
+  },
+  {
+    src: '/services/home-categories/wedding-stationery.png',
+    label: 'Wedding stationery',
+    description: 'Menus, programs, and place settings.',
+  },
   { src: '/services/7.png', label: 'Custom monograms', description: 'Marks that thread through every touchpoint.' },
-  { src: '/services/8.png', label: 'Illustration & caricature', description: 'Hand-drawn personality for print and motion.' },
+  {
+    src: '/services/8.png',
+    label: 'Illustration & caricature',
+    description: 'Hand-drawn personality for print and motion.',
+  },
 ]
 
 /** Brand loop — poster uses a real printed spread (not a device mockup). */

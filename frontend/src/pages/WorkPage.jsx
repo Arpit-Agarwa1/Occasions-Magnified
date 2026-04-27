@@ -49,14 +49,17 @@ function OmagBrandLoopMedia() {
   )
 }
 
-/** Labels + real magazine / product stills — no white polaroid frame. */
+/**
+ * Hero polaroids — curated stills (home category suite + editorial spreads) for sharper,
+ * print-forward thumbnails than legacy `/services/*.png` crops.
+ */
 const POLAROIDS = [
-  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', label: 'MAGAZINES', tilt: 'rotate-[2.5deg]' },
-  { src: '/work/magazine/cover.jpg', label: "O'MAG", tilt: '-rotate-[3deg]' },
-  { src: '/work/magazine/back-cover.jpg', label: 'PRINT', tilt: '-rotate-[2deg]' },
-  { src: '/services/e-invites.png', label: 'INVITATIONS', tilt: 'rotate-[3deg]' },
-  { src: '/services/6.png', label: 'STATIONERY', tilt: 'rotate-[2deg]' },
-  { src: '/services/8.png', label: 'ILLUSTRATION', tilt: '-rotate-[2.5deg]' },
+  { src: '/work/magazine/omag-home-spread.png', label: 'MAGAZINES', tilt: 'rotate-[2.5deg]' },
+  { src: '/services/home-categories/omag-magazine.png', label: "O'MAG", tilt: '-rotate-[3deg]' },
+  { src: '/work/magazine/mockup3.jpg', label: 'PRINT', tilt: '-rotate-[2deg]' },
+  { src: '/services/home-categories/wedding-invitation-suite.png', label: 'INVITATIONS', tilt: 'rotate-[3deg]' },
+  { src: '/services/home-categories/wedding-stationery.png', label: 'STATIONERY', tilt: 'rotate-[2deg]' },
+  { src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', label: 'ILLUSTRATION', tilt: '-rotate-[2.5deg]' },
 ]
 
 /** Portfolio — polaroids, motion films, O’Mag loop, masonry archive, process, services. */
@@ -134,8 +137,8 @@ export function WorkPage() {
             </p>
             <h2 className="mt-3 font-serif text-3xl text-white md:text-[2.55rem]">Magazines, motion &amp; welcome boards</h2>
             <p className="mt-4 font-serif text-lg leading-relaxed text-cream/82 md:text-xl md:leading-relaxed">
-              Customised magazine, save the date invite, and welcome board design — motion, type, and finishing tuned
-              for your celebration.
+              Magazine, save-the-date, and welcome board pieces — motion, type, and finishing tuned for your
+              celebration.
             </p>
           </div>
           <div className="mt-14 grid justify-items-center gap-10 sm:gap-12 lg:grid-cols-3 lg:justify-items-stretch lg:gap-8">
@@ -270,7 +273,12 @@ export function WorkPage() {
                 key={block.src}
                 className="overflow-hidden rounded-2xl border border-burgundy/10 bg-om-page shadow-md ring-1 ring-burgundy/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <img src={block.src} alt="" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                <img
+                  src={block.src}
+                  alt={block.alt ?? block.title}
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                />
                 <figcaption className="border-t border-burgundy/10 px-5 py-5 md:px-6 md:py-5">
                   <p className="font-serif text-xl font-semibold text-burgundy md:text-2xl">{block.title}</p>
                   <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75 md:text-base">
@@ -293,7 +301,12 @@ export function WorkPage() {
                 key={s.src}
                 className="flex flex-col overflow-hidden rounded-xl border border-burgundy/10 bg-[#faf7f2] shadow-sm ring-1 ring-black/[0.02] transition duration-300 hover:-translate-y-0.5 hover:shadow-md"
               >
-                <img src={s.src} alt="" className="aspect-[4/3] w-full object-cover" loading="lazy" />
+                <img
+                  src={s.src}
+                  alt={`${s.label} — sample work`}
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                />
                 <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
                   <p className="font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/60 uppercase">
                     {s.label}
@@ -314,15 +327,6 @@ export function WorkPage() {
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="border-y border-burgundy/15 bg-[#2c0808]" aria-label="Design reference strip">
-        <img
-          src="/brand/reference-home-strip.jpg"
-          alt="Occasions Magnified colour and layout reference strip"
-          className="mx-auto max-h-[min(44vh,320px)] w-full object-cover object-center opacity-[0.97]"
-          loading="lazy"
-        />
       </section>
 
       <div className="border-t border-om-gold/20 bg-gradient-to-b from-burgundy to-burgundy-deep py-14 text-center md:py-16">

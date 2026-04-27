@@ -118,12 +118,11 @@ export function PortfolioPreviewSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl font-semibold text-burgundy md:text-[2.35rem]">
-            Celebrate Memorable Occasions
+            Timeless design for your celebration
           </h2>
           <p className="mt-4 font-serif text-lg leading-relaxed text-burgundy/80">
-            From cinematic invites to personalized magazines, every design is crafted to capture emotions, stories,
-            <br />
-            and moments that matter.
+            Magazine keepsakes, save-the-dates, and welcome boards—each crafted to reflect your story with elegance and
+            care.
           </p>
         </div>
 
