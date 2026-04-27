@@ -275,14 +275,14 @@ export function OmagPage() {
                 className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
               >
                 {/*
-                  Heyzine PDF thumbs vary in aspect; a fixed 3:4 frame + object-cover fills every card
-                  edge-to-edge on mobile and desktop (uniform carousel, no floating letterbox).
+                  Heyzine thumbs are often wide (PDF preview); cover + tall 3:4 crops on phones and phone-landscape.
+                  Below lg: flex + object-contain + max-height shows the full thumb. lg+: uniform 3:4 tiles + cover.
                 */}
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-black/35">
+                <div className="relative w-full overflow-hidden bg-black/35 flex min-h-[min(46vw,260px)] items-center justify-center py-2 lg:aspect-[3/4] lg:min-h-0 lg:block lg:py-0">
                   <img
                     src={s.src}
                     alt={s.title}
-                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    className="mx-auto block h-auto w-full max-h-[min(50dvh,440px)] object-contain object-center lg:absolute lg:inset-0 lg:mx-0 lg:h-full lg:max-h-none lg:object-cover"
                     loading="lazy"
                   />
                 </div>
