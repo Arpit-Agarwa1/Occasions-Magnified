@@ -53,18 +53,18 @@ export function HomeServicesStrip() {
                     style={{ objectPosition: it.objectPosition ?? 'center' }}
                   />
                 </div>
-                <div className="flex h-full min-h-0 w-full flex-col bg-[#4A0404] px-3 py-3 text-cream sm:w-[45%] sm:shrink-0 sm:px-3 sm:py-3 md:w-[45%] md:px-3.5 md:py-3.5 xl:flex-1 xl:w-full">
-                  <p className="shrink-0 text-center font-serif text-[12px] font-semibold leading-snug text-cream sm:text-[13px] md:text-sm">
+                <div className="flex h-full min-h-0 w-full flex-col bg-[#4A0404] px-3 py-3 text-cream sm:w-[45%] sm:shrink-0 sm:px-4 sm:py-4 md:w-[45%] md:px-5 md:py-5 xl:flex-1 xl:w-full">
+                  <p className="shrink-0 text-center font-serif text-base font-semibold leading-snug text-cream sm:text-lg md:text-xl lg:text-[1.35rem] lg:leading-tight">
                     {it.title}
                   </p>
-                  <p className="mt-2 line-clamp-3 min-h-[3.5rem] shrink-0 text-center font-serif text-[11px] leading-snug text-cream/90 sm:min-h-[3.75rem] sm:text-xs sm:leading-relaxed">
+                  <p className="mt-2.5 line-clamp-3 min-h-[4.5rem] shrink-0 text-center font-serif text-sm leading-relaxed text-cream/90 sm:min-h-[5rem] sm:text-base md:min-h-[5.5rem] md:text-[1.05rem] md:leading-relaxed">
                     {it.description}
                   </p>
-                  <div className="mt-auto flex shrink-0 items-center justify-between border-t border-cream/10 pt-3">
-                    <span className="inline-flex items-center justify-center rounded-sm bg-cream px-2.5 py-1.5 font-nav text-[9px] font-semibold tracking-wide text-[#4A0404] sm:px-3 sm:text-[10px]">
+                  <div className="mt-auto flex shrink-0 items-center justify-between border-t border-cream/10 pt-3.5 sm:pt-4">
+                    <span className="inline-flex items-center justify-center rounded-sm bg-cream px-3 py-2 font-nav text-[11px] font-semibold tracking-wide text-[#4A0404] sm:px-3.5 sm:text-xs md:text-sm">
                       Shop Designs
                     </span>
-                    <span className="font-nav text-lg leading-none text-cream/90 sm:text-xl" aria-hidden>
+                    <span className="font-nav text-xl leading-none text-cream/90 sm:text-2xl" aria-hidden>
                       →
                     </span>
                   </div>
