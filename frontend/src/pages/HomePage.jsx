@@ -21,7 +21,7 @@ export function HomePage() {
   return (
     <>
       {/* Hero — dream design + CTA to portfolio overview */}
-      <section className="relative flex min-h-[min(48vh,520px)] flex-col overflow-hidden text-white md:min-h-[min(50vh,600px)]">
+      <section className="relative flex min-h-[min(52vh,560px)] flex-col overflow-hidden text-white md:min-h-[min(54vh,620px)]">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <video
             aria-hidden
@@ -50,16 +50,25 @@ export function HomePage() {
         />
         <div className="relative z-10 flex min-h-0 flex-1 flex-col">
           <div className="flex flex-1 flex-col items-center justify-center px-4 py-12 md:px-8 md:py-16">
-            <h2 className="max-w-4xl text-center font-serif text-2xl font-semibold leading-snug tracking-tight text-white sm:text-3xl md:text-[2.15rem]">
-              Your Dream Design, Just a Click Away
+            <p className="mb-5 text-center font-nav text-[10px] font-semibold tracking-[0.38em] text-om-gold/90 uppercase drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)] sm:mb-6 sm:text-[11px] sm:tracking-[0.42em]">
+              Occasions Magnified
+            </p>
+            <h2 className="max-w-4xl text-center font-serif leading-[1.06] tracking-tight text-balance sm:max-w-5xl sm:leading-[1.05] md:max-w-6xl md:leading-[1.02] lg:leading-[0.98]">
+              <span className="block text-4xl font-semibold text-cream drop-shadow-[0_3px_22px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl lg:text-7xl">
+                Your Dream Design,
+              </span>
+              {/** Solid gold (no gradient clip) — reads clearly on video + burgundy wash in all browsers. */}
+              <span className="mt-2 block text-[clamp(1.65rem,4.8vw,3.35rem)] font-light italic leading-tight text-om-gold sm:mt-3 md:mt-4 [text-shadow:0_1px_0_rgba(255,255,255,0.14),0_6px_28px_rgba(0,0,0,0.5)]">
+                Just a Click Away
+              </span>
             </h2>
-            <p className="mt-5 max-w-2xl text-center font-serif text-base leading-relaxed text-white/90 md:text-lg">
+            <p className="mt-6 max-w-xl text-center font-serif text-base leading-relaxed text-cream/85 text-balance sm:mt-8 sm:text-lg md:max-w-2xl md:text-xl md:leading-relaxed">
               Explore our past designs and find something that feels just right for your special moment.
             </p>
-            <div className="mt-8 flex justify-center">
+            <div className="mt-9 flex justify-center sm:mt-10">
               <Link
                 to="/work"
-                className="inline-flex items-center justify-center rounded-sm border-2 border-cream/80 bg-cream px-8 py-2.5 font-nav text-sm font-semibold tracking-wide text-[#4A0404] shadow-sm transition hover:bg-white md:px-10 md:py-3 md:text-base"
+                className="inline-flex items-center justify-center rounded-sm border-2 border-om-gold/55 bg-cream px-8 py-2.5 font-nav text-sm font-semibold tracking-wide text-burgundy shadow-[0_6px_24px_-6px_rgba(0,0,0,0.35)] transition hover:border-om-gold hover:bg-white hover:shadow-[0_10px_36px_-8px_rgba(201,162,77,0.28)] md:px-10 md:py-3 md:text-base"
               >
                 Explore Our Designs
               </Link>
