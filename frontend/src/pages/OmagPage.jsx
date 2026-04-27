@@ -116,7 +116,14 @@ function OmagHeroDeviceFrame({ src, alt }) {
         </span>
       </div>
       <div className="overflow-hidden rounded-2xl bg-[#2c1818]">
-        <img src={src} alt={alt} className="aspect-[4/5] w-full object-cover" width={800} height={1000} loading="eager" />
+        <img
+          src={src}
+          alt={alt}
+          className="aspect-[4/5] w-full object-contain md:object-cover"
+          width={800}
+          height={1000}
+          loading="eager"
+        />
       </div>
       <div className="flex items-center justify-between px-1.5 py-2 text-black/45">
         <span className="flex gap-3 font-nav text-base" aria-hidden>
@@ -217,7 +224,7 @@ export function OmagPage() {
                 />
               ) : (
                 <video
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-contain md:object-cover"
                   src="/brand/omag-section-loop.mp4"
                   poster="/how-it-works/how-it-works.png"
                   controls
@@ -267,7 +274,7 @@ export function OmagPage() {
                 rel="noopener noreferrer"
                 className="w-[min(88vw,22rem)] shrink-0 snap-center overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
               >
-                <img src={s.src} alt={s.title} className="aspect-[3/4] w-full object-cover" loading="lazy" />
+                <img src={s.src} alt={s.title} className="aspect-[3/4] w-full object-contain md:object-cover" loading="lazy" />
                 {s.badge ? (
                   <p className="border-t border-cream/10 bg-black/40 px-3 py-2 text-center font-nav text-[10px] font-semibold tracking-[0.2em] text-cream/95 uppercase">
                     {s.badge}

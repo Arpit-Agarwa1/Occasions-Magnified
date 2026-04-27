@@ -26,7 +26,7 @@ export function HomePage() {
           <video
             aria-hidden
             autoPlay
-            className="absolute inset-0 h-full w-full object-cover object-center opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden"
+            className="absolute inset-0 h-full w-full object-contain object-center opacity-95 [@media(prefers-reduced-motion:reduce)]:hidden md:object-cover"
             loop
             muted
             playsInline

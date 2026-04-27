@@ -100,11 +100,11 @@ export function WorkPage() {
               <span className="font-hand text-3xl text-cream/95 drop-shadow-md transition group-hover:text-white md:text-4xl">
                 {p.label}
               </span>
-              <div className="mt-3 w-[min(88vw,300px)] overflow-hidden rounded-2xl shadow-[0_20px_56px_-14px_rgba(0,0,0,0.5)] ring-1 ring-white/20 transition duration-500 group-hover:ring-om-gold/40">
+              <div className="mt-3 w-[min(88vw,300px)] overflow-hidden rounded-2xl bg-black/25 shadow-[0_20px_56px_-14px_rgba(0,0,0,0.5)] ring-1 ring-white/20 transition duration-500 group-hover:ring-om-gold/40">
                 <img
                   src={p.src}
                   alt={p.label}
-                  className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                  className="aspect-[4/3] w-full object-contain transition duration-700 group-hover:scale-[1.03] md:object-cover"
                   loading="lazy"
                 />
               </div>
@@ -206,11 +206,11 @@ export function WorkPage() {
             .
           </p>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-burgundy/10 shadow-xl ring-1 ring-burgundy/[0.04]">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-burgundy/10 bg-[#f9f7f2] shadow-xl ring-1 ring-burgundy/[0.04]">
             <img
               src="/work/magazine/mockup.jpg"
               alt="Desk mockup of custom magazines and stationery"
-              className="aspect-[21/9] w-full object-cover object-center sm:aspect-[24/9]"
+              className="aspect-[4/3] w-full object-contain object-center md:aspect-[21/9] md:object-cover lg:aspect-[24/9]"
               loading="lazy"
             />
           </div>
@@ -228,7 +228,7 @@ export function WorkPage() {
                   <img
                     src={item.src}
                     alt={item.title}
-                    className="w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                    className="w-full object-contain transition duration-300 group-hover:scale-[1.02] md:object-cover"
                     loading="lazy"
                   />
                   <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 transition group-hover:bg-black/30">
@@ -276,7 +276,7 @@ export function WorkPage() {
                 <img
                   src={block.src}
                   alt={block.alt ?? block.title}
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-[4/3] w-full object-contain md:object-cover"
                   loading="lazy"
                 />
                 <figcaption className="border-t border-burgundy/10 px-5 py-5 md:px-6 md:py-5">
@@ -304,7 +304,7 @@ export function WorkPage() {
                 <img
                   src={s.src}
                   alt={`${s.label} — sample work`}
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-[4/3] w-full object-contain md:object-cover"
                   loading="lazy"
                 />
                 <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">

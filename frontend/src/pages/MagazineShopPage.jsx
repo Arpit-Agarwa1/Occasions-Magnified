@@ -28,7 +28,7 @@ export function MagazineShopPage() {
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="aspect-[3/4] w-full object-cover"
+                  className="aspect-[3/4] w-full object-contain md:object-cover"
                   loading="lazy"
                 />
                 {item.badge ? (

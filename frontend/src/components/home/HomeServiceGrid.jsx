@@ -46,7 +46,7 @@ function ServiceCard({ title, blurb, imageSrc, imageAlt, href, internal }) {
   const body = (
     <>
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-burgundy/5">
-        <img src={imageSrc} alt={imageAlt} className="h-full w-full object-cover" loading="lazy" />
+        <img src={imageSrc} alt={imageAlt} className="h-full w-full object-contain md:object-cover" loading="lazy" />
       </div>
       <div className="bg-[#4A0404] px-4 py-5 text-center text-cream md:px-5 md:py-6">
         <h3 className="font-nav text-[10px] font-bold tracking-[0.14em] md:text-[11px]">{title}</h3>

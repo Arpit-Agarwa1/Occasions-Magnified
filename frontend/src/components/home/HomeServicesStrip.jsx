@@ -43,12 +43,12 @@ export function HomeServicesStrip() {
           {ITEMS.map((it) => {
             const Card = (
               <div className="group flex h-full min-h-0 flex-col overflow-hidden rounded-sm bg-white shadow-md ring-1 ring-black/10 transition hover:shadow-lg sm:flex-row sm:items-stretch xl:flex-col">
-                {/** Same aspect + `object-cover` on every card so thumbnails read as one uniform size. */}
+                {/** Same aspect box; `object-contain` on small screens avoids harsh crops, `cover` from md up. */}
                 <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-[#ece7de] sm:w-[55%] sm:max-w-[55%] xl:w-full xl:max-w-none">
                   <img
                     src={it.src}
                     alt={it.alt}
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-contain md:object-cover"
                     loading="lazy"
                     style={{ objectPosition: it.objectPosition ?? 'center' }}
                   />
