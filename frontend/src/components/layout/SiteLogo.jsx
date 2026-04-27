@@ -5,9 +5,9 @@
 export const SITE_LOGO_IMG_CLASSES =
   'h-11 w-auto shrink-0 origin-left sm:h-12 md:h-14 lg:h-16 xl:h-[4.25rem] 2xl:h-20'
 
-/** CSS scale applied on top of `SITE_LOGO_IMG_CLASSES` — does not affect layout height. */
+/** CSS scale on the img — larger mark without changing the layout box (`h-*` above). */
 const SITE_LOGO_VISUAL_SCALE_CLASSES =
-  'scale-[1.52] motion-reduce:scale-100 sm:scale-[1.46] md:scale-[1.58] lg:scale-[1.68] xl:scale-[1.76] 2xl:scale-[1.84]'
+  'scale-[1.62] motion-reduce:scale-100 sm:scale-[1.58] md:scale-[1.72] lg:scale-[1.84] xl:scale-[1.92] 2xl:scale-[2]'
 
 /**
  * Hero overlap on home — negative margin must mirror each breakpoint in `SITE_LOGO_IMG_CLASSES`.

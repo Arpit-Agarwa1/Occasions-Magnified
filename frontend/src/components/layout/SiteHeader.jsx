@@ -36,7 +36,7 @@ export function SiteHeader() {
     <header className={shell}>
       {/* Logo left · desktop nav right · burger right on small screens */}
       {/* py-0: row height follows the logo (tallest item); links + burger stay visually centered */}
-      <div className="flex w-full min-w-0 items-center justify-between gap-3 px-4 py-0 sm:gap-4 sm:px-5 md:gap-5 md:px-6 lg:px-8 xl:gap-6 xl:px-10 2xl:px-12">
+      <div className="flex w-full min-w-0 items-center justify-between gap-3 overflow-visible px-4 py-0 sm:gap-4 sm:px-5 md:gap-5 md:px-6 lg:px-8 xl:gap-6 xl:px-10 2xl:px-12">
         <NavLink
           to="/"
           className="flex shrink-0 items-center overflow-visible rounded-sm outline-none drop-shadow-sm transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream/80 focus-visible:ring-offset-2 focus-visible:ring-offset-om-header"
