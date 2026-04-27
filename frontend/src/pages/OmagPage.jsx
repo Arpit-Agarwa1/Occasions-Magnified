@@ -263,7 +263,7 @@ export function OmagPage() {
           </button>
           <div
             ref={scrollerRef}
-            className="flex min-h-0 flex-1 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex min-h-0 flex-1 snap-x snap-mandatory items-center gap-4 overflow-x-auto overscroll-x-contain scroll-smooth py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {slides.map((s, idx) => (
               <a
@@ -275,14 +275,15 @@ export function OmagPage() {
                 className="flex w-[min(88vw,22rem)] shrink-0 snap-center flex-col overflow-hidden rounded-md border border-cream/15 bg-black/25 shadow-lg ring-1 ring-black/20 transition-[transform,box-shadow,opacity] duration-300 ease-out motion-safe:hover:-translate-y-1 motion-safe:hover:ring-cream/35"
               >
                 {/*
-                  Heyzine thumbs are often wide (PDF preview); cover + tall 3:4 crops on phones and phone-landscape.
-                  Below lg: flex + object-contain + max-height shows the full thumb. lg+: uniform 3:4 tiles + cover.
+                  Mobile: never use w-full + max-h together on wide Heyzine thumbs — width stays 100% while height
+                  is capped, so sides overflow and overflow-hidden clips (logo / “Drama Queen” cut off). Use
+                  w-auto max-w-full so width shrinks with the height cap. lg+: fixed 3:4 + cover as before.
                 */}
-                <div className="relative w-full overflow-hidden bg-black/35 flex min-h-[min(46vw,260px)] items-center justify-center py-2 lg:aspect-[3/4] lg:min-h-0 lg:block lg:py-0">
+                <div className="relative flex w-full max-lg:min-h-0 max-lg:overflow-visible items-center justify-center bg-black/35 py-2 max-lg:px-1 lg:block lg:aspect-[3/4] lg:overflow-hidden lg:py-0 lg:px-0">
                   <img
                     src={s.src}
                     alt={s.title}
-                    className="mx-auto block h-auto w-full max-h-[min(50dvh,440px)] object-contain object-center lg:absolute lg:inset-0 lg:mx-0 lg:h-full lg:max-h-none lg:object-cover"
+                    className="mx-auto block h-auto w-auto max-h-[min(44dvh,300px)] max-w-full object-contain object-center lg:absolute lg:inset-0 lg:mx-0 lg:h-full lg:w-full lg:max-h-none lg:max-w-none lg:object-cover"
                     loading="lazy"
                   />
                 </div>
