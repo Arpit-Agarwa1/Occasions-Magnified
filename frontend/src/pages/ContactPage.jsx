@@ -91,8 +91,7 @@ export function ContactPage() {
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(165deg,rgba(69,2,1,0.06)_0%,transparent_42%,rgba(201,162,77,0.06)_100%)]"
         />
         <div className="relative mx-auto max-w-3xl text-center">
-          <p className="font-nav text-[10px] font-semibold tracking-[0.38em] text-burgundy/55 uppercase">Contact</p>
-          <h1 className="mt-3 font-serif text-[clamp(1.85rem,5vw,2.75rem)] font-semibold leading-[1.12] tracking-tight text-burgundy">
+          <h1 className="font-serif text-[clamp(1.85rem,5vw,2.75rem)] font-semibold leading-[1.12] tracking-tight text-burgundy">
             Let&apos;s create something beautiful together
           </h1>
           <p className="mx-auto mt-5 max-w-xl font-serif text-lg leading-relaxed text-burgundy/82 md:text-xl md:leading-relaxed">
