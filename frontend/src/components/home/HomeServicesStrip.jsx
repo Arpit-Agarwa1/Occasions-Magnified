@@ -3,26 +3,27 @@ import { SHOP_CATEGORIES } from '../../data/shopCategories.js'
 import { MarqueeRibbon } from './MarqueeRibbon.jsx'
 
 /** Visuals for each category card — aligned with `SHOP_CATEGORIES` order (see `public/services/home-categories/`). */
+/** `objectPosition` tunes focal point when art aspect ≠ card — cards use cover so tiles read full-bleed. */
 const CARD_MEDIA = [
   {
     src: '/services/home-categories/wedding-invitation-suite.png',
     alt: 'Wedding invitation suite samples',
-    objectPosition: 'center',
+    objectPosition: 'center center',
   },
   {
     src: '/services/home-categories/wedding-stationery.png',
     alt: 'Wedding stationery samples',
-    objectPosition: 'center',
+    objectPosition: 'center center',
   },
   {
     src: '/services/home-categories/celebration-suite.png',
     alt: 'Celebration suite stationery and print details',
-    objectPosition: 'center',
+    objectPosition: 'center 42%',
   },
   {
     src: '/services/home-categories/omag-magazine.png',
     alt: "O'Mag magazine cover — custom keepsake",
-    objectPosition: 'center',
+    objectPosition: 'center 38%',
   },
 ]
 
@@ -43,14 +44,14 @@ export function HomeServicesStrip() {
           {ITEMS.map((it) => {
             const Card = (
               <div className="group flex h-full min-h-0 flex-col overflow-hidden rounded-sm bg-white shadow-md ring-1 ring-black/10 transition hover:shadow-lg sm:flex-row sm:items-stretch xl:flex-col">
-                {/** Same aspect box; always `object-contain` so phone landscape (md+) does not crop card art. */}
+                {/** Portrait tile uses `object-cover` so artwork fills the frame; contain left empty bands on wide PNGs. */}
                 <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-[#ece7de] sm:w-[55%] sm:max-w-[55%] xl:w-full xl:max-w-none">
                   <img
                     src={it.src}
                     alt={it.alt}
-                    className="absolute inset-0 h-full w-full object-contain"
+                    className="absolute inset-0 h-full w-full max-h-none max-w-none object-cover"
                     loading="lazy"
-                    style={{ objectPosition: it.objectPosition ?? 'center' }}
+                    style={{ objectPosition: it.objectPosition ?? 'center center' }}
                   />
                 </div>
                 <div className="flex h-full min-h-0 w-full flex-col bg-[#4A0404] px-3 py-3 text-cream sm:w-[45%] sm:shrink-0 sm:px-4 sm:py-4 md:w-[45%] md:px-5 md:py-5 xl:flex-1 xl:w-full">
