@@ -115,16 +115,14 @@ export function HomePage() {
             <div className="flex w-full justify-center md:justify-end">
               <Link
                 to="/omag"
-                className="block w-full max-w-[min(100%,22rem)] outline-none focus-visible:rounded-[2rem] focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[min(100%,24rem)] md:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)]"
+                className="block w-full max-w-[min(100%,22rem)] outline-none focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[min(100%,24rem)] md:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)]"
               >
-                <div className="rounded-[2rem] bg-[#f0e8dc] p-2 shadow-[0_32px_80px_-28px_rgba(0,0,0,0.55)] ring-1 ring-black/[0.06] sm:p-3">
-                  <img
-                    src="/work/magazine/omag-home-spread.png"
-                    alt="O'Mag open spread — custom wedding magazine in hand"
-                    className="block h-auto w-full rounded-[1.25rem] sm:rounded-[1.5rem]"
-                    loading="lazy"
-                  />
-                </div>
+                <img
+                  src="/work/magazine/omag-home-spread.png"
+                  alt="O'Mag open spread — custom wedding magazine in hand"
+                  className="block h-auto w-full rounded-md sm:rounded-lg"
+                  loading="lazy"
+                />
               </Link>
             </div>
           </div>

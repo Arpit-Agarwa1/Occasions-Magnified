@@ -2,8 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
-import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
-
 /** Hero frame — printed wedding cover (`public/work/magazine/omag-hero-cover.png`). */
 const HERO_INSTAGRAM_IMG = '/work/magazine/omag-hero-cover.png'
 
@@ -54,7 +52,7 @@ const FAQS = [
   {
     question: 'What is the process from start to delivery?',
     answer:
-      'You share your details → we design → you receive a preview → revisions are made → final print and delivery.\n\nWe guide you at every step to keep the process smooth and stress-free.',
+      'You share your details → we design → you receive a preview → revisions are made → final print and delivery. We guide you at every step to keep the process smooth and stress-free.',
   },
   {
     question: 'How long does it take?',
@@ -74,12 +72,12 @@ const FAQS = [
   {
     question: 'What about payment, delivery, and gifting?',
     answer:
-      'We take a 50% advance to begin the design, and the remaining 50% after final approval before delivery.\n\nYour magazine is printed and delivered to your address — and we can also send it directly as a gift. Your photos and content are handled with complete privacy.',
+      'We take a 50% advance to begin the design, and the remaining 50% after final approval before delivery. Your magazine is printed and delivered to your address — and we can also send it directly as a gift. Your photos and content are handled with complete privacy.',
   },
   {
     question: 'Do you collaborate with photographers or studios?',
     answer:
-      "Yes, we love collaborating with photographers and studios.\n\nIf you'd like to offer O'Mag to your clients, feel free to connect with us to discuss how we can work together.",
+      "Yes, we love collaborating with photographers and studios. If you'd like to offer O'Mag to your clients, feel free to connect with us to discuss how we can work together.",
   },
   {
     question: 'Do you offer bulk or partnership pricing?',
@@ -485,30 +483,36 @@ export function OmagPage() {
 
   return (
     <div className="bg-[#f5f2ec] text-[#4A0404]">
-      {/* Hero — paper field + two columns (matches landing mock: O’MAG + CTAs | IG frame) */}
+      {/* Hero — primary title Customised Magazines; O’MAG lockup as eyebrow; CTAs → shop + samples */}
       <section className="om-omag-skin border-b border-[#4A0404]/15">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 md:items-center md:gap-20 md:px-10 md:py-24 lg:py-28">
           <div className="max-w-xl md:max-w-none">
-            <p className="font-serif text-[2.75rem] leading-[0.95] tracking-tight text-[#4A0404] md:text-[3.35rem] lg:text-[3.5rem]">
+            <p className="font-serif text-2xl font-semibold leading-none tracking-tight text-[#4A0404]/85 md:text-3xl">
               O&apos;MAG
             </p>
             <p className="mt-2 font-nav text-[10px] font-semibold tracking-[0.32em] text-[#4A0404]/50 uppercase">
               Occasions Magnified
             </p>
-            <h1 className="mt-8 font-serif text-2xl font-semibold tracking-tight text-[#4A0404] md:text-3xl md:tracking-tight">
+            <h1 className="mt-6 font-serif text-[clamp(2.15rem,5.5vw,3.45rem)] font-semibold leading-[1.08] tracking-tight text-[#4A0404] md:mt-8">
               Customised Magazines
             </h1>
-            <p className="mt-6 max-w-md font-serif text-[1.05rem] leading-relaxed text-[#4A0404]/88 md:text-lg md:leading-relaxed">
-              Turn your memories into a beautifully crafted magazine — designed to celebrate your story in the most
+            <p className="mt-6 max-w-lg font-serif text-[1.05rem] leading-relaxed text-[#4A0404]/88 md:text-lg md:leading-relaxed">
+              Turn your memories into a beautifully crafted magazine - designed to celebrate your story in the most
               meaningful way.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-              <ChevronPillLink
+              <a
                 href="#omag-shop"
-                className="border-[#4A0404] text-[#4A0404] [&>span:last-child]:bg-[#4A0404] hover:bg-[#4A0404] hover:text-cream [&:hover>span:last-child]:bg-cream [&:hover>span:last-child]:text-[#4A0404]"
+                className="group inline-flex items-center gap-3 rounded-full border-2 border-[#4A0404] bg-[#4A0404] px-8 py-3 font-nav text-xs font-bold tracking-[0.2em] text-cream uppercase shadow-sm transition hover:border-[#3d0303] hover:bg-[#3d0303]"
               >
-                Shop Magazine
-              </ChevronPillLink>
+                <span>Shop Magazine</span>
+                <span
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cream text-lg leading-none text-[#4A0404] transition group-hover:bg-white group-hover:ring-1 group-hover:ring-cream/50"
+                  aria-hidden
+                >
+                  ›
+                </span>
+              </a>
               <a
                 href="#omag-samples"
                 className="group inline-flex items-center gap-3 rounded-full border-2 border-[#4A0404] bg-white px-8 py-3 font-nav text-xs font-bold tracking-[0.2em] text-[#4A0404] uppercase shadow-sm transition hover:bg-[#4A0404]/05"
@@ -540,7 +544,7 @@ export function OmagPage() {
         <div className="om-omag-skin px-4 py-14 md:px-10 md:py-20">
           <div className="mx-auto max-w-4xl">
             <p className="mx-auto mb-10 max-w-2xl text-center font-serif text-lg leading-relaxed text-[#4A0404]/88 md:mb-12 md:text-xl md:leading-relaxed">
-              Not just a magazine — it&apos;s your story, thoughtfully designed and turned into a timeless keepsake you
+              Not just a magazine - it&apos;s your story, thoughtfully designed and turned into a timeless keepsake you
               can hold forever.
             </p>
             <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-[#4A0404]/15 bg-[#1a0505] shadow-lg">
@@ -581,8 +585,7 @@ export function OmagPage() {
           Explore Our Creations
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center font-serif text-sm leading-relaxed text-cream/80 md:text-base md:leading-relaxed">
-          Take a look at some of the magazines we&apos;ve designed — each one unique, personal, and crafted with care.
-          Swipe or use the arrows; each card opens a Heyzine flip-book in a new tab.
+          Take a look at some of the magazines we&apos;ve designed - each one unique, personal, and crafted with care.
         </p>
 
         <div className="mx-auto mt-12 flex max-w-6xl items-center gap-2 sm:gap-4 md:gap-6">
@@ -745,7 +748,7 @@ export function OmagPage() {
                 </span>
                 <span className="min-w-0 flex-1 text-left leading-snug">{item.question}</span>
               </summary>
-              <p className="mt-3 border-t border-[#4A0404]/10 pt-3 pl-[2.85rem] font-serif text-sm leading-relaxed text-[#4A0404]/78 whitespace-pre-line md:pl-[3.1rem] md:text-[0.95rem]">
+              <p className="mt-3 border-t border-[#4A0404]/10 pt-3 pl-[2.85rem] font-serif text-sm leading-relaxed text-[#4A0404]/78 md:pl-[3.1rem] md:text-[0.95rem]">
                 {item.answer}
               </p>
             </details>

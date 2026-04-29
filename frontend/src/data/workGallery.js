@@ -56,44 +56,44 @@ export const magazineGalleryItems = [
 
 /**
  * O’Mag “Samples” — Heyzine flipbooks; `src` is each book’s `og:image` thumb so covers match the live flipbook.
- * Order: ascending page count (ties alphabetical by title).
+ * Order: samples strip (Kids → Family → Wedding → Anniversary ×2 → Wedding); page count in `badge`.
  * @see https://heyzine.com/
  */
 export const omagSampleCarouselItems = [
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/38dd89e4a4974fb3259e9c18ec5e4ba32ee80c1c.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/38dd89e4a4.html',
-    title: "O'Mag — Aashirya (12 pages)",
+    title: "O'Mag — Kids Magazine",
     badge: '12 pages',
   },
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/ec694af2e0f965858b47f7e780058e4abf633c12.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/ec694af2e0.html',
-    title: "O'Mag — Family magazine (16 pages)",
+    title: "O'Mag — Family Magazine",
     badge: '16 pages',
   },
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/068c607c1a27b8f337c08b50e295c2c99199ca79.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/068c607c1a.html',
-    title: "O'Mag — Wedding magazine (16 pages)",
+    title: "O'Mag — Wedding Magazine",
     badge: '16 pages',
   },
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/38540cdbaa3cf47cc3fdbe9629c30bcc56ebb26f.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/38540cdbaa.html',
-    title: "O'Mag — Magazine anniversary (20 pages)",
+    title: "O'Mag — Anniversary Magazine",
     badge: '20 pages',
   },
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/07cdbd76ed069132e84773a3ff883941c8416b12.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/07cdbd76ed.html',
-    title: "O'Mag — Sheetal & Rahul (20 pages)",
+    title: "O'Mag — Anniversary Magazine",
     badge: '20 pages',
   },
   {
     src: 'https://cdnc.heyzine.com/files/uploaded/v3/c50ed68b42709976114ea325aebfac62f2e53152.pdf-thumb.jpg',
     href: 'https://heyzine.com/flip-book/c50ed68b42.html',
-    title: "O'Mag — Kavya & Manjunath (24 pages)",
+    title: "O'Mag — Wedding Magazine",
     badge: '24 pages',
   },
 ]
