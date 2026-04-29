@@ -83,8 +83,16 @@ export function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
           <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] md:gap-x-9 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:gap-x-10">
             <div className="max-w-md md:max-w-none lg:max-w-xl">
-              <h2 className="font-serif text-[2.2rem] leading-[1.05] tracking-tight text-white md:text-[2.5rem] lg:text-[2.7rem]">
-                O&apos;Mag
+              <h2 className="m-0 max-w-[min(100%,17rem)] sm:max-w-[min(100%,19rem)] md:max-w-[min(100%,21rem)] lg:max-w-[min(100%,23rem)]">
+                <img
+                  src="/brand/logo-occasions-magnified.svg"
+                  alt="O&apos;Mag — Occasions Magnified"
+                  className="block h-auto w-full drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
+                  width={1080}
+                  height={1080}
+                  loading="lazy"
+                  decoding="async"
+                />
               </h2>
               <p className="mt-2 font-nav text-[10px] font-semibold uppercase tracking-[0.32em] text-cream/75 md:text-[11px] md:tracking-[0.34em]">
                 Customised Magazine
@@ -123,7 +131,7 @@ export function HomePage() {
       <PortfolioPreviewSection />
 
       {/* Meet the designer */}
-      <section className="relative overflow-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
+      <section className="relative overflow-x-hidden bg-[#4A0404] py-16 text-[#F5F5F5] md:py-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-35"
           style={{
@@ -136,7 +144,7 @@ export function HomePage() {
             <img
               src="/brand/founder-shristi.png"
               alt="Shristi — designer behind Occasions Magnified"
-              className="block w-full object-contain drop-shadow-xl"
+              className="block w-full -translate-y-5 object-contain drop-shadow-xl motion-reduce:translate-y-0 sm:-translate-y-7 md:-translate-y-8"
               width={420}
               height={520}
               loading="lazy"

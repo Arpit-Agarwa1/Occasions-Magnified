@@ -76,7 +76,7 @@ function IconShop({ className = 'h-5 w-5' }) {
 }
 
 /**
- * Contact — primary WhatsApp + email actions, then structured channels with icons.
+ * Contact — hero + reply note, WhatsApp & email CTAs, Get in Touch channels, social & shop links.
  * Matches studio typography (font-nav labels, serif body) and om-page cream shell.
  */
 export function ContactPage() {
@@ -92,11 +92,11 @@ export function ContactPage() {
         />
         <div className="relative mx-auto max-w-3xl text-center">
           <h1 className="font-serif text-[clamp(1.85rem,5vw,2.75rem)] font-semibold leading-[1.12] tracking-tight text-burgundy">
-            Let&apos;s create something beautiful together
+            Tell Us About Your Occasion
           </h1>
           <p className="mx-auto mt-5 max-w-xl font-serif text-lg leading-relaxed text-burgundy/82 md:text-xl md:leading-relaxed">
-            Tell us about your occasion — invitations, O&apos;Mag, or stationery — and we&apos;ll guide you through the
-            next step.
+            Whether it&apos;s a wedding, a gift, or a special celebration — share your idea with us and we&apos;ll help
+            bring it to life through thoughtful design.
           </p>
           <p className="mx-auto mt-3 max-w-md font-serif text-sm italic text-burgundy/55 md:text-[0.95rem]">
             We usually reply within 24–48 hours on WhatsApp and email.
@@ -126,19 +126,39 @@ export function ContactPage() {
 
       {/* Channel grid */}
       <section className="mx-auto max-w-5xl px-4 py-14 md:px-8 md:py-16">
-        <h2 className="text-center font-nav text-xs font-semibold tracking-[0.28em] text-burgundy/50 uppercase">
-          All ways to reach us
-        </h2>
+        <div className="text-center">
+          <p className="font-nav text-xs font-semibold tracking-[0.28em] text-burgundy/50 uppercase">
+            All ways to reach us
+          </p>
+          <div
+            className="mx-auto mt-3 flex max-w-md flex-wrap items-center justify-center gap-x-3 gap-y-2 font-nav text-xs font-semibold tracking-[0.22em] text-burgundy/45 uppercase"
+            role="group"
+            aria-label="Section: Get in Touch"
+          >
+            <span className="hidden h-px min-w-[2.5rem] flex-1 bg-burgundy/20 sm:block sm:max-w-[4.5rem]" aria-hidden />
+            <span className="tracking-[0.35em] text-burgundy/35" aria-hidden>
+              ———
+            </span>
+            <span className="text-burgundy/55">Get in Touch</span>
+            <span className="tracking-[0.35em] text-burgundy/35" aria-hidden>
+              ———
+            </span>
+            <span className="hidden h-px min-w-[2.5rem] flex-1 bg-burgundy/20 sm:block sm:max-w-[4.5rem]" aria-hidden />
+          </div>
+        </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <article className="flex flex-col rounded-2xl border border-burgundy/12 bg-white p-6 shadow-[0_18px_48px_-28px_rgba(45,2,1,0.18)] ring-1 ring-black/[0.03] transition hover:border-burgundy/22 hover:shadow-[0_22px_52px_-26px_rgba(45,2,1,0.22)]">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-burgundy text-cream shadow-inner">
               <IconMail className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">Email</h3>
+            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">Mail</h3>
+            <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75">
+              Share your requirements and we&apos;ll get back to you within 24–48 hours.
+            </p>
             <a
               href={SITE_LINKS.email}
-              className="mt-2 break-all font-serif text-lg font-medium text-burgundy underline-offset-[6px] transition hover:underline"
+              className="mt-3 break-all font-serif text-lg font-medium text-burgundy underline-offset-[6px] transition hover:underline"
             >
               {SITE_EMAIL}
             </a>
@@ -148,25 +168,25 @@ export function ContactPage() {
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-burgundy text-cream shadow-inner">
               <IconPhone className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">Phone</h3>
+            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">Call</h3>
+            <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75">
+              Available for calls &amp; messages (India).
+            </p>
             <a
               href={SITE_LINKS.phone}
-              className="mt-2 font-serif text-lg font-medium tabular-nums text-burgundy underline-offset-[6px] transition hover:underline"
+              className="mt-3 font-serif text-lg font-medium tabular-nums text-burgundy underline-offset-[6px] transition hover:underline"
             >
               +91 {SITE_PHONE_DISPLAY}
             </a>
-            <p className="mt-2 font-serif text-sm text-burgundy/55">Voice &amp; SMS — India</p>
           </article>
 
           <article className="flex flex-col rounded-2xl border border-burgundy/12 bg-white p-6 shadow-[0_18px_48px_-28px_rgba(45,2,1,0.18)] ring-1 ring-black/[0.03] transition hover:border-burgundy/22 hover:shadow-[0_22px_52px_-26px_rgba(45,2,1,0.22)] sm:col-span-2 lg:col-span-1">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#128C7E] text-white shadow-inner">
               <IconWhatsApp className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">
-              WhatsApp
-            </h3>
+            <h3 className="mt-4 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/55 uppercase">Text</h3>
             <p className="mt-2 font-serif text-sm leading-relaxed text-burgundy/75">
-              Opens with a short brief — edit it before you send. Same number as phone.
+              Start a quick chat with us for faster responses and easy coordination.
             </p>
             <a
               href={waUrl}
@@ -182,9 +202,26 @@ export function ContactPage() {
 
         {/* Social & shops */}
         <div className="mt-10 rounded-2xl border border-burgundy/10 bg-white/80 p-6 backdrop-blur-[2px] md:p-8">
-          <h3 className="text-center font-nav text-[11px] font-semibold tracking-[0.22em] text-burgundy/50 uppercase">
-            Social &amp; shop
-          </h3>
+          <div className="text-center">
+            <p className="font-nav text-[11px] font-semibold tracking-[0.22em] text-burgundy/50 uppercase">
+              Social &amp; Shop
+            </p>
+            <div
+              className="mx-auto mt-3 flex max-w-md flex-wrap items-center justify-center gap-x-3 gap-y-2 font-nav text-[11px] font-semibold tracking-[0.2em] text-burgundy/45 uppercase"
+              role="group"
+              aria-label="Section: Connect and Explore"
+            >
+              <span className="hidden h-px min-w-[2.5rem] flex-1 bg-burgundy/20 sm:block sm:max-w-[4.5rem]" aria-hidden />
+              <span className="tracking-[0.35em] text-burgundy/35" aria-hidden>
+                ———
+              </span>
+              <span className="text-burgundy/55">Connect &amp; Explore</span>
+              <span className="tracking-[0.35em] text-burgundy/35" aria-hidden>
+                ———
+              </span>
+              <span className="hidden h-px min-w-[2.5rem] flex-1 bg-burgundy/20 sm:block sm:max-w-[4.5rem]" aria-hidden />
+            </div>
+          </div>
           <ul className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
             <li>
               <a
@@ -198,10 +235,12 @@ export function ContactPage() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-nav text-[10px] font-semibold tracking-[0.18em] text-burgundy/50 uppercase">
-                    Instagram
+                    Insta
                   </span>
                   <span className="block truncate font-serif text-base font-medium text-burgundy">{SITE_INSTAGRAM_HANDLE}</span>
-                  <span className="block font-serif text-xs text-burgundy/55">Invites &amp; stationery reels</span>
+                  <span className="block font-serif text-xs text-burgundy/55">
+                    Explore our latest designs, reels &amp; creative work
+                  </span>
                 </span>
               </a>
             </li>
@@ -217,10 +256,12 @@ export function ContactPage() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-nav text-[10px] font-semibold tracking-[0.18em] text-burgundy/50 uppercase">
-                    YouTube
+                    Youtube
                   </span>
                   <span className="block font-serif text-base font-medium text-burgundy">@OccasionsMagnified</span>
-                  <span className="block font-serif text-xs text-burgundy/55">Films &amp; behind-the-scenes</span>
+                  <span className="block font-serif text-xs text-burgundy/55">
+                    Watch motion invites, stories &amp; behind-the-scenes
+                  </span>
                 </span>
               </a>
             </li>
@@ -236,10 +277,12 @@ export function ContactPage() {
                 </span>
                 <span className="min-w-0">
                   <span className="block font-nav text-[10px] font-semibold tracking-[0.18em] text-burgundy/50 uppercase">
-                    Etsy shop
+                    Etsy
                   </span>
                   <span className="block font-serif text-base font-medium text-burgundy">Occasions Magnified</span>
-                  <span className="block font-serif text-xs text-burgundy/55">Browse listings &amp; place orders</span>
+                  <span className="block font-serif text-xs text-burgundy/55">
+                    Browse ready-to-use designs &amp; place orders easily
+                  </span>
                 </span>
               </a>
             </li>
@@ -258,7 +301,9 @@ export function ContactPage() {
                     LinkedIn
                   </span>
                   <span className="block font-serif text-base font-medium text-burgundy">Shristi Jhalani</span>
-                  <span className="block font-serif text-xs text-burgundy/55">Studio &amp; updates</span>
+                  <span className="block font-serif text-xs text-burgundy/55">
+                    Founder journey, updates &amp; professional insights
+                  </span>
                 </span>
               </a>
             </li>

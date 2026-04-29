@@ -102,7 +102,7 @@ export const omagSampleCarouselItems = [
 export const invitationVideoItems = [
   {
     src: '/work/invitations/rupal.mp4',
-    title: 'Customised magazine',
+    title: 'Customised Magazine',
     poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
     tagline: "Designed to turn your memories into a timeless keepsake you'll cherish forever.",
   },
