@@ -80,10 +80,10 @@ export function HomePage() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"
         />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-x-14 md:gap-y-0 lg:gap-x-16 xl:gap-x-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-3 sm:px-6 md:px-8">
+          <div className="grid min-w-0 items-center gap-10 sm:gap-12 md:grid-cols-2 md:gap-x-14 md:gap-y-0 lg:gap-x-16 xl:gap-x-20">
             {/** Lockup (logo + label) has no gap; body + CTA keep rhythm via column gap. */}
-            <div className="flex w-full max-w-md flex-col items-start gap-6 text-left text-start md:gap-7 lg:max-w-lg lg:pr-4">
+            <div className="flex min-w-0 w-full max-w-md flex-col items-start gap-6 text-left text-start md:gap-7 lg:max-w-lg lg:pr-4">
               <div className="flex flex-col items-start gap-0">
                 <h2 className="m-0 block w-fit max-w-[min(100%,13rem)] self-start sm:max-w-[min(100%,14rem)] md:max-w-[min(100%,15rem)]">
                   <img
@@ -106,16 +106,16 @@ export function HomePage() {
               </p>
               <Link
                 to="/omag"
-                className="flex w-fit shrink-0 self-start items-center justify-center rounded-full bg-cream px-7 py-2.5 font-nav text-[13px] font-semibold tracking-wide text-[#4A0404] shadow-md transition hover:bg-white hover:shadow-lg md:px-8 md:py-3 md:text-sm"
+                className="flex w-full shrink-0 items-center justify-center rounded-full bg-cream px-7 py-3 font-nav text-[13px] font-semibold tracking-wide text-[#4A0404] shadow-md transition hover:bg-white hover:shadow-lg sm:w-fit sm:self-start sm:py-2.5 md:px-8 md:py-3 md:text-sm"
               >
                 Create Your O&apos;Mag
               </Link>
             </div>
 
-            <div className="flex w-full justify-center md:justify-end">
+            <div className="flex min-w-0 w-full justify-center md:justify-end">
               <Link
                 to="/omag"
-                className="block w-full max-w-[min(100%,22rem)] outline-none focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[min(100%,24rem)] md:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)]"
+                className="mx-auto block w-full max-w-lg outline-none focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-xl md:ml-auto md:mr-0 md:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)]"
               >
                 <img
                   src="/work/magazine/omag-home-spread.png"
@@ -140,8 +140,8 @@ export function HomePage() {
             backgroundSize: 'cover',
           }}
         />
-        <div className="relative z-10 mx-auto grid max-w-7xl items-start gap-12 px-4 md:grid-cols-2 md:items-start md:gap-16 md:px-8">
-          <div className="mx-auto w-full max-w-[380px] md:mx-0 md:max-w-[420px]">
+        <div className="relative z-10 mx-auto grid min-w-0 max-w-7xl items-start gap-10 px-3 sm:gap-12 sm:px-6 md:grid-cols-2 md:items-start md:gap-16 md:px-8">
+          <div className="mx-auto w-full min-w-0 max-w-[min(100%,380px)] md:mx-0 md:max-w-[420px]">
             <img
               src="/brand/founder-shristi.png"
               alt="Shristi — designer behind Occasions Magnified"
@@ -151,11 +151,11 @@ export function HomePage() {
               loading="lazy"
             />
           </div>
-          <div className="flex min-h-0 flex-col md:justify-start">
+          <div className="flex min-h-0 min-w-0 flex-col md:justify-start">
             <h2 className="font-nav text-xs font-semibold tracking-[0.32em] text-[#F5F5F5]/90 uppercase">
               {FOUNDER_HEADING}
             </h2>
-            <p className="mt-6 whitespace-pre-line font-serif text-[1.05rem] leading-relaxed text-[#F5F5F5]/95 md:text-lg">
+            <p className="mt-6 whitespace-pre-line text-pretty font-serif text-[1.05rem] leading-relaxed text-[#F5F5F5]/95 md:text-lg">
               {FOUNDER_BODY}
             </p>
             <a
@@ -171,10 +171,12 @@ export function HomePage() {
       </section>
 
       {/* What our clients say — cream card overlapping burgundy (mock) */}
-      <section className="relative bg-[#4A0404] pb-0 pt-14 md:pt-16">
-        <h2 className="relative z-10 px-4 text-center font-serif text-3xl text-white md:text-[2.35rem]">What Our Clients Say…</h2>
-        <div className="relative z-10 mx-auto mt-10 max-w-5xl rounded-t-[1.75rem] bg-[#F5F5F0] px-6 py-12 text-[#4A0404] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] md:px-14 md:py-14">
-          <blockquote className="text-center font-serif text-xl italic leading-relaxed md:text-2xl">
+      <section className="relative bg-[#4A0404] pb-0 pt-12 sm:pt-14 md:pt-16">
+        <h2 className="relative z-10 px-3 text-center font-serif text-2xl leading-tight text-white text-balance sm:text-3xl md:text-[2.35rem]">
+          What Our Clients Say…
+        </h2>
+        <div className="relative z-10 mx-auto mt-8 max-w-5xl rounded-t-[1.25rem] bg-[#F5F5F0] px-4 py-10 text-[#4A0404] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] sm:mt-10 sm:rounded-t-[1.75rem] sm:px-6 sm:py-12 md:px-14 md:py-14">
+          <blockquote className="text-center font-serif text-lg italic leading-relaxed text-pretty sm:text-xl md:text-2xl">
             &ldquo;The invite video brought tears to our families&apos; eyes! Every detail was spot on.&rdquo;
           </blockquote>
           <p className="mt-8 text-center font-nav text-xs font-semibold tracking-[0.22em] text-[#4A0404]/70 uppercase">
