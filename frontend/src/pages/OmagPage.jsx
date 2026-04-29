@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
 /** Hero frame — printed wedding cover (`public/work/magazine/omag-hero-cover.png`). */
 const HERO_INSTAGRAM_IMG = '/work/magazine/omag-hero-cover.png'
+
+/** WhatsApp deep link for “Order Now” — visitor can edit the message before sending. */
+const OMAG_ORDER_WHATSAPP_URL = `${SITE_LINKS.whatsapp}?text=${encodeURIComponent(
+  "Hi! I'd like to order O'Mag (custom magazine). Please share pricing, timeline, and next steps. Thank you!",
+)}`
 
 const STEPS = [
   {
@@ -226,12 +230,12 @@ export function OmagPage() {
             </p>
             <div className="mt-10 flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <a
-                href={SITE_LINKS.etsy}
+                href={OMAG_ORDER_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex w-full min-w-0 items-center justify-center gap-3 rounded-full border-2 border-[#4A0404] bg-[#4A0404] px-6 py-3 font-nav text-[11px] font-bold tracking-[0.18em] text-cream uppercase shadow-sm transition hover:border-[#3d0303] hover:bg-[#3d0303] sm:w-auto sm:px-8 sm:text-xs sm:tracking-[0.2em]"
               >
-                <span>Shop Magazine</span>
+                <span>Order Now</span>
                 <span
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-cream text-lg leading-none text-[#4A0404] transition group-hover:bg-white group-hover:ring-1 group-hover:ring-cream/50"
                   aria-hidden
@@ -484,21 +488,6 @@ export function OmagPage() {
             </details>
           ))}
         </div>
-      </section>
-
-      <section className="border-t border-[#4A0404]/10 bg-[#4A0404] px-3 py-12 text-center sm:px-4 sm:py-14 md:py-16">
-        <Link
-          to="/contact"
-          className="group mx-auto inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full border-2 border-cream/80 bg-cream px-6 py-3 font-nav text-[11px] font-bold tracking-[0.16em] text-[#4A0404] uppercase shadow-sm transition hover:bg-white sm:w-auto sm:max-w-none sm:px-8 sm:text-xs sm:tracking-[0.18em]"
-        >
-          <span>Contact us</span>
-          <span
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#4A0404] text-lg leading-none text-cream transition group-hover:bg-cream group-hover:text-[#4A0404] group-hover:ring-1 group-hover:ring-[#4A0404]/30"
-            aria-hidden
-          >
-            ›
-          </span>
-        </Link>
       </section>
     </div>
   )
