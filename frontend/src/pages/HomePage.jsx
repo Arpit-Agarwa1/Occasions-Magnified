@@ -69,8 +69,8 @@ export function HomePage() {
 
       <HomeServicesStrip />
 
-      {/* O’Mag — editorial split: texture, readable measure, image with depth (no light “card” frame). */}
-      <section className="relative overflow-hidden bg-[#4A0404] py-14 text-[#F5F5F5] md:py-18 lg:py-22">
+      {/* O’Mag — two-column hero: left-aligned lockup + label + body + pill CTA; right = cream mat + large rounded photo (matches print mockup layout). */}
+      <section className="relative overflow-hidden bg-[#4A0404] py-14 text-[#f3e9dc] md:py-20 lg:py-24">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -81,47 +81,50 @@ export function HomePage() {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent"
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] md:gap-x-9 md:gap-y-0 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:gap-x-10">
-            <div className="max-w-md md:max-w-none lg:max-w-xl">
-              <h2 className="m-0 max-w-[min(100%,17rem)] sm:max-w-[min(100%,19rem)] md:max-w-[min(100%,21rem)] lg:max-w-[min(100%,23rem)]">
-                <img
-                  src="/brand/logo-occasions-magnified.svg"
-                  alt="O&apos;Mag — Occasions Magnified"
-                  className="block h-auto w-full drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
-                  width={1080}
-                  height={1080}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </h2>
-              <p className="mt-2 font-nav text-[10px] font-semibold uppercase tracking-[0.32em] text-cream/75 md:text-[11px] md:tracking-[0.34em]">
-                Customised Magazine
-              </p>
-              <div className="mt-4 h-px w-10 bg-cream/35" aria-hidden />
-              <p className="mt-4 font-serif text-[0.95rem] leading-[1.6] text-cream/95 md:text-base md:leading-[1.65]">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-x-14 md:gap-y-0 lg:gap-x-16 xl:gap-x-20">
+            {/** Lockup (logo + label) has no gap; body + CTA keep rhythm via column gap. */}
+            <div className="flex w-full max-w-md flex-col items-start gap-6 text-left text-start md:gap-7 lg:max-w-lg lg:pr-4">
+              <div className="flex flex-col items-start gap-0">
+                <h2 className="m-0 block w-fit max-w-[min(100%,13rem)] self-start sm:max-w-[min(100%,14rem)] md:max-w-[min(100%,15rem)]">
+                  <img
+                    src="/brand/logo-occasions-magnified.svg"
+                    alt="O&apos;Mag — Occasions Magnified"
+                    className="block h-auto w-full max-w-full drop-shadow-[0_4px_24px_rgba(0,0,0,0.35)]"
+                    width={1080}
+                    height={1080}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </h2>
+                <p className="m-0 w-full max-w-full self-start font-nav text-[10px] font-semibold uppercase tracking-[0.32em] text-[#f3e9dc]/80 md:text-[11px] md:tracking-[0.36em]">
+                  Customised Magazine
+                </p>
+              </div>
+              <p className="m-0 w-full max-w-full self-start font-serif text-[0.95rem] leading-[1.65] text-[#f3e9dc]/95 md:text-lg md:leading-[1.65]">
                 Turn your memories into a keepsake with our custom-designed magazines — thoughtfully curated layouts,
                 meaningful storytelling, and premium print quality that you can revisit for years.
               </p>
               <Link
                 to="/omag"
-                className="mt-6 inline-flex w-fit items-center justify-center rounded-full bg-cream px-7 py-2.5 font-nav text-[13px] font-semibold tracking-wide text-[#4A0404] shadow-md transition hover:bg-white hover:shadow-lg md:mt-7 md:px-8 md:py-3 md:text-sm"
+                className="flex w-fit shrink-0 self-start items-center justify-center rounded-full bg-cream px-7 py-2.5 font-nav text-[13px] font-semibold tracking-wide text-[#4A0404] shadow-md transition hover:bg-white hover:shadow-lg md:px-8 md:py-3 md:text-sm"
               >
                 Create Your O&apos;Mag
               </Link>
             </div>
 
-            <div className="flex justify-center md:justify-end">
+            <div className="flex w-full justify-center md:justify-end">
               <Link
                 to="/omag"
-                className="block w-full max-w-[22rem] outline-none focus-visible:rounded-2xl focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[24rem] md:max-w-none md:w-full"
+                className="block w-full max-w-[min(100%,22rem)] outline-none focus-visible:rounded-[2rem] focus-visible:ring-2 focus-visible:ring-cream/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[#4A0404] sm:max-w-[min(100%,24rem)] md:max-w-[min(100%,26rem)] lg:max-w-[min(100%,30rem)]"
               >
-                {/** Natural image size — no aspect box or fill colour, so only the photo shows (rounded corners on the asset). */}
-                <img
-                  src="/work/magazine/omag-home-spread.png"
-                  alt="O'Mag open spread — custom wedding magazine in hand"
-                  className="block h-auto w-full rounded-2xl"
-                  loading="lazy"
-                />
+                <div className="rounded-[2rem] bg-[#f0e8dc] p-2 shadow-[0_32px_80px_-28px_rgba(0,0,0,0.55)] ring-1 ring-black/[0.06] sm:p-3">
+                  <img
+                    src="/work/magazine/omag-home-spread.png"
+                    alt="O'Mag open spread — custom wedding magazine in hand"
+                    className="block h-auto w-full rounded-[1.25rem] sm:rounded-[1.5rem]"
+                    loading="lazy"
+                  />
+                </div>
               </Link>
             </div>
           </div>
