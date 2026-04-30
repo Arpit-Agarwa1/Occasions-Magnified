@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
-/** Hero frame — printed wedding cover (`public/work/magazine/omag-hero-cover.png`). */
+/** Hero frame — printed O’Mag spread (`public/work/magazine/omag-hero-cover.png`). */
 const HERO_INSTAGRAM_IMG = '/work/magazine/omag-hero-cover.png'
 
 /** WhatsApp deep link for “Order Now” — visitor can edit the message before sending. */
@@ -143,10 +143,10 @@ function StepGlyph({ name }) {
   )
 }
 
-/** Right column — IG-style frame around printed cover (mock layout). */
+/** Right column — IG-style frame; photo is wide (magazine on the right) — crop from the left so the magazine fills the view. */
 function OmagHeroDeviceFrame({ src, alt }) {
   return (
-    <div className="mx-auto w-full max-w-[min(100%,340px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:rounded-[1.75rem] sm:p-2.5 md:max-w-md">
+    <div className="mx-auto w-full max-w-[min(100%,380px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:max-w-[min(100%,420px)] sm:rounded-[1.75rem] sm:p-2.5 md:max-w-lg">
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-2 pb-2.5 pt-1">
         <div
           className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#4A0404] to-[#2a0808] ring-2 ring-white shadow"
@@ -164,7 +164,7 @@ function OmagHeroDeviceFrame({ src, alt }) {
         <img
           src={src}
           alt={alt}
-          className="aspect-[4/5] w-full object-contain md:object-cover"
+          className="aspect-[4/5] w-full object-cover object-[72%_center] sm:object-[68%_center] md:aspect-[5/6] md:object-[65%_center]"
           width={800}
           height={1000}
           loading="eager"
@@ -270,7 +270,7 @@ export function OmagPage() {
           <div className="flex min-w-0 justify-center md:justify-end">
             <OmagHeroDeviceFrame
               src={HERO_INSTAGRAM_IMG}
-              alt="O'Mag wedding magazine cover — Embarking on Forever, printed keepsake"
+              alt="O'Mag open magazine — personalized love story spread on a printed keepsake"
             />
           </div>
         </div>
