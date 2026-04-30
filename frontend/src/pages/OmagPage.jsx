@@ -153,7 +153,7 @@ function OmagHeroDeviceFrame({ src, alt }) {
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-2 pb-2.5 pt-1">
         <div className="min-w-0 flex-1">
           <p className="truncate font-nav text-[11px] font-semibold text-black/80">occasionsmagnified</p>
-          <p className="font-nav text-[9px] text-black/45">O&apos;Mag · printed</p>
+          <p className="font-nav text-[9px] text-black/45">O&apos;Mag Customised Magazines</p>
         </div>
         <span className="font-nav text-lg text-black/35" aria-hidden>
           ⋯
@@ -443,7 +443,7 @@ export function OmagPage() {
           >
             ‹
           </button>
-          <div className="relative flex-1 rounded-sm border-2 border-dashed border-white bg-[#4A0404] px-4 pb-20 pt-9 text-center text-cream shadow-xl sm:px-6 sm:pb-16 sm:pt-10 md:px-12 md:py-12">
+          <div className="relative flex-1 rounded-sm border-2 border-dashed border-white bg-[#4A0404] px-4 py-9 text-center text-cream shadow-xl sm:px-6 sm:py-10 md:px-12 md:py-12">
             <blockquote className="font-serif text-base italic leading-relaxed text-pretty sm:text-lg md:text-xl">
               &ldquo;Shristi beautifully captured our love story in the O&apos;Mag. It brought tears to my
               wife&apos;s eyes on our anniversary! The design, quality, and service were top-notch.&rdquo;
@@ -451,12 +451,6 @@ export function OmagPage() {
             <p className="mt-8 font-nav text-xs font-semibold tracking-[0.22em] text-cream/85 uppercase">
               — Amit &amp; Jyoti
             </p>
-            <img
-              src="/brand/founder-shristi.png"
-              alt="Shristi — designer"
-              className="absolute bottom-3 right-4 h-16 w-16 -translate-y-3 rounded-full border-4 border-white object-cover shadow-lg motion-reduce:translate-y-0 md:bottom-4 md:right-8 md:h-20 md:w-20 md:-translate-y-4"
-              loading="lazy"
-            />
           </div>
           <button
             type="button"

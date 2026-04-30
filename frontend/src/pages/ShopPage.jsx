@@ -60,56 +60,7 @@ export function ShopPage() {
           ))}
         </div>
 
-        <h2 className="mt-16 text-center font-serif text-2xl text-[#310B0B] md:text-3xl">
-          What We Create / Why Choose Us
-        </h2>
-        <div className="mx-auto mt-6 max-w-4xl rounded-lg bg-[#310B0B] px-6 py-24 text-center text-cream/80 shadow-inner">
-          <span className="font-serif text-sm italic">Featured film or hero visual</span>
-        </div>
-
-        <h2 className="mt-16 text-center font-serif text-2xl text-[#310B0B] md:text-3xl">
-          Trending Designs Carousel (Instagram Embed)
-        </h2>
-        <div className="mx-auto mt-6 flex max-w-5xl gap-3 overflow-x-auto pb-2">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-52 w-32 shrink-0 rounded-sm bg-[#8b6b63]/35 shadow-inner ring-1 ring-black/5"
-              aria-hidden
-            />
-          ))}
-        </div>
-        <div className="mx-auto mt-8 max-w-3xl">
-          <Link
-            to="/work"
-            className="flex w-full items-center justify-center rounded-sm bg-[#310B0B] px-6 py-4 text-center font-nav text-[11px] font-semibold tracking-[0.18em] text-white uppercase transition hover:bg-[#451212]"
-          >
-            MORE SAMPLES (REDIRECTED TO OUR WORK PAGE)
-          </Link>
-        </div>
-
-        <h2 className="mt-16 text-center font-serif text-2xl text-[#310B0B] md:text-3xl">
-          Reviews &amp; Testimonials (Text + Video)
-        </h2>
-        <div className="mx-auto mt-8 max-w-3xl">
-          <div className="relative rounded-md border-2 border-dashed border-[#310B0B] bg-[#310B0B] px-8 py-10 text-center text-cream shadow-lg">
-            <blockquote className="font-serif text-lg italic leading-relaxed md:text-xl">
-              &ldquo;Shristi beautifully captured our love story in the O&apos;Mag. It brought tears to my
-              wife&apos;s eyes on our anniversary! The design, quality, and service were top-notch.&rdquo;
-            </blockquote>
-            <p className="mt-6 font-nav text-xs font-semibold tracking-[0.2em] text-cream/80 uppercase">
-              — Amit &amp; Jyoti
-            </p>
-            <img
-              src="/brand/founder-shristi.png"
-              alt=""
-              className="absolute -bottom-6 right-6 h-16 w-16 rounded-full border-4 border-white object-cover shadow-md"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-        <div className="mx-auto mt-20 max-w-3xl text-center">
+        <div className="mx-auto mt-16 max-w-3xl text-center md:mt-20">
           <h2 className="font-serif text-3xl text-[#310B0B]">Not Sure Where to Begin?</h2>
           <p className="mt-4 font-serif text-lg text-burgundy/85">
             Whether you&apos;re planning a wedding, celebrating a milestone, or looking for a heartwarming
