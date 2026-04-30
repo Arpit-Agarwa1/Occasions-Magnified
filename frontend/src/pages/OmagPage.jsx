@@ -3,6 +3,9 @@ import { omagSampleCarouselItems } from '../data/workGallery.js'
 import { SITE_LINKS } from '../constants/site.js'
 /** Hero frame — printed O’Mag spread (`public/work/magazine/omag-hero-cover.png`). */
 const HERO_INSTAGRAM_IMG = '/work/magazine/omag-hero-cover.png'
+/** Native pixel size of that PNG — slot + `width`/`height` match the file exactly. */
+const HERO_COVER_WIDTH = 833
+const HERO_COVER_HEIGHT = 1024
 
 /** WhatsApp deep link for “Order Now” — visitor can edit the message before sending. */
 const OMAG_ORDER_WHATSAPP_URL = `${SITE_LINKS.whatsapp}?text=${encodeURIComponent(
@@ -143,24 +146,26 @@ function StepGlyph({ name }) {
   )
 }
 
-/** Right column — IG-style frame; hero photo is 3:2 — full bleed inside slot so the whole magazine stays visible. */
+/** Right column — IG-style frame; hero PNG uses native 833×1024 slot so the full image fits. */
 function OmagHeroDeviceFrame({ src, alt }) {
   return (
     <div className="mx-auto w-full max-w-[min(100%,420px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:max-w-[min(100%,480px)] sm:rounded-[1.75rem] sm:p-2.5 md:max-w-xl">
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-2 pb-2.5 pt-1">
         <div
-          className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#4A0404] to-[#2a0808] p-1 ring-2 ring-white shadow"
+          className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#4A0404] to-[#2a0808] p-[3px] shadow ring-2 ring-white"
           aria-hidden
         >
-          <img
-            src="/brand/logo-om-occasions-magnified.png"
-            alt=""
-            className="h-full w-full object-contain brightness-0 invert"
-            width={36}
-            height={36}
-            loading="eager"
-            decoding="async"
-          />
+          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#f5f2ec]">
+            <img
+              src="/brand/logo-om-occasions-magnified.png"
+              alt=""
+              className="max-h-[1.35rem] w-auto max-w-[1.75rem] object-contain object-center"
+              width={48}
+              height={48}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </div>
         <div className="min-w-0 flex-1">
           <p className="truncate font-nav text-[11px] font-semibold text-black/80">occasionsmagnified</p>
@@ -174,9 +179,10 @@ function OmagHeroDeviceFrame({ src, alt }) {
         <img
           src={src}
           alt={alt}
-          className="aspect-[1024/682] w-full object-contain object-center"
-          width={1024}
-          height={682}
+          className="w-full object-contain object-center"
+          width={HERO_COVER_WIDTH}
+          height={HERO_COVER_HEIGHT}
+          style={{ aspectRatio: `${HERO_COVER_WIDTH} / ${HERO_COVER_HEIGHT}` }}
           loading="eager"
         />
       </div>
