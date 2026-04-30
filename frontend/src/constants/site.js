@@ -19,10 +19,11 @@ export const SITE_PHONE_DISPLAY = '9660011183'
 export const SITE_INSTAGRAM_HANDLE = '@occasions.magnified'
 
 /** Prefill when visitors open WhatsApp from the site (e.g. footer “Contact Us”). They can edit before sending. */
-const WHATSAPP_CONTACT_PREFILL = `Hi! Thank you for reaching out to Occasions Magnified.
-We'd love to create something beautiful for your special occasion.
+const WHATSAPP_CONTACT_PREFILL = `Hi! I'm interested in a custom design.
 
-Please share a few details about your requirement (event type, timeline, and what you're looking for), and we'll get back to you shortly.`
+Please share pricing, timeline, and next steps.
+
+I'll share my requirements once we connect. Thank you!`
 
 /**
  * WhatsApp deep link with the welcome + intake prompt (user can edit before sending).
