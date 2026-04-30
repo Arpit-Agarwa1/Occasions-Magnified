@@ -31,3 +31,18 @@ Please share a few details about your requirement (event type, timeline, and wha
 export function getWhatsAppContactUrl() {
   return `${SITE_LINKS.whatsapp}?text=${encodeURIComponent(WHATSAPP_CONTACT_PREFILL)}`
 }
+
+/** Prefill for Work page “Start Your Custom Design” (pricing, timeline, next steps). */
+const WHATSAPP_CUSTOM_DESIGN_PREFILL = `Hi! I'm interested in a custom design.
+
+Please share pricing, timeline, and next steps.
+
+I'll share my requirements once we connect. Thank you!`
+
+/**
+ * WhatsApp deep link for custom-design inquiries from the work archive CTA.
+ * @returns {string}
+ */
+export function getWhatsAppCustomDesignUrl() {
+  return `${SITE_LINKS.whatsapp}?text=${encodeURIComponent(WHATSAPP_CUSTOM_DESIGN_PREFILL)}`
+}
