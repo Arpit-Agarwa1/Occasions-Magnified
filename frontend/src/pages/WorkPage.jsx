@@ -1,10 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { magazineGalleryItems, workGalleryTabOptions } from '../data/workGallery.js'
-import { getWhatsAppCustomDesignUrl } from '../constants/site.js'
-import { ChevronPillLink } from '../components/ui/ChevronPillLink.jsx'
 import { ImageLightbox } from '../components/work/ImageLightbox.jsx'
 
-/** Work — hero, categorized print archive with lightbox, WhatsApp CTA. */
+/** Work — hero, categorized print archive with lightbox. */
 export function WorkPage() {
   const [activeTabId, setActiveTabId] = useState('all')
   const [lightboxIndex, setLightboxIndex] = useState(null)
@@ -114,15 +112,6 @@ export function WorkPage() {
               ))}
             </div>
           )}
-        </div>
-      </div>
-
-      <div className="border-t border-om-gold/20 bg-gradient-to-b from-burgundy to-burgundy-deep py-14 text-center md:py-16">
-        <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">Loved what you see?</h2>
-        <div className="mt-8 flex justify-center px-4">
-          <ChevronPillLink href={getWhatsAppCustomDesignUrl()} external>
-            Start Your Custom Design
-          </ChevronPillLink>
         </div>
       </div>
 
