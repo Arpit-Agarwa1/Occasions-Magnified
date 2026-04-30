@@ -143,10 +143,10 @@ function StepGlyph({ name }) {
   )
 }
 
-/** Right column — IG-style frame; photo is wide (magazine on the right) — crop from the left so the magazine fills the view. */
+/** Right column — IG-style frame; hero photo is 3:2 — full bleed inside slot so the whole magazine stays visible. */
 function OmagHeroDeviceFrame({ src, alt }) {
   return (
-    <div className="mx-auto w-full max-w-[min(100%,380px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:max-w-[min(100%,420px)] sm:rounded-[1.75rem] sm:p-2.5 md:max-w-lg">
+    <div className="mx-auto w-full max-w-[min(100%,420px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:max-w-[min(100%,480px)] sm:rounded-[1.75rem] sm:p-2.5 md:max-w-xl">
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-2 pb-2.5 pt-1">
         <div
           className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#4A0404] to-[#2a0808] ring-2 ring-white shadow"
@@ -164,9 +164,9 @@ function OmagHeroDeviceFrame({ src, alt }) {
         <img
           src={src}
           alt={alt}
-          className="aspect-[4/5] w-full object-cover object-[72%_center] sm:object-[68%_center] md:aspect-[5/6] md:object-[65%_center]"
-          width={800}
-          height={1000}
+          className="aspect-[1024/682] w-full object-contain object-center"
+          width={1024}
+          height={682}
           loading="eager"
         />
       </div>
