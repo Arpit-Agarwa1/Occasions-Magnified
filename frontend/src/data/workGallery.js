@@ -3,10 +3,25 @@
  * Files live under `frontend/public/work/`, `public/services/`.
  */
 
+/** @typedef {'weddingInvitations' | 'omag' | 'celebrationDesigns'} WorkGalleryCategory */
+
+/**
+ * Tab ids for the work archive (excluding `all`).
+ * @type {{ id: string; label: string }[]}
+ */
+export const workGalleryTabOptions = [
+  { id: 'all', label: 'All' },
+  { id: 'weddingInvitations', label: 'Wedding Invitations' },
+  { id: 'omag', label: 'O’Mag' },
+  { id: 'celebrationDesigns', label: 'Celebration Designs' },
+]
+
 /**
  * @typedef {Object} WorkMediaItem
+ * @property {string} id Stable key for list rendering
  * @property {string} src Thumbnail — local path under `public/` or absolute URL (e.g. Heyzine CDN cover)
  * @property {string} title
+ * @property {WorkGalleryCategory} category Archive tab filter
  * @property {string} [badge] Optional ribbon on shop grid cards
  * @property {string} [href] Optional external link (opens in new tab)
  */
@@ -21,22 +36,22 @@
 
 /** @type {WorkMediaItem[]} */
 export const magazineGalleryItems = [
-  { src: '/work/magazine/omag-home-spread.png', title: 'O’Mag — hero spread' },
-  { src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi' },
-  { src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand' },
-  { src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack' },
-  { src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup' },
-  { src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover' },
-  { src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue' },
-  { src: '/work/magazine/1.png', title: 'Spread — editorial layout' },
-  { src: '/work/magazine/15.png', title: 'Feature spread' },
-  { src: '/work/magazine/20.png', title: 'Celebration layout' },
-  { src: '/work/magazine/4.png', title: 'Typography study' },
-  { src: '/work/magazine/cover2.png', title: 'Cover — alternate' },
-  { src: '/work/magazine/cover.jpg', title: 'Cover — classic' },
-  { src: '/work/magazine/7.jpg', title: 'Print finish detail' },
-  { src: '/work/magazine/8.jpg', title: 'Cover concept' },
-  { src: '/work/magazine/aashi-back-cover.jpg', title: 'Aashi — back cover' },
+  { id: 'work-omag-hero-spread', src: '/work/magazine/omag-home-spread.png', title: 'O’Mag — hero spread', category: 'omag' },
+  { id: 'work-open-aashi', src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi', category: 'omag' },
+  { id: 'work-mockup-hand', src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand', category: 'omag' },
+  { id: 'work-stack', src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack', category: 'omag' },
+  { id: 'work-flatlay', src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup', category: 'celebrationDesigns' },
+  { id: 'work-ka-cover', src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover', category: 'weddingInvitations' },
+  { id: 'work-family-issue', src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue', category: 'celebrationDesigns' },
+  { id: 'work-editorial', src: '/work/magazine/1.png', title: 'Spread — editorial layout', category: 'omag' },
+  { id: 'work-feature', src: '/work/magazine/15.png', title: 'Feature spread', category: 'celebrationDesigns' },
+  { id: 'work-celebration', src: '/work/magazine/20.png', title: 'Celebration layout', category: 'celebrationDesigns' },
+  { id: 'work-typography', src: '/work/magazine/4.png', title: 'Typography study', category: 'omag' },
+  { id: 'work-cover-alt', src: '/work/magazine/cover2.png', title: 'Cover — alternate', category: 'weddingInvitations' },
+  { id: 'work-cover-classic', src: '/work/magazine/cover.jpg', title: 'Cover — classic', category: 'weddingInvitations' },
+  { id: 'work-print-detail', src: '/work/magazine/7.jpg', title: 'Print finish detail', category: 'omag' },
+  { id: 'work-cover-concept', src: '/work/magazine/8.jpg', title: 'Cover concept', category: 'weddingInvitations' },
+  { id: 'work-aashi-back', src: '/work/magazine/aashi-back-cover.jpg', title: 'Aashi — back cover', category: 'omag' },
 ]
 
 /**
