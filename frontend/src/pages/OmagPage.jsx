@@ -215,12 +215,22 @@ export function OmagPage() {
       <section className="om-omag-skin border-b border-[#4A0404]/15">
         <div className="mx-auto grid min-w-0 max-w-7xl gap-10 px-3 py-12 sm:gap-12 sm:px-4 sm:py-16 md:grid-cols-2 md:items-center md:gap-16 md:px-8 md:py-24 lg:gap-20 lg:px-10 lg:py-28">
           <div className="min-w-0 max-w-xl md:max-w-none">
-            <p className="font-serif text-2xl font-semibold leading-none tracking-tight text-[#4A0404]/85 md:text-3xl">
-              O&apos;MAG
-            </p>
-            <p className="mt-2 font-nav text-[10px] font-semibold tracking-[0.32em] text-[#4A0404]/50 uppercase">
-              Occasions Magnified
-            </p>
+            {/** Borderless on `om-omag-skin`; filter maps cream SVG to heading burgundy so it stays legible on paper. */}
+            <div className="m-0 w-fit max-w-[min(100%,11.5rem)] sm:max-w-[min(100%,12.5rem)] md:max-w-[min(100%,13.5rem)]">
+              <img
+                src="/brand/logo-occasions-magnified.svg"
+                alt="O'Mag — Occasions Magnified"
+                className="block h-auto w-full max-w-full"
+                width={1080}
+                height={1080}
+                loading="lazy"
+                decoding="async"
+                style={{
+                  filter:
+                    'brightness(0) saturate(100%) invert(11%) sepia(26%) saturate(2000%) hue-rotate(318deg) brightness(0.76) contrast(1.06)',
+                }}
+              />
+            </div>
             <h1 className="mt-6 font-serif text-[clamp(1.85rem,calc(0.65rem+4.2vw),3.45rem)] font-semibold leading-[1.08] tracking-tight text-[#4A0404] text-balance md:mt-8">
               Customised Magazines
             </h1>
