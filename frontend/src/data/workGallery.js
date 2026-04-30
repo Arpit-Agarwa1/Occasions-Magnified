@@ -11,10 +11,10 @@
  */
 export const workGalleryTabOptions = [
   { id: 'all', label: 'All' },
-  { id: 'weddingInvitations', label: 'Wedding Invitations' },
+  { id: 'weddingInvitations', label: 'Wedding Invitation Suite' },
   { id: 'weddingStationery', label: 'Wedding Stationery' },
-  { id: 'celebrationDesigns', label: 'Celebration Designs' },
-  { id: 'omag', label: 'O’Mag' },
+  { id: 'celebrationDesigns', label: 'Celebration Suite' },
+  { id: 'omag', label: "O'Mag (Magazine)" },
 ]
 
 /**
