@@ -34,7 +34,8 @@ export function SocialIconRow() {
         className={iconClass}
         aria-label="Etsy"
       >
-        <SvgBrandEtsy className="h-full w-full" />
+        {/* Wordmark reads large at full bleed — scale down inside the same hit target */}
+        <SvgBrandEtsy className="h-full w-full origin-center scale-[0.72]" />
       </a>
       <a
         href={SITE_LINKS.linkedin}
