@@ -151,22 +151,6 @@ function OmagHeroDeviceFrame({ src, alt }) {
   return (
     <div className="mx-auto w-full max-w-[min(100%,420px)] min-w-0 rounded-[1.25rem] bg-white p-2 shadow-[0_28px_80px_-40px_rgba(0,0,0,0.35)] ring-1 ring-black/10 sm:max-w-[min(100%,480px)] sm:rounded-[1.75rem] sm:p-2.5 md:max-w-xl">
       <div className="flex items-center gap-2 border-b border-black/[0.06] px-2 pb-2.5 pt-1">
-        <div
-          className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#4A0404] to-[#2a0808] p-[3px] shadow ring-2 ring-white"
-          aria-hidden
-        >
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#f5f2ec]">
-            <img
-              src="/brand/logo-om-occasions-magnified.png"
-              alt=""
-              className="max-h-[1.35rem] w-auto max-w-[1.75rem] object-contain object-center"
-              width={48}
-              height={48}
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-        </div>
         <div className="min-w-0 flex-1">
           <p className="truncate font-nav text-[11px] font-semibold text-black/80">occasionsmagnified</p>
           <p className="font-nav text-[9px] text-black/45">O&apos;Mag · printed</p>
