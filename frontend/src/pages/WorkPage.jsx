@@ -3,6 +3,57 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { magazineGalleryItems, workGalleryTabOptions } from '../data/workGallery.js'
 import { ImageLightbox } from '../components/work/ImageLightbox.jsx'
 
+/** FAQ — ordering, customization, payment, and delivery (Our Work page). */
+const WORK_FAQS = [
+  {
+    question: 'What can I order from the shop?',
+    answer:
+      'You can explore wedding invitation suites, stationery, celebration designs, and more — all customizable as per your needs.',
+  },
+  {
+    question: 'How do I place an order?',
+    answer:
+      'Browse a category, select a design you like, and connect with us via WhatsApp or inquiry to get started.',
+  },
+  {
+    question: 'Are all designs customizable?',
+    answer:
+      'Yes, every design can be personalized with your details, colors, and preferences. We also offer fully custom designs from scratch.',
+  },
+  {
+    question: 'What is the payment process?',
+    answer:
+      'We take a 50% advance to begin your design. The remaining 50% is paid after you approve the final design, before delivery.',
+  },
+  {
+    question: 'What is the typical timeline?',
+    answer:
+      'Timelines vary by project, but most designs are completed within a few working days after receiving all details.',
+  },
+  {
+    question: 'Will I get to see a preview before final delivery?',
+    answer: 'Yes, a design preview is shared for your approval before final delivery or printing.',
+  },
+  {
+    question: 'Can I request changes after preview?',
+    answer: 'Yes, revisions are included to ensure the design matches your expectations.',
+  },
+  {
+    question: 'Do you offer digital and printed designs?',
+    answer:
+      'Yes, depending on the product, we offer digital files and/or printed designs. We’ll guide you based on your requirement.',
+  },
+  {
+    question: 'Can I request urgent orders?',
+    answer:
+      'Yes, we accommodate urgent requests whenever possible. Please contact us on WhatsApp to check availability.',
+  },
+  {
+    question: 'How do I contact you for queries or support?',
+    answer: 'You can reach us easily via WhatsApp for the fastest response.',
+  },
+]
+
 /** Work — hero, categorized print archive with lightbox. */
 export function WorkPage() {
   const { hash, pathname } = useLocation()
@@ -164,6 +215,39 @@ export function WorkPage() {
           )}
         </div>
       </div>
+
+      {/* FAQ — ordering, timelines, previews */}
+      <section id="faq" className="scroll-mt-24 border-t border-burgundy/10 bg-om-page py-14 text-burgundy md:scroll-mt-28 md:py-20">
+        <div className="mx-auto max-w-3xl px-4 md:px-8">
+          <h2 className="text-center font-serif text-xl tracking-tight text-balance sm:text-2xl md:text-3xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-center font-serif text-[0.95rem] leading-relaxed text-burgundy/78 text-pretty sm:text-base">
+            Common questions about ordering, customization, timelines, and how we work with you.
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-center font-serif text-sm text-burgundy/65 text-pretty">
+            Tap a question to expand. For anything else, reach us on WhatsApp.
+          </p>
+          <div className="mx-auto mt-10 max-w-3xl space-y-2">
+            {WORK_FAQS.map((item, idx) => (
+              <details
+                key={`work-faq-${idx}-${item.question.slice(0, 24)}`}
+                className="group rounded-sm border border-burgundy/12 bg-white/90 px-4 py-3 shadow-sm open:bg-white md:px-5"
+              >
+                <summary className="flex cursor-pointer list-none items-start gap-2 font-serif text-[0.95rem] marker:content-none sm:gap-3 sm:text-base md:text-lg">
+                  <span className="mt-0.5 shrink-0 font-serif text-base tabular-nums text-burgundy/35 sm:text-lg md:text-xl">
+                    {String(idx + 1).padStart(2, '0')}.
+                  </span>
+                  <span className="min-w-0 flex-1 text-left leading-snug">{item.question}</span>
+                </summary>
+                <p className="mt-3 border-t border-burgundy/10 pt-3 pl-9 font-serif text-sm leading-relaxed text-burgundy/78 text-pretty sm:pl-[2.85rem] md:pl-[3.1rem] md:text-[0.95rem]">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <ImageLightbox
         items={lightboxItems}

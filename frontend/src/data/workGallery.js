@@ -6,15 +6,15 @@
 /** @typedef {'weddingInvitations' | 'weddingStationery' | 'omag' | 'celebrationDesigns'} WorkGalleryCategory */
 
 /**
- * Tab ids for the work archive (excluding `all`).
+ * Tab ids for the work archive (`all` first). Order matches home “View Designs” / `SHOP_CATEGORIES` + `workArchiveTabId`.
  * @type {{ id: string; label: string }[]}
  */
 export const workGalleryTabOptions = [
   { id: 'all', label: 'All' },
   { id: 'weddingInvitations', label: 'Wedding Invitations' },
   { id: 'weddingStationery', label: 'Wedding Stationery' },
-  { id: 'omag', label: 'O’Mag' },
   { id: 'celebrationDesigns', label: 'Celebration Designs' },
+  { id: 'omag', label: 'O’Mag' },
 ]
 
 /**
