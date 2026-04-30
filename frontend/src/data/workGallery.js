@@ -1,6 +1,6 @@
 /**
- * Curated portfolio media — magazine spreads, motion invites, process, and service stills.
- * Files live under `frontend/public/work/`, `public/services/`, `public/how-it-works/`.
+ * Curated portfolio media — magazine spreads, motion invites, O’Mag samples.
+ * Files live under `frontend/public/work/`, `public/services/`.
  */
 
 /**
@@ -17,21 +17,6 @@
  * @property {string} title
  * @property {string} poster
  * @property {string} tagline
- */
-
-/**
- * @typedef {Object} ServiceStillItem
- * @property {string} src
- * @property {string} label
- * @property {string} [description]
- */
-
-/**
- * @typedef {Object} ProcessShowcaseItem
- * @property {string} src
- * @property {string} title
- * @property {string} caption
- * @property {string} [alt] Image description for accessibility
  */
 
 /** @type {WorkMediaItem[]} */
@@ -119,52 +104,3 @@ export const invitationVideoItems = [
     tagline: 'Statement designs that welcome your guests with elegance and style.',
   },
 ]
-
-/** Studio / process — print-forward stills (replaced legacy how-it-works stock). */
-export const processShowcaseItems = [
-  {
-    src: '/work/magazine/1.png',
-    title: 'In the studio',
-    caption:
-      'Spreads are composed like editorial features — hierarchy, rhythm, and print-safe margins.',
-    alt: 'Editorial magazine spread showing typography hierarchy and layout grid.',
-  },
-  {
-    src: '/work/magazine/mockup-magazine.jpg',
-    title: 'From brief to bound',
-    caption:
-      'Milestones, imagery, and copy come together in a guided layout pass you can review.',
-    alt: 'Stack of finished custom magazines with covers and binding visible.',
-  },
-]
-
-/** @type {ServiceStillItem[]} */
-export const serviceGalleryItems = [
-  {
-    src: '/services/home-categories/wedding-invitation-suite.png',
-    label: 'Digital & e-invites',
-    description: 'Animated and static invites for every channel.',
-  },
-  {
-    src: '/work/magazine/mockup1.jpg',
-    label: 'Print stationery',
-    description: 'Cohesive suites for day-of and pre-wedding.',
-  },
-  {
-    src: '/services/home-categories/wedding-stationery.png',
-    label: 'Wedding stationery',
-    description: 'Menus, programs, and place settings.',
-  },
-  { src: '/services/7.png', label: 'Custom monograms', description: 'Marks that thread through every touchpoint.' },
-  {
-    src: '/services/8.png',
-    label: 'Illustration & caricature',
-    description: 'Hand-drawn personality for print and motion.',
-  },
-]
-
-/** Brand loop — poster uses a real printed spread (not a device mockup). */
-export const brandShowcaseLoop = {
-  src: '/brand/omag-section-loop.mp4',
-  poster: '/work/magazine/open-magazne-o-mag-aashi.jpg',
-}
