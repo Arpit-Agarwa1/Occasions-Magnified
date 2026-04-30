@@ -30,11 +30,11 @@ const CARD_MEDIA = [
 const ITEMS = SHOP_CATEGORIES.map((cat, idx) => ({
   ...cat,
   ...CARD_MEDIA[idx],
-  /** Home strip: O’Mag opens the dedicated page; other categories open Shop at the right section. */
-  homeTo: cat.id === 'omag' ? '/omag' : `/shop#${cat.id}`,
+  /** Deep-link into Work archive tabs (hash matches `workGalleryTabOptions[].id`). */
+  homeTo: `/work#${cat.workArchiveTabId}`,
 }))
 
-/** Home — category cards: copy + “Shop Designs” deep-linking into Shop or O’Mag. */
+/** Home — category cards: copy + “View Designs” linking to the Work gallery tab for that category. */
 export function HomeServicesStrip() {
   return (
     <section className="bg-[#f9f7f2] py-0">
@@ -63,7 +63,7 @@ export function HomeServicesStrip() {
                   </p>
                   <div className="mt-auto flex shrink-0 items-center justify-between border-t border-cream/10 pt-3.5 sm:pt-4">
                     <span className="inline-flex items-center justify-center rounded-sm bg-cream px-3 py-2 font-nav text-[11px] font-semibold tracking-wide text-[#4A0404] sm:px-3.5 sm:text-xs md:text-sm">
-                      Shop Designs
+                      View Designs
                     </span>
                     <span className="font-nav text-xl leading-none text-cream/90 sm:text-2xl" aria-hidden>
                       →

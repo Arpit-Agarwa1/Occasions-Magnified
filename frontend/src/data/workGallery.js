@@ -3,7 +3,7 @@
  * Files live under `frontend/public/work/`, `public/services/`.
  */
 
-/** @typedef {'weddingInvitations' | 'omag' | 'celebrationDesigns'} WorkGalleryCategory */
+/** @typedef {'weddingInvitations' | 'weddingStationery' | 'omag' | 'celebrationDesigns'} WorkGalleryCategory */
 
 /**
  * Tab ids for the work archive (excluding `all`).
@@ -12,6 +12,7 @@
 export const workGalleryTabOptions = [
   { id: 'all', label: 'All' },
   { id: 'weddingInvitations', label: 'Wedding Invitations' },
+  { id: 'weddingStationery', label: 'Wedding Stationery' },
   { id: 'omag', label: 'O’Mag' },
   { id: 'celebrationDesigns', label: 'Celebration Designs' },
 ]
@@ -40,7 +41,7 @@ export const magazineGalleryItems = [
   { id: 'work-open-aashi', src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi', category: 'omag' },
   { id: 'work-mockup-hand', src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand', category: 'omag' },
   { id: 'work-stack', src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack', category: 'omag' },
-  { id: 'work-flatlay', src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup', category: 'celebrationDesigns' },
+  { id: 'work-flatlay', src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup', category: 'weddingStationery' },
   { id: 'work-ka-cover', src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover', category: 'weddingInvitations' },
   { id: 'work-family-issue', src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue', category: 'celebrationDesigns' },
   { id: 'work-editorial', src: '/work/magazine/1.png', title: 'Spread — editorial layout', category: 'omag' },
@@ -49,8 +50,8 @@ export const magazineGalleryItems = [
   { id: 'work-typography', src: '/work/magazine/4.png', title: 'Typography study', category: 'omag' },
   { id: 'work-cover-alt', src: '/work/magazine/cover2.png', title: 'Cover — alternate', category: 'weddingInvitations' },
   { id: 'work-cover-classic', src: '/work/magazine/cover.jpg', title: 'Cover — classic', category: 'weddingInvitations' },
-  { id: 'work-print-detail', src: '/work/magazine/7.jpg', title: 'Print finish detail', category: 'omag' },
-  { id: 'work-cover-concept', src: '/work/magazine/8.jpg', title: 'Cover concept', category: 'weddingInvitations' },
+  { id: 'work-print-detail', src: '/work/magazine/7.jpg', title: 'Print finish detail', category: 'weddingStationery' },
+  { id: 'work-cover-concept', src: '/work/magazine/8.jpg', title: 'Cover concept', category: 'weddingStationery' },
   { id: 'work-aashi-back', src: '/work/magazine/aashi-back-cover.jpg', title: 'Aashi — back cover', category: 'omag' },
 ]
 

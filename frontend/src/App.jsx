@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { MainLayout } from './layouts/MainLayout.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 
@@ -9,8 +9,6 @@ const withDefault = (importFn, name) => lazy(() => importFn().then((m) => ({ def
 
 const WorkPage = withDefault(() => import('./pages/WorkPage.jsx'), 'WorkPage')
 const OmagPage = withDefault(() => import('./pages/OmagPage.jsx'), 'OmagPage')
-const ShopPage = withDefault(() => import('./pages/ShopPage.jsx'), 'ShopPage')
-const MagazineShopPage = withDefault(() => import('./pages/MagazineShopPage.jsx'), 'MagazineShopPage')
 const AboutPage = withDefault(() => import('./pages/AboutPage.jsx'), 'AboutPage')
 const TestimonialsPage = withDefault(() => import('./pages/TestimonialsPage.jsx'), 'TestimonialsPage')
 const ContactPage = withDefault(() => import('./pages/ContactPage.jsx'), 'ContactPage')
@@ -25,8 +23,8 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="work" element={<WorkPage />} />
           <Route path="omag" element={<OmagPage />} />
-          <Route path="shop" element={<ShopPage />} />
-          <Route path="shop/magazine" element={<MagazineShopPage />} />
+          {/* Legacy `/shop` URLs → portfolio (shop hub page removed). */}
+          <Route path="shop/*" element={<Navigate to="/work" replace />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="testimonials" element={<TestimonialsPage />} />
           <Route path="contact" element={<ContactPage />} />

@@ -1,11 +1,61 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { magazineGalleryItems, workGalleryTabOptions } from '../data/workGallery.js'
 import { ImageLightbox } from '../components/work/ImageLightbox.jsx'
 
 /** Work — hero, categorized print archive with lightbox. */
 export function WorkPage() {
+  const { hash, pathname } = useLocation()
+  const navigate = useNavigate()
   const [activeTabId, setActiveTabId] = useState('all')
-  const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [lightboxIndex, setLightboxIndex] = useState(/** @type {number | null} */ (null))
+  /** Avoid repeated `scrollIntoView` when the same hash effect runs more than once. */
+  const lastArchiveScrollHashRef = useRef('')
+
+  /** Sync archive tab from `/work#tabId` (e.g. home category cards). */
+  useEffect(() => {
+    const raw = hash.replace(/^#/, '')
+    if (!raw) {
+      setActiveTabId('all')
+      return
+    }
+    const ok = workGalleryTabOptions.some((t) => t.id === raw)
+    if (ok) {
+      setActiveTabId(raw)
+    } else {
+      setActiveTabId('all')
+      navigate('/work', { replace: true })
+    }
+  }, [hash, navigate])
+
+  /** Scroll to the masonry grid once per distinct hash (deep links + in-page tab changes). */
+  useEffect(() => {
+    if (pathname !== '/work') {
+      lastArchiveScrollHashRef.current = ''
+      return
+    }
+    if (!hash) {
+      lastArchiveScrollHashRef.current = ''
+      return
+    }
+    if (lastArchiveScrollHashRef.current === hash) return
+    lastArchiveScrollHashRef.current = hash
+    const el = document.getElementById('archive')
+    if (!el) return
+    const t = window.setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 60)
+    return () => window.clearTimeout(t)
+  }, [pathname, hash])
+
+  const selectTab = useCallback(
+    /** @param {string} tabId */
+    (tabId) => {
+      setActiveTabId(tabId)
+      navigate(tabId === 'all' ? '/work' : `/work#${tabId}`, { replace: true })
+    },
+    [navigate],
+  )
 
   const filteredItems = useMemo(() => {
     if (activeTabId === 'all') return magazineGalleryItems
@@ -58,7 +108,7 @@ export function WorkPage() {
                       ? 'border-burgundy bg-burgundy text-cream shadow-md'
                       : 'border-burgundy/25 bg-white text-burgundy/85 hover:border-burgundy/45 hover:bg-cream/30'
                   }`}
-                  onClick={() => setActiveTabId(tab.id)}
+                  onClick={() => selectTab(tab.id)}
                 >
                   {tab.label}
                 </button>
