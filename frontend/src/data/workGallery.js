@@ -75,53 +75,53 @@ export const magazineGalleryItems = [
     title: 'Grand opening ceremony invitation',
     category: 'celebrationDesigns',
   },
-  // O'Mag (Magazine)
+  // O'Mag (Magazine) — grid captions use one line under the tab name
   {
     id: 'work-omag-spread-01',
     src: '/work/gallery/magazine/spread-01.png',
-    title: 'O’Mag — interior spread',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-spread-19',
     src: '/work/gallery/magazine/spread-19.png',
-    title: 'O’Mag — feature spread',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-artboard',
     src: '/work/gallery/magazine/artboard-01.jpg',
-    title: 'O’Mag — layout concept',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-cover-flat',
     src: '/work/gallery/magazine/magazine-omag.jpg',
-    title: 'O’Mag — cover & branding',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-mockup-3',
     src: '/work/gallery/magazine/mockup-3.jpg',
-    title: 'O’Mag — print mockup',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-mockup-1',
     src: '/work/gallery/magazine/mockup-1.jpg',
-    title: 'O’Mag — keepsake mockup',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-anniversary-spread',
     src: '/work/gallery/magazine/anniversary-photo-book-spread.png',
-    title: 'O’Mag — anniversary edition spread',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   {
     id: 'work-omag-mehendi-magazine-spread',
     src: '/work/gallery/magazine/mehendi-booklet-spread.png',
-    title: 'O’Mag — Mehendi photo booklet spread',
+    title: "O'Mag – Magazine Designs",
     category: 'omag',
   },
   // Wedding Invitation Suite
