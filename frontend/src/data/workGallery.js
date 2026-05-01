@@ -15,7 +15,7 @@ export const workGalleryTabOptions = [
   { id: 'weddingInvitations', label: 'Wedding Invitation Suite' },
   { id: 'weddingStationery', label: 'Wedding Stationery' },
   { id: 'celebrationDesigns', label: 'Celebration Suite' },
-  { id: 'omag', label: "O'Mag (Magazine)" },
+  { id: 'omag', label: "O'Mag – Magazine Designs" },
 ]
 
 /**
@@ -118,6 +118,12 @@ export const magazineGalleryItems = [
     title: 'O’Mag — anniversary edition spread',
     category: 'omag',
   },
+  {
+    id: 'work-omag-mehendi-magazine-spread',
+    src: '/work/gallery/magazine/mehendi-booklet-spread.png',
+    title: 'O’Mag — Mehendi photo booklet spread',
+    category: 'omag',
+  },
   // Wedding Invitation Suite
   {
     id: 'work-win-couple-monogram',
@@ -129,12 +135,6 @@ export const magazineGalleryItems = [
     id: 'work-win-mehendi-2',
     src: '/work/gallery/wedding-invitations/mehendi-2.jpg',
     title: 'Mehendi invitation — variant',
-    category: 'weddingInvitations',
-  },
-  {
-    id: 'work-win-mehendi-booklet',
-    src: '/work/gallery/wedding-invitations/mehendi-booklet-spread.png',
-    title: 'Mehendi invitation — booklet spread',
     category: 'weddingInvitations',
   },
   {

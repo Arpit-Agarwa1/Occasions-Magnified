@@ -34,7 +34,7 @@ export const SHOP_CATEGORIES = [
   {
     id: 'omag',
     workArchiveTabId: 'omag',
-    title: "O'Mag (Magazine)",
+    title: "O'Mag – Magazine Designs",
     description:
       'A custom magazine that turns your memories into a timeless keepsake you can cherish forever.',
     ctaHref: '/omag',
