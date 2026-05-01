@@ -1,6 +1,7 @@
 /**
- * Curated portfolio media — magazine spreads, motion invites, O’Mag samples.
- * Files live under `frontend/public/work/`, `public/services/`.
+ * Curated portfolio media for the Work page masonry grid.
+ * Category assets live under `public/work/gallery/{celebration,magazine,wedding-invitations,wedding-stationery}/`.
+ * Legacy paths under `public/work/magazine/` remain for home/O’Mag hero and video posters where referenced.
  */
 
 /** @typedef {'weddingInvitations' | 'weddingStationery' | 'omag' | 'celebrationDesigns'} WorkGalleryCategory */
@@ -37,22 +38,148 @@ export const workGalleryTabOptions = [
 
 /** @type {WorkMediaItem[]} */
 export const magazineGalleryItems = [
-  { id: 'work-omag-hero-spread', src: '/work/magazine/omag-home-spread.png', title: 'O’Mag — hero spread', category: 'omag' },
-  { id: 'work-open-aashi', src: '/work/magazine/open-magazne-o-mag-aashi.jpg', title: 'Open spread — Aashi', category: 'omag' },
-  { id: 'work-mockup-hand', src: '/work/magazine/mockup3.jpg', title: 'O’Mag in hand', category: 'omag' },
-  { id: 'work-stack', src: '/work/magazine/mockup-magazine.jpg', title: 'Magazine stack', category: 'omag' },
-  { id: 'work-flatlay', src: '/work/magazine/mockup1.jpg', title: 'Flatlay mockup', category: 'weddingStationery' },
-  { id: 'work-ka-cover', src: '/work/magazine/mockup-ka-cover.jpg', title: 'Mockup — KA cover', category: 'weddingInvitations' },
-  { id: 'work-family-issue', src: '/work/magazine/mockup-magazine-chacha-chachi.jpg', title: 'Mockup — family issue', category: 'celebrationDesigns' },
-  { id: 'work-editorial', src: '/work/magazine/1.png', title: 'Spread — editorial layout', category: 'omag' },
-  { id: 'work-feature', src: '/work/magazine/15.png', title: 'Feature spread', category: 'celebrationDesigns' },
-  { id: 'work-celebration', src: '/work/magazine/20.png', title: 'Celebration layout', category: 'celebrationDesigns' },
-  { id: 'work-typography', src: '/work/magazine/4.png', title: 'Typography study', category: 'omag' },
-  { id: 'work-cover-alt', src: '/work/magazine/cover2.png', title: 'Cover — alternate', category: 'weddingInvitations' },
-  { id: 'work-cover-classic', src: '/work/magazine/cover.jpg', title: 'Cover — classic', category: 'weddingInvitations' },
-  { id: 'work-print-detail', src: '/work/magazine/7.jpg', title: 'Print finish detail', category: 'weddingStationery' },
-  { id: 'work-cover-concept', src: '/work/magazine/8.jpg', title: 'Cover concept', category: 'weddingStationery' },
-  { id: 'work-aashi-back', src: '/work/magazine/aashi-back-cover.jpg', title: 'Aashi — back cover', category: 'omag' },
+  // Celebration Suite
+  {
+    id: 'work-cel-baby-shower-board',
+    src: '/work/gallery/celebration/baby-shower-board.jpg',
+    title: 'Baby shower board',
+    category: 'celebrationDesigns',
+  },
+  {
+    id: 'work-cel-baby-shower-welcome',
+    src: '/work/gallery/celebration/baby-shower-welcome-board.jpg',
+    title: 'Baby shower welcome board',
+    category: 'celebrationDesigns',
+  },
+  {
+    id: 'work-cel-baby-announcement-news',
+    src: '/work/gallery/celebration/baby-announcement-newspaper.png',
+    title: 'Baby announcement — newspaper style',
+    category: 'celebrationDesigns',
+  },
+  {
+    id: 'work-cel-newspaper-baby',
+    src: '/work/gallery/celebration/newspaper-baby.png',
+    title: 'Newspaper — baby feature',
+    category: 'celebrationDesigns',
+  },
+  {
+    id: 'work-cel-newspaper-announcement',
+    src: '/work/gallery/celebration/newspaper-baby-announcement.png',
+    title: 'Newspaper — baby announcement',
+    category: 'celebrationDesigns',
+  },
+  // O'Mag (Magazine)
+  {
+    id: 'work-omag-spread-01',
+    src: '/work/gallery/magazine/spread-01.png',
+    title: 'O’Mag — interior spread',
+    category: 'omag',
+  },
+  {
+    id: 'work-omag-spread-19',
+    src: '/work/gallery/magazine/spread-19.png',
+    title: 'O’Mag — feature spread',
+    category: 'omag',
+  },
+  {
+    id: 'work-omag-artboard',
+    src: '/work/gallery/magazine/artboard-01.jpg',
+    title: 'O’Mag — layout concept',
+    category: 'omag',
+  },
+  {
+    id: 'work-omag-cover-flat',
+    src: '/work/gallery/magazine/magazine-omag.jpg',
+    title: 'O’Mag — cover & branding',
+    category: 'omag',
+  },
+  {
+    id: 'work-omag-mockup-3',
+    src: '/work/gallery/magazine/mockup-3.jpg',
+    title: 'O’Mag — print mockup',
+    category: 'omag',
+  },
+  {
+    id: 'work-omag-mockup-1',
+    src: '/work/gallery/magazine/mockup-1.jpg',
+    title: 'O’Mag — keepsake mockup',
+    category: 'omag',
+  },
+  // Wedding Invitation Suite
+  {
+    id: 'work-win-couple-monogram',
+    src: '/work/gallery/wedding-invitations/couple-monogram.jpg',
+    title: 'Wedding — couple monogram',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-mehendi-2',
+    src: '/work/gallery/wedding-invitations/mehendi-2.jpg',
+    title: 'Mehendi invitation — variant',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-mehendi-invite',
+    src: '/work/gallery/wedding-invitations/mehendi-invite.jpg',
+    title: 'Mehendi invitation',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-mehendi-1',
+    src: '/work/gallery/wedding-invitations/mehendi-1.jpg',
+    title: 'Mehendi invitation — suite',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-monogram-couple',
+    src: '/work/gallery/wedding-invitations/monogram-couple.png',
+    title: 'Monogram — couple mark',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-monogram',
+    src: '/work/gallery/wedding-invitations/monogram.jpg',
+    title: 'Monogram — wedding mark',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-countdown',
+    src: '/work/gallery/wedding-invitations/wedding-countdown.png',
+    title: 'Wedding countdown',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-invite',
+    src: '/work/gallery/wedding-invitations/wedding-invite.jpg',
+    title: 'Wedding invitation',
+    category: 'weddingInvitations',
+  },
+  // Wedding Stationery
+  {
+    id: 'work-wst-newspaper-std',
+    src: '/work/gallery/wedding-stationery/newspaper-save-the-date.jpg',
+    title: 'Save the date — newspaper style',
+    category: 'weddingStationery',
+  },
+  {
+    id: 'work-wst-thank-you',
+    src: '/work/gallery/wedding-stationery/thank-you-note.png',
+    title: 'Thank you note',
+    category: 'weddingStationery',
+  },
+  {
+    id: 'work-wst-welcome-mehendi',
+    src: '/work/gallery/wedding-stationery/welcome-board-mehendi.jpg',
+    title: 'Welcome board — Mehendi',
+    category: 'weddingStationery',
+  },
+  {
+    id: 'work-wst-welcome-wedding',
+    src: '/work/gallery/wedding-stationery/welcome-board-wedding.png',
+    title: 'Welcome board — wedding',
+    category: 'weddingStationery',
+  },
 ]
 
 /**
