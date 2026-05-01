@@ -39,6 +39,25 @@ const STEPS = [
   },
 ]
 
+/** Client quotes for the O’Mag testimonial carousel. */
+const OMAG_TESTIMONIALS = [
+  {
+    quote:
+      "Shristi beautifully captured our love story in the O'Mag. It brought tears to my wife's eyes on our anniversary! The design, quality, and service were top-notch.",
+    attribution: 'Amit & Jyoti',
+  },
+  {
+    quote:
+      'Photo magazine bahut hi sundar bani hai. Design aur presentation dono hi laajawab hain. Bahut bahut dhanyavaad 😊',
+    attribution: 'Kunal, Studio Ramayan',
+  },
+  {
+    quote:
+      'My wife loved the magazine! It was perfect. It is now a beautiful memory for us and those who look at it. It was very well made, especially in the short time we had. Keep up the good work!',
+    attribution: 'Nishant Pathak, Pune',
+  },
+]
+
 /** FAQ accordion — question + answer pairs for O’Mag page. */
 const FAQS = [
   {
@@ -187,6 +206,17 @@ export function OmagPage() {
   const slides = useMemo(() => omagSampleCarouselItems, [])
   const scrollerRef = useRef(null)
   const [reduceMotion, setReduceMotion] = useState(false)
+  const [omagTestimonialIdx, setOmagTestimonialIdx] = useState(0)
+  const testimonialCount = OMAG_TESTIMONIALS.length
+  const activeTestimonial = OMAG_TESTIMONIALS[omagTestimonialIdx]
+
+  /** Cycle testimonial index with wrap. */
+  const stepTestimonial = useCallback(
+    (delta) => {
+      setOmagTestimonialIdx((i) => (i + delta + testimonialCount) % testimonialCount)
+    },
+    [testimonialCount],
+  )
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -290,26 +320,17 @@ export function OmagPage() {
               can hold forever.
             </p>
             <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-[#4A0404]/15 bg-[#1a0505] shadow-lg">
-              {reduceMotion ? (
-                <img
-                  src="/how-it-works/how-it-works.png"
-                  alt="How O'Mag works — still overview"
-                  className="absolute inset-0 m-auto h-full w-full object-contain"
-                  loading="lazy"
-                />
-              ) : (
-                <video
-                  className="absolute inset-0 h-full w-full object-contain"
-                  src="/brand/omag-section-loop.mp4"
-                  poster="/how-it-works/how-it-works.png"
-                  controls
-                  playsInline
-                  muted
-                  loop
-                  preload="metadata"
-                  aria-label="O'Mag layouts and print preview"
-                />
-              )}
+              <video
+                className="absolute inset-0 h-full w-full object-contain"
+                src="/brand/omag-section-loop.mp4"
+                controls
+                playsInline
+                muted
+                loop
+                autoPlay={!reduceMotion}
+                preload={reduceMotion ? 'metadata' : 'auto'}
+                aria-label="O'Mag layouts and print preview"
+              />
             </div>
             <p className="mt-4 text-center font-serif text-sm text-[#4A0404]/65 md:text-base">
               Use the video controls when sound is available.
@@ -435,27 +456,47 @@ export function OmagPage() {
         <h2 className="mt-4 text-center font-serif text-2xl text-[#4A0404] text-balance sm:text-3xl md:text-[2.1rem]">
           What Our Clients Say
         </h2>
-        <div className="mx-auto mt-8 flex min-w-0 max-w-4xl items-stretch gap-3 sm:mt-10 sm:gap-4 md:gap-6">
+        <div className="mx-auto mt-8 flex min-w-0 max-w-4xl items-stretch gap-2 sm:mt-10 sm:gap-3 md:gap-6">
           <button
             type="button"
-            className="hidden shrink-0 self-center rounded-full border border-[#4A0404]/20 bg-white/80 px-2 py-8 text-2xl text-[#4A0404]/50 transition hover:bg-white md:block"
+            className="shrink-0 self-center rounded-full border border-[#4A0404]/20 bg-white/80 px-1.5 py-6 text-xl text-[#4A0404]/50 transition hover:bg-white sm:px-2 sm:py-7 sm:text-2xl md:py-8"
             aria-label="Previous testimonial"
+            onClick={() => stepTestimonial(-1)}
           >
             ‹
           </button>
-          <div className="relative flex-1 rounded-sm border-2 border-dashed border-white bg-[#4A0404] px-4 py-9 text-center text-cream shadow-xl sm:px-6 sm:py-10 md:px-12 md:py-12">
-            <blockquote className="font-serif text-base italic leading-relaxed text-pretty sm:text-lg md:text-xl">
-              &ldquo;Shristi beautifully captured our love story in the O&apos;Mag. It brought tears to my
-              wife&apos;s eyes on our anniversary! The design, quality, and service were top-notch.&rdquo;
-            </blockquote>
-            <p className="mt-8 font-nav text-xs font-semibold tracking-[0.22em] text-cream/85 uppercase">
-              — Amit &amp; Jyoti
-            </p>
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
+            <div
+              className="relative flex-1 rounded-sm border-2 border-dashed border-white bg-[#4A0404] px-4 py-9 text-center text-cream shadow-xl sm:px-6 sm:py-10 md:px-12 md:py-12"
+              aria-live="polite"
+            >
+              <blockquote className="font-serif text-base italic leading-relaxed text-pretty sm:text-lg md:text-xl">
+                &ldquo;{activeTestimonial.quote}&rdquo;
+              </blockquote>
+              <p className="mt-8 font-nav text-xs font-semibold tracking-[0.22em] text-cream/85 uppercase">
+                — {activeTestimonial.attribution}
+              </p>
+            </div>
+            <div className="flex justify-center gap-2" aria-label="Testimonial slides">
+              {OMAG_TESTIMONIALS.map((_, i) => (
+                <button
+                  key={`omag-testimonial-dot-${i}`}
+                  type="button"
+                  aria-label={`Show testimonial ${i + 1} of ${testimonialCount}`}
+                  aria-current={i === omagTestimonialIdx ? 'true' : undefined}
+                  className={`h-2.5 w-2.5 rounded-full transition ${
+                    i === omagTestimonialIdx ? 'bg-[#4A0404]' : 'bg-[#4A0404]/25 hover:bg-[#4A0404]/45'
+                  }`}
+                  onClick={() => setOmagTestimonialIdx(i)}
+                />
+              ))}
+            </div>
           </div>
           <button
             type="button"
-            className="hidden shrink-0 self-center rounded-full border border-[#4A0404]/20 bg-white/80 px-2 py-8 text-2xl text-[#4A0404]/50 transition hover:bg-white md:block"
+            className="shrink-0 self-center rounded-full border border-[#4A0404]/20 bg-white/80 px-1.5 py-6 text-xl text-[#4A0404]/50 transition hover:bg-white sm:px-2 sm:py-7 sm:text-2xl md:py-8"
             aria-label="Next testimonial"
+            onClick={() => stepTestimonial(1)}
           >
             ›
           </button>
