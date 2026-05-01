@@ -69,6 +69,12 @@ export const magazineGalleryItems = [
     title: 'Newspaper — baby announcement',
     category: 'celebrationDesigns',
   },
+  {
+    id: 'work-cel-grand-opening',
+    src: '/work/gallery/celebration/grand-opening-invitation.png',
+    title: 'Grand opening ceremony invitation',
+    category: 'celebrationDesigns',
+  },
   // O'Mag (Magazine)
   {
     id: 'work-omag-spread-01',
@@ -106,6 +112,12 @@ export const magazineGalleryItems = [
     title: 'O’Mag — keepsake mockup',
     category: 'omag',
   },
+  {
+    id: 'work-omag-anniversary-spread',
+    src: '/work/gallery/magazine/anniversary-photo-book-spread.png',
+    title: 'O’Mag — anniversary edition spread',
+    category: 'omag',
+  },
   // Wedding Invitation Suite
   {
     id: 'work-win-couple-monogram',
@@ -120,15 +132,27 @@ export const magazineGalleryItems = [
     category: 'weddingInvitations',
   },
   {
-    id: 'work-win-mehendi-invite',
-    src: '/work/gallery/wedding-invitations/mehendi-invite.jpg',
-    title: 'Mehendi invitation',
+    id: 'work-win-mehendi-booklet',
+    src: '/work/gallery/wedding-invitations/mehendi-booklet-spread.png',
+    title: 'Mehendi invitation — booklet spread',
     category: 'weddingInvitations',
   },
   {
-    id: 'work-win-mehendi-1',
-    src: '/work/gallery/wedding-invitations/mehendi-1.jpg',
-    title: 'Mehendi invitation — suite',
+    id: 'work-win-roopesh-neha-suite',
+    src: '/work/gallery/wedding-invitations/roopesh-neha-wedding-suite.png',
+    title: 'Wedding invitation suite — Roopesh & Neha',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-sangeet-haldi-suite',
+    src: '/work/gallery/wedding-invitations/sangeet-haldi-invitation-suite.png',
+    title: 'Sangeet & Haldi invitation suite',
+    category: 'weddingInvitations',
+  },
+  {
+    id: 'work-win-simrat-gurpreet-suite',
+    src: '/work/gallery/wedding-invitations/simrat-gurpreet-wedding-suite.png',
+    title: 'Punjabi wedding invitation suite — Simrat & Gurpreet',
     category: 'weddingInvitations',
   },
   {

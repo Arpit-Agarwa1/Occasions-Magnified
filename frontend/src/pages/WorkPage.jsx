@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { magazineGalleryItems, workGalleryTabOptions } from '../data/workGallery.js'
 import { ImageLightbox } from '../components/work/ImageLightbox.jsx'
+import { publicUrl } from '../utils/publicUrl.js'
 
 /** FAQ — ordering, customization, payment, and delivery (Our Work page). */
 const WORK_FAQS = [
@@ -112,7 +113,7 @@ export function WorkPage() {
   }, [activeTabId])
 
   const lightboxItems = useMemo(
-    () => filteredItems.map((item) => ({ src: item.src, alt: item.title })),
+    () => filteredItems.map((item) => ({ src: publicUrl(item.src), alt: item.title })),
     [filteredItems],
   )
 
@@ -185,12 +186,13 @@ export function WorkPage() {
                   aria-label={`View large — ${item.title}`}
                   onClick={() => setLightboxIndex(idx)}
                 >
-                  <span className="relative block">
+                  <span className="relative aspect-[3/4] w-full overflow-hidden bg-[#f2efe8]">
                     <img
-                      src={item.src}
+                      src={publicUrl(item.src)}
                       alt={item.title}
-                      className="w-full object-contain transition duration-300 group-hover:scale-[1.02] md:object-cover"
+                      className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-[1.02]"
                       loading="lazy"
+                      decoding="async"
                     />
                     <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 transition group-hover:bg-black/30">
                       <span className="rounded-full bg-white/95 px-3 py-1.5 font-nav text-[10px] font-bold tracking-wide text-burgundy uppercase opacity-0 shadow-md transition group-hover:opacity-100">
