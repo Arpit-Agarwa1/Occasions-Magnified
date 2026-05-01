@@ -1,17 +1,38 @@
+/** Verified client quotes — name + city for attribution. */
 const quotes = [
   {
-    body: 'The attention to detail and warmth in every page made our invitation feel like the beginning of our story — not just a card.',
-    name: 'A. & R.',
-    place: 'Mumbai',
+    id: 'nishant-pune',
+    body: "My wife loved the magazine! It was perfect. It is now a beautiful memory for us and those who look at it. It was very well made, especially in the short time we had. Keep up the good work!",
+    name: 'Nishant Pathak',
+    place: 'Pune',
   },
   {
-    body: "Our O'Mag gift for parents brought tears — the layout felt like a real editorial feature of our family.",
-    name: 'S. K.',
-    place: 'Delhi',
+    id: 'divya-jaipur',
+    body: 'Our wedding invite turned out exactly how we wanted — simple, classy, and very personal. We got so many compliments!',
+    name: 'Divya',
+    place: 'Jaipur',
+  },
+  {
+    id: 'megha-hyderabad',
+    body: "I wasn't sure how it would turn out initially, but the final result completely exceeded my expectations.",
+    name: 'Megha',
+    place: 'Hyderabad',
+  },
+  {
+    id: 'kunal-studio-ramayan',
+    body: 'Photo magazine bahut hi sundar bani hai. Design aur presentation dono hi laajawab hain. Bahut bahut dhanyavaad 😊',
+    name: 'Kunal',
+    place: 'Studio Ramayan',
+  },
+  {
+    id: 'kiran-jaipur',
+    body: "I got my magazine and wedding invitation designed by Occasions Magnified, and I absolutely loved their work. The designs were elegant, creative, and exactly how I imagined.",
+    name: 'Kiran',
+    place: 'Jaipur',
   },
 ]
 
-/** Client quotes — replace with verified testimonials when ready. */
+/** Client quotes — masonry-style list with serif blockquotes. */
 export function TestimonialsPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-14 md:px-8 md:py-20">
@@ -21,7 +42,7 @@ export function TestimonialsPage() {
       </p>
       <ul className="mt-12 space-y-12">
         {quotes.map((q) => (
-          <li key={q.name} className="rounded-sm border border-burgundy/10 bg-cream/40 p-8 shadow-sm">
+          <li key={q.id} className="rounded-sm border border-burgundy/10 bg-cream/40 p-8 shadow-sm">
             <blockquote className="font-serif text-xl italic leading-relaxed text-burgundy/95">
               &ldquo;{q.body}&rdquo;
             </blockquote>
