@@ -58,23 +58,22 @@ const WORK_FAQS = [
 export function WorkPage() {
   const { hash, pathname } = useLocation()
   const navigate = useNavigate()
-  const [activeTabId, setActiveTabId] = useState('all')
   const [lightboxIndex, setLightboxIndex] = useState(/** @type {number | null} */ (null))
   /** Avoid repeated `scrollIntoView` when the same hash effect runs more than once. */
   const lastArchiveScrollHashRef = useRef('')
 
-  /** Sync archive tab from `/work#tabId` (e.g. home category cards). */
+  /** Active filter — derived from URL hash so deep links and tab clicks stay in sync without effect setState. */
+  const activeTabId = useMemo(() => {
+    const raw = hash.replace(/^#/, '')
+    if (!raw) return 'all'
+    return workGalleryTabOptions.some((t) => t.id === raw) ? raw : 'all'
+  }, [hash])
+
+  /** Strip invalid `#fragment` from the URL (keep valid tab ids only). */
   useEffect(() => {
     const raw = hash.replace(/^#/, '')
-    if (!raw) {
-      setActiveTabId('all')
-      return
-    }
-    const ok = workGalleryTabOptions.some((t) => t.id === raw)
-    if (ok) {
-      setActiveTabId(raw)
-    } else {
-      setActiveTabId('all')
+    if (!raw) return
+    if (!workGalleryTabOptions.some((t) => t.id === raw)) {
       navigate('/work', { replace: true })
     }
   }, [hash, navigate])
@@ -102,7 +101,6 @@ export function WorkPage() {
   const selectTab = useCallback(
     /** @param {string} tabId */
     (tabId) => {
-      setActiveTabId(tabId)
       navigate(tabId === 'all' ? '/work' : `/work#${tabId}`, { replace: true })
     },
     [navigate],
@@ -118,8 +116,10 @@ export function WorkPage() {
     [filteredItems],
   )
 
+  /** Close lightbox when the visible grid changes (defer avoids cascading-render lint). */
   useEffect(() => {
-    setLightboxIndex(null)
+    const id = window.requestAnimationFrame(() => setLightboxIndex(null))
+    return () => window.cancelAnimationFrame(id)
   }, [activeTabId])
 
   return (
