@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { HomeServicesStrip } from '../components/home/HomeServicesStrip.jsx'
+import { HomeTestimonialsCarousel } from '../components/home/HomeTestimonialsCarousel.jsx'
 import { PortfolioPreviewSection } from '../components/home/PortfolioPreviewSection.jsx'
 import { SITE_LINKS } from '../constants/site.js'
 
@@ -175,14 +176,7 @@ export function HomePage() {
         <h2 className="relative z-10 px-3 text-center font-serif text-2xl leading-tight text-white text-balance sm:text-3xl md:text-[2.35rem]">
           What Our Clients Say…
         </h2>
-        <div className="relative z-10 mx-auto mt-8 max-w-5xl rounded-t-[1.25rem] bg-[#F5F5F0] px-4 py-10 text-[#4A0404] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] sm:mt-10 sm:rounded-t-[1.75rem] sm:px-6 sm:py-12 md:px-14 md:py-14">
-          <blockquote className="text-center font-serif text-lg italic leading-relaxed text-pretty sm:text-xl md:text-2xl">
-            &ldquo;The invite video brought tears to our families&apos; eyes! Every detail was spot on.&rdquo;
-          </blockquote>
-          <p className="mt-8 text-center font-nav text-xs font-semibold tracking-[0.22em] text-[#4A0404]/70 uppercase">
-            — Aanya &amp; Karan, Mumbai
-          </p>
-        </div>
+        <HomeTestimonialsCarousel />
       </section>
     </>
   )
